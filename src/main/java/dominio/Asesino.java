@@ -1,5 +1,11 @@
 package dominio;
-
+/**
+ * 
+ * Clase que define a un tipo Asesino, la misma hereda de la clase 
+ * abstracta Casta por lo que se definen los métodos abstractos declarados en Casta y 
+ * se define al nombreCasta como "Asesino".
+ *
+ */
 public class Asesino extends Casta {
 
 	public Asesino(double prob_crit, double evasion, double daño_crit) {
@@ -27,6 +33,15 @@ public class Asesino extends Casta {
 	}
 
 	// Aumentar Evasion
+	/**
+	 * <h3><u>Método habilidad2</u></h3>
+	 * Se redefine el método abstracto heredado.<p>
+	 * El objetivo de dicho método es el de aumentar la probabilidad de evasión de 
+	 * los personajes pertenecientes a dicha casta. (Asesinos)
+	 * @param caster De tipo Personaje encargado de obtener y setear energías.
+	 * @param atacado De tipo Peleable (no se utiliza)
+	 * @return boolean, true en caso de poder aumentar la evasion, false en caso contrario.
+	 */
 	public boolean habilidad2(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
