@@ -1,5 +1,12 @@
 package dominio;
 
+/**
+ * 
+ * Clase que define a un tipo Guerrero, la misma hereda de la clase 
+ * abstracta Casta por lo que se definen los métodos abstractos declarados en Casta y 
+ * se define al nombreCasta como "Guerrero".
+ *
+ */
 public class Guerrero extends Casta {
 
 	public Guerrero(double prob_crit, double evasion, double daño_crit) {

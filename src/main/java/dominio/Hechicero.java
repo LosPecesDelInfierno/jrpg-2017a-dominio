@@ -1,5 +1,12 @@
 package dominio;
 
+/**
+ * 
+ * Clase que define a un tipo Hechicero, la misma hereda de la clase 
+ * abstracta Casta por lo que se definen los métodos abstractos declarados en Casta y 
+ * se define al nombreCasta como "Hechicero".
+ *
+ */
 public class Hechicero extends Casta {
 
 	public Hechicero(double prob_crit, double evasion, double daño_crit) {
