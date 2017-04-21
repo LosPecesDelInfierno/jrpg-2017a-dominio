@@ -1,7 +1,12 @@
 package dominio;
 
 import java.io.Serializable;
-
+/**
+ * 
+ * <p>Clase encargada de definir los métodos y atributos de un Personaje.<br>
+ * Implementa las interfaces Peleable y Serializable</p>
+ * 
+ */
 public abstract class Personaje implements Peleable, Serializable {
 
 	protected int salud;
@@ -237,7 +242,15 @@ public abstract class Personaje implements Peleable, Serializable {
 	public void setEnergiaTope(int energiaTope) {
 		this.energiaTope = energiaTope;
 	}
-
+/**
+ * <h3><u>Método Atacar</u></p>
+ * <p>Este método recibirá un objeto del tipo Peleable al cual, el objeto llamador (un Personaje) intentará atacar.<br>
+ * En caso de no poder concretar dicho ataque se retornará un int de valor 0. Si es posible el ataque, se procederá
+ * y se retornará un int distinto de cero.</p>
+ * @param atacado Es un Objeto del tipo Peleable al cual se intenta atacar.
+ * @return En caso de No poder concretar el ataque devuelve un cero, caso contrario
+ * devuelve un entero distinto de cero.
+ */
 	public int atacar(Peleable atacado) {
 		if (salud == 0)
 			return 0;
@@ -292,7 +305,15 @@ public abstract class Personaje implements Peleable, Serializable {
 	public boolean estaVivo() {
 		return salud > 0;
 	}
-
+/**
+ * <h3><u>Método serAtacado </u><h3>
+ * <p>Este método será el encargado de proceder a dañar al objeto llamador.<br>
+ * Recibirá el daño que se pretende recibir para luego de distintas evaluaciones concretar el ataque recibido.</p>
+ * <p>En caso que se pueda evitar el ataque recibido ya sea por defensa o probabilidad de evitarlo, el método devolverá un cero. 
+ * Caso contrario se procede a recibir el ataque y luego retornar el daño final.</p>
+ * @param daño Es el daño que se pretende recibir (int).
+ * @return Se devuelve un int representando el daño recibido (si NO hubo daño sera cero).
+ */
 	public int serAtacado(int daño) {
 		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
 			daño -= this.defensa;
