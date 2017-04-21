@@ -1,5 +1,10 @@
 package dominio;
-
+/**
+ * 
+ * Clase que define a un tipo de Personaje como "Elfo".
+ * Por lo tanto extiende a la clase abstracta Personaje.
+ *
+ */
 public class Elfo extends Personaje {
 
 	public Elfo(String nombre, Casta casta, int id) {
