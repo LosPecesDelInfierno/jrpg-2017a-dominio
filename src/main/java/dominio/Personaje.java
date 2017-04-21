@@ -3,7 +3,7 @@ package dominio;
 import java.io.Serializable;
 /**
  * 
- * <p>Clase encargada de definir los métodos y atributos de un Personaje.<br>
+ * <p>Clase abstracta encargada de definir los métodos y atributos de un Personaje.<br>
  * Implementa las interfaces Peleable y Serializable</p>
  * 
  */
