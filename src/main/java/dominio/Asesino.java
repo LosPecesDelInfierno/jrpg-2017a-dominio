@@ -23,6 +23,17 @@ public class Asesino extends Casta {
 	}
 
 	// Golpe Crítico
+	/**
+	 * <h3><u>Golpe Critico</u></h3>
+	 * Implementacion del método abstracto habilidad1 declarado en la clase abstracta Casta.<p>
+	 * En este caso el método es el encargado de producir un Golpe Critico 
+	 * por parte de un asesino hacia un objeto Peleable.<br>
+	 * Nótese que en este caso el Personaje (Asesino) que ataca es parámetro.
+	 * @param caster De tipo Personaje (Asesino) encargado de obtener y setear energías.
+	 * @param atacado De tipo Peleable a ser atacado por el Asesino.
+	 * @return Si el caster tiene suficiente energia para realizar el ataque devuelve un boolean true, caso 
+	 * contrario devuelve false.
+	 */
 	public boolean habilidad1(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -34,8 +45,8 @@ public class Asesino extends Casta {
 
 	// Aumentar Evasion
 	/**
-	 * <h3><u>Método habilidad2</u></h3>
-	 * Se redefine el método abstracto heredado.<p>
+	 * <h3><u>Aumentar Evasión</u></h3>
+	 * Se redefine el método abstracto habilidad2 heredado.<p>
 	 * El objetivo de dicho método es el de aumentar la probabilidad de evasión de 
 	 * los personajes pertenecientes a dicha casta. (Asesinos)
 	 * @param caster De tipo Personaje encargado de obtener y setear energías.
