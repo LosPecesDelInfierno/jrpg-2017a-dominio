@@ -25,6 +25,17 @@ public class Guerrero extends Casta {
 	}
 
 	// Ataque Doble
+	/**
+	 * <h3><u>Ataque Doble</u></h3>
+	 * Implementacion del método abstracto habilidad1 declarado en la clase abstracta Casta.<p>
+	 * En este caso el método es el encargado de producir un Ataque Doble 
+	 * por parte de un guerrero hacia un objeto Peleable.<br>
+	 * Nótese que en este caso el Personaje (Guerrero) que ataca es parámetro.
+	 * @param caster Objeto de tipo Personaje encargado del ataque.
+	 * @param atacado Objeto de tipo Peleable a ser atacado.
+	 * @return Si el caster tiene suficiente energia para realizar el ataque devuelve un boolean true, caso 
+	 * contrario devuelve false.
+	 */
 	public boolean habilidad1(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -35,6 +46,16 @@ public class Guerrero extends Casta {
 	}
 	
 	// Aumentar Defensa
+	/**
+	 * <h3><u>Aumentar Defensa</u></h3>
+	 * Implementacion del método abstracto habilidad2 declarado en la clase abstracta Casta.<p>
+	 * En este caso este método es el encargado de aumentar la defensa de un caster de tipo Personaje (Guerrero).<br>
+	 * Nótese que el Personaje (Guerrero) es parámetro.
+	 * @param caster Personaje (Guerrero) a recibir el aumento de defensa.
+	 * @param atacado No se utiliza pero debe incluirse como parámetro ya que la declaración del metodo en la clase padre lo contiene.
+	 * @return Si el caster tiene suficiente energia para realizar aumento devuelve un boolean true, caso 
+	 * contrario devuelve false.
+	 */
 	public boolean habilidad2(Personaje caster, Peleable atacado) { 
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
