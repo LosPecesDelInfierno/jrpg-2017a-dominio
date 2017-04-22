@@ -50,7 +50,10 @@ public class Humano extends Personaje {
 	 * <h3><u>Golpe Fatal</u></h3>
 	 * Intenta un golpe fatal (provoca hasta un max de la mitad de la vida del objeto Peleable atacado).<p>
 	 * En caso de poder realizarse, se reduce la energía a la mitad retornando un boolean true.<br>
-	 * Caso contrario resta energía al objeto llamador y devuelve false.
+	 * Caso contrario devuelve false y se piede la energía.
+	 * 
+	 * @param atacado Peleable a ser atacado por el Humano.
+	 * @return true en caso de realizarse el ataque, false en caso contrario.
 	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
@@ -59,7 +62,7 @@ public class Humano extends Personaje {
 				return true;
 			}
 		}
-		this.setEnergia(this.getEnergia() - 10);
+		this.setEnergia(this.getEnergia() - 10); 
 		return false;
 	}
 }
