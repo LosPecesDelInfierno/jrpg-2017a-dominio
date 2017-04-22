@@ -32,6 +32,14 @@ public class Elfo extends Personaje {
 	}
 
 	// Golpe Level
+	/**
+	 * <h3><u>Golpe Level</u></h3>
+	 * Intenta un golpe utilizando la fuerza del Elfo + el nivel de dicho Personaje.<br>
+	 * En caso de poder realizarse el ataque se pierde la Energia utilizada y se devuelve true, caso contrario devuelve false.
+	 * 
+	 * @param atacado Peleable a ser atacado por el Elfo.
+	 * @return true en caso de realizarse el ataque, false en caso contrario.
+	 */
 	public boolean habilidadRaza1(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);
@@ -42,6 +50,14 @@ public class Elfo extends Personaje {
 	}
 
 	// Ataque Bosque
+	/**
+	 * <h3><u>Golpe Bosque</u></h3>
+	 * Intenta un golpe utilizando la magia del Elfo como daño a causar.<br>
+	 * En caso de poder realizarse el ataque se pierde la Energia utilizada 
+	 * y se devuelve true, caso contrario devuelve false.
+	 * @param atacado Peleable a ser atacado por el Elfo.
+	 * @return true en caso de realizarse el ataque, false en caso contrario.
+	 */
 	public boolean habilidadRaza2(Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.setEnergia(this.getEnergia() - 10);
