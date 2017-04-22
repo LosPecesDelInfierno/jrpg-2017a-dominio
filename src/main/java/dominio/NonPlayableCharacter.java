@@ -1,5 +1,10 @@
 package dominio;
 
+/**
+ * 
+ * Personaje no jugable, "manejado por la cpu".
+ *
+ */
 public class NonPlayableCharacter implements Peleable {
 
 	private int salud;
@@ -85,14 +90,27 @@ public class NonPlayableCharacter implements Peleable {
 	public void setSalud(int salud) {
 		this.salud = salud;
 	}
-
+	/**
+	 * <h3><u>Método atacar</u></h3>
+	 * Método encargado de realizar un ataque por parte de un personaje no manejado por un jugador.<p>
+	 * Pseudo-aleatoriamente puede ser un 50% más fuerte, en caso de que el numero aleatorio sea menor 
+	 * a la probalidad que tiene los NPC de lograr un golpe crítico.
+	 * @param atacado Es el Peleable a atacar por parte del NPC.
+	 * @return Un int que representa el daño causado, (si no se logra el ataque el retorno es 0)
+	 */
 	public int atacar(Peleable atacado) {
 		if (MyRandom.nextDouble() <= 0.15) {// los NPC tienen 15% de golpes criticos
 			return atacado.serAtacado((int) (this.getAtaque() * 1.5));
 		} else
 			return atacado.serAtacado(this.getAtaque());
 	}
-
+/**
+ * <h3><u>Método serAtacado</u></h3>
+ * Método encargado de recepcionar un ataque por parte de un personaje no manejado por un jugador.<p>
+ * Si la defensa es mayor o se esquiva el golpe el NPC no recibe daño alguno.
+ * @param daño Es el daño a recibir por parte del NPC.
+ * @return Un int que representa el daño causado, (si no se logra el ataque el retorno es 0)
+ */
 	public int serAtacado(int daño) {
 		if (MyRandom.nextDouble() >= 0.15) {
 			daño -= this.getDefensa() / 2;
