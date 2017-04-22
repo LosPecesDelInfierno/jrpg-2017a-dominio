@@ -24,6 +24,17 @@ public class Hechicero extends Casta {
 	}
 
 	// Bola de Fuego
+	/**
+	 * <h3><u>Bola de Fuego</u></h3>
+	 * Implementacion del método abstracto habilidad1 declarado en la clase abstracta Casta.<p>
+	 * En este caso el método es el encargado de producir un ataque por Bola de Fuego 
+	 * por parte de un hechicero hacia un objeto Peleable.<br>
+	 * Nótese que en este caso el Personaje que ataca es parámetro.
+	 * @param caster Objeto de tipo Personaje encargado del ataque.
+	 * @param atacado Objeto de tipo Peleable a ser atacado.
+	 * @return Si el caster tiene suficiente energia para realizar el ataque devuelve un boolean true, caso 
+	 * contrario devuelve false.
+	 */
 	public boolean habilidad1(Personaje caster, Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
@@ -34,6 +45,17 @@ public class Hechicero extends Casta {
 	}
 
 	// Curar Aliado
+	/**
+	 * <h3><u>Curar Aliado</u></h3>
+	 * Implementacion del método abstracto habilidad2 declarado en la clase abstracta Casta.<p>
+	 * En este caso el método es el encargado de curar a un Peleable aliado, 
+	 * por parte de un hechicero.<br>
+	 * Nótese que el Personaje que cura es parámetro.
+	 * @param caster Objeto de tipo Personaje encargado de la sanacion.
+	 * @param aliado Objeto de tipo Peleable a ser curado.
+	 * @return Si el caster tiene suficiente energia para realizar la sanación devuelve un boolean true, caso 
+	 * contrario devuelve false.
+	 */
 	public boolean habilidad2(Personaje caster, Peleable aliado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);
