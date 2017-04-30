@@ -1,7 +1,7 @@
 package dominio;
 
 /**
- * 
+ *
  * Personaje no jugable, "manejado por la cpu".
  *
  */
@@ -14,32 +14,33 @@ public class NonPlayableCharacter implements Peleable {
 	private int nivel;
 	private static final int dificultadAleatoria = -1;
 
-	public NonPlayableCharacter(String nombre, int nivel, int dificultadNPC) {
+	public NonPlayableCharacter(final String nombre, final int nivel, final int dificultadNPC) {
 		this.nombre = nombre;
 		this.nivel = nivel;
 		int dificultad;
-		if (dificultadNPC == dificultadAleatoria)
+		if (dificultadNPC == dificultadAleatoria) {
 			dificultad = MyRandom.nextInt(3);
-		else
+		} else {
 			dificultad = dificultadNPC;
-
+		}
 		switch (dificultad) {
 		case 0:
-			this.fuerza = 10 + (nivel - 1) * 3;// 30%
+			this.fuerza = 10 + (nivel - 1) * 3; // 30%
 			this.salud = 30 + (nivel - 1) * 15;
 			this.defensa = 2 + (nivel - 1) * 1;
 			break;
 		case 1:
-			this.fuerza = 20 + (nivel - 1) * 6;// 50%
+			this.fuerza = 20 + (nivel - 1) * 6; // 50%
 			this.salud = 40 + (nivel - 1) * 20;
 			this.defensa = 5 + (nivel - 1) * 2;
 			break;
 		case 2:
-			this.fuerza = 30 + (nivel - 1) * 10;// 50%
+			this.fuerza = 30 + (nivel - 1) * 10; // 50%
 			this.salud = 50 + (nivel - 1) * 25;
 			this.defensa = 4 + (nivel - 1) * 4;
 			break;
-
+		default:
+	    break;
 		}
 	}
 
@@ -51,7 +52,7 @@ public class NonPlayableCharacter implements Peleable {
 		return fuerza;
 	}
 
-	public void setFuerza(int fuerza) {
+	public void setFuerza(final int fuerza) {
 		this.fuerza = fuerza;
 	}
 
@@ -59,7 +60,7 @@ public class NonPlayableCharacter implements Peleable {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public void setNombre(final String nombre) {
 		this.nombre = nombre;
 	}
 
@@ -67,7 +68,7 @@ public class NonPlayableCharacter implements Peleable {
 		return nivel;
 	}
 
-	public void setNivel(int nivel) {
+	public void setNivel(final int nivel) {
 		this.nivel = nivel;
 	}
 
@@ -79,7 +80,7 @@ public class NonPlayableCharacter implements Peleable {
 		return defensa;
 	}
 
-	public void setDefensa(int defensa) {
+	public void setDefensa(final int defensa) {
 		this.defensa = defensa;
 	}
 
@@ -87,22 +88,23 @@ public class NonPlayableCharacter implements Peleable {
 		return salud;
 	}
 
-	public void setSalud(int salud) {
+	public void setSalud(final int salud) {
 		this.salud = salud;
 	}
 	/**
 	 * <h3><u>Método atacar</u></h3>
 	 * Método encargado de realizar un ataque por parte de un personaje no manejado por un jugador.<p>
-	 * Pseudo-aleatoriamente puede ser un 50% más fuerte, en caso de que el numero aleatorio sea menor 
+	 * Pseudo-aleatoriamente puede ser un 50% más fuerte, en caso de que el numero aleatorio sea menor
 	 * a la probalidad que tiene los NPC de lograr un golpe crítico.
 	 * @param atacado Es el Peleable a atacar por parte del NPC.
 	 * @return Un int que representa el daño causado, (si no se logra el ataque el retorno es 0)
 	 */
-	public int atacar(Peleable atacado) {
-		if (MyRandom.nextDouble() <= 0.15) {// los NPC tienen 15% de golpes criticos
+	public int atacar(final Peleable atacado) {
+		if (MyRandom.nextDouble() <= 0.15) { // los NPC tienen 15% de golpes criticos
 			return atacado.serAtacado((int) (this.getAtaque() * 1.5));
-		} else
+		} else {
 			return atacado.serAtacado(this.getAtaque());
+		}
 	}
 /**
  * <h3><u>Método serAtacado</u></h3>
@@ -118,14 +120,14 @@ public class NonPlayableCharacter implements Peleable {
 				salud -= danio;
 				return danio;
 			}
-			return 0;// no le hace daño ya que la defensa fue mayor
+			return 0; // no le hace daño ya que la defensa fue mayor
 		}
-		return 0;// esquivo el golpe
+		return 0; // esquivo el golpe
 	}
 
 	public void despuesDeTurno() { }
 
-	public void ganarExperiencia(int exp) {
+	public void ganarExperiencia(final int exp) {
 
 	}
 
@@ -135,7 +137,7 @@ public class NonPlayableCharacter implements Peleable {
 	}
 
 	@Override
-	public void setAtaque(int ataque) {
+	public void setAtaque(final int ataque) {
 		this.fuerza = ataque;
 	}
 }

@@ -1,10 +1,15 @@
 package dominio;
 /**
- * 
+ *
  * Clase encargada de la creacion de un pseudo-random.
  *
  */
 public class MyRandom {
+
+  public MyRandom(){
+    
+  }
+
 /**
  * Genera un double
  * @return Devuelve un double de valor {@literal 0.49}
@@ -17,8 +22,8 @@ public class MyRandom {
 	 * @param val Valor (int) en el que se basará para la creacion de un nuevo entero.
 	 * @return Devuelve un int de valor igual a (val-1);
 	 */
-	public static int nextInt(int val) {
+	public static int nextInt(final int val) {
 		return val - 1;
 	}
-	
+
 }

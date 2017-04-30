@@ -3,7 +3,7 @@ package dominio;
 import java.io.Serializable;
 /**
  * <h3><u>Clase Abstracta Casta</u></h3>
- * Clase abstracta que define distintos tipos de miembros y métodos 
+ * Clase abstracta que define distintos tipos de miembros y métodos
  * heredables por aquellas clases que la extiendan.<p>
  * Contiene 3 métodos abstractos: habilidad1, habilidad2, habilidad3.
  * Contiene getters y setters.
@@ -25,14 +25,14 @@ public abstract class Casta implements Serializable {
 /**
  * <h3><u>Constructor Casta por parámetros</u></h3>
  * Asigna los parámetros indicados a cada miembro correspondiente de la clase.
- * @param prob_crit Es un double que representa la probabilidad de dar un golpe crítico.
+ * @param probCrit Es un double que representa la probabilidad de dar un golpe crítico.
  * @param evasion Idem parámetro prob_crit pero para evitar un ataque.
- * @param danio_crit Double que representa el dañoCrítico deseado para la para casta en cracion.
+ * @param danioCrit Double que representa el dañoCrítico deseado para la para casta en cracion.
  */
-	public Casta(double prob_crit, double evasion, double danio_crit) {
-		this.probabilidadGolpeCritico = prob_crit;
+	public Casta(final double probCrit, final double evasion, final double danioCrit) {
+		this.probabilidadGolpeCritico = probCrit;
 		this.probabilidadEvitarDanio = evasion;
-		this.danioCritico = danio_crit;
+		this.danioCritico = danioCrit;
 	}
 
 	public abstract boolean habilidad1(Personaje caster, Peleable atacado);
@@ -53,7 +53,7 @@ public abstract class Casta implements Serializable {
 		return probabilidadGolpeCritico;
 	}
 
-	public void setProbabilidadGolpeCritico(double probabilidadGolpeCritico) {
+	public void setProbabilidadGolpeCritico(final double probabilidadGolpeCritico) {
 		this.probabilidadGolpeCritico = probabilidadGolpeCritico;
 	}
 
@@ -61,7 +61,7 @@ public abstract class Casta implements Serializable {
 		return probabilidadEvitarDanio;
 	}
 
-	public void setProbabilidadEvitarDanio(double probabilidadEvitarDanio) {
+	public void setProbabilidadEvitarDanio(final double probabilidadEvitarDanio) {
 		this.probabilidadEvitarDanio = probabilidadEvitarDanio;
 	}
 
@@ -73,7 +73,7 @@ public abstract class Casta implements Serializable {
  * Setea el dañoCrítico deseado para la casta mediante el parámetro recibido.
  * @param danioCritico Es el double que representa el nuevo dañoCrítico deseado
  */
-	public void setDanioCritico(double danioCritico) {
+	public void setDanioCritico(final double danioCritico) {
 		this.danioCritico = danioCritico;
 	}
 }
