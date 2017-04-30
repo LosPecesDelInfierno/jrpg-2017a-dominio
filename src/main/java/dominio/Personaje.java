@@ -144,7 +144,7 @@ public abstract class Personaje implements Peleable, Serializable {
 
 	public void setClan(Alianza clan) {
 		this.clan = clan;
-		clan.añadirPersonaje(this);
+		clan.anadirPersonaje(this);
 	}
 
 	public int getSalud() {
@@ -265,7 +265,7 @@ public abstract class Personaje implements Peleable, Serializable {
 	}
 
 	public int golpe_critico() {
-		return (int) (this.ataque * this.getCasta().getDañoCritico());
+		return (int) (this.ataque * this.getCasta().getDanioCritico());
 	}
 
 	public void despuesDeTurno() {
@@ -311,50 +311,50 @@ public abstract class Personaje implements Peleable, Serializable {
  * Recibirá el daño que se pretende recibir para luego de distintas evaluaciones concretar el ataque recibido.</p>
  * <p>En caso que se pueda evitar el ataque recibido ya sea por defensa o probabilidad de evitarlo, el método devolverá un cero. 
  * Caso contrario se procede a recibir el ataque y luego retornar el daño final.</p>
- * @param daño Es el daño que se pretende recibir (int).
+ * @param danio Es el daño que se pretende recibir (int).
  * @return Se devuelve un int representando el daño recibido (si NO hubo daño sera cero).
  */
-	public int serAtacado(int daño) {
-		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDaño()) {
-			daño -= this.defensa;
-			if (daño > 0) {
-				if (salud <= daño) {
-					daño = salud;
+	public int serAtacado(int danio) {
+		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDanio()) {
+			danio -= this.defensa;
+			if (danio > 0) {
+				if (salud <= danio) {
+					danio = salud;
 					salud = 0;
 				} else {
-					salud -= daño;
+					salud -= danio;
 				}
-				return daño;
+				return danio;
 			}
 			return 0;
 		}
 		return 0;
 	}
 
-	public int serRobadoSalud(int daño) {
-		daño -= this.defensa;
-		if (daño <= 0)
+	public int serRobadoSalud(int danio) {
+		danio -= this.defensa;
+		if (danio <= 0)
 			return 0;
-		if ((salud - daño) >= 0)
-			salud -= daño;
+		if ((salud - danio) >= 0)
+			salud -= danio;
 		else {
-			daño = salud;// le queda menos salud que el daño inflingido
+			danio = salud;// le queda menos salud que el daño inflingido
 			salud = 0;
 		}
-		return daño;
+		return danio;
 	}
 
-	public int serDesernegizado(int daño) {
-		daño -= this.defensa;
-		if (daño <= 0)
+	public int serDesernegizado(int danio) {
+		danio -= this.defensa;
+		if (danio <= 0)
 			return 0;
-		if ((energia - daño) >= 0)
-			energia -= daño;
+		if ((energia - danio) >= 0)
+			energia -= danio;
 		else {
-			daño = energia;// le queda menos energia que el daño inflingido
+			danio = energia;// le queda menos energia que el daño inflingido
 			energia = 0;
 		}
-		return daño;
+		return danio;
 	}
 
 	public void serCurado(int salud) {
@@ -373,7 +373,7 @@ public abstract class Personaje implements Peleable, Serializable {
 
 	public void crearAlianza(String nombre_alianza) {
 		this.clan = new Alianza(nombre_alianza);
-		this.clan.añadirPersonaje(this);
+		this.clan.anadirPersonaje(this);
 	}
 
 	public void salirDeAlianza() {
@@ -387,12 +387,12 @@ public abstract class Personaje implements Peleable, Serializable {
 		if (this.clan == null) {
 			Alianza a = new Alianza("Alianza 1");
 			this.clan = a;
-			a.añadirPersonaje(this);
+			a.anadirPersonaje(this);
 		}
 
 		if (nuevo_aliado.clan == null) {
 			nuevo_aliado.clan = this.clan;
-			this.clan.añadirPersonaje(nuevo_aliado);
+			this.clan.anadirPersonaje(nuevo_aliado);
 			return true;
 		} else
 			return false;

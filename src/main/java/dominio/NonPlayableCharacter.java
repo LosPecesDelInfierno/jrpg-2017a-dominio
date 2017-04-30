@@ -108,15 +108,15 @@ public class NonPlayableCharacter implements Peleable {
  * <h3><u>Método serAtacado</u></h3>
  * Método encargado de recepcionar un ataque por parte de un personaje no manejado por un jugador.<p>
  * Si la defensa es mayor o se esquiva el golpe el NPC no recibe daño alguno.
- * @param daño Es el daño a recibir por parte del NPC.
+ * @param danio Es el daño a recibir por parte del NPC.
  * @return Un int que representa el daño causado, (si no se logra el ataque el retorno es 0)
  */
-	public int serAtacado(int daño) {
+	public int serAtacado(int danio) {
 		if (MyRandom.nextDouble() >= 0.15) {
-			daño -= this.getDefensa() / 2;
-			if (daño > 0) {
-				salud -= daño;
-				return daño;
+			danio -= this.getDefensa() / 2;
+			if (danio > 0) {
+				salud -= danio;
+				return danio;
 			}
 			return 0;// no le hace daño ya que la defensa fue mayor
 		}

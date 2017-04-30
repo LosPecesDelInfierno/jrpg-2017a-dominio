@@ -6,7 +6,7 @@ package dominio;
  *
  */
 public interface Peleable {
-	public int serAtacado(int daño);
+	public int serAtacado(int danio);
 	public int getSalud();
 	public void despuesDeTurno();
 	public int atacar(Peleable atacado);

@@ -18,7 +18,7 @@ public class TestAliarCombatir {
 	}
 	
 	@Test
-	public void testDañar(){
+	public void testDaniar(){
 		Humano h = new Humano("Nicolas",new Guerrero(),1);
 		Humano h2 = new Humano("Lautaro",new Asesino(),1);
 		

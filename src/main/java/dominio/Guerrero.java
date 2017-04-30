@@ -9,8 +9,8 @@ package dominio;
  */
 public class Guerrero extends Casta {
 
-	public Guerrero(double prob_crit, double evasion, double daño_crit) {
-		super(prob_crit, evasion, daño_crit);
+	public Guerrero(double prob_crit, double evasion, double danio_crit) {
+		super(prob_crit, evasion, danio_crit);
 		this.nombreCasta = "Guerrero";
 	}
 

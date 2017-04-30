@@ -42,7 +42,7 @@ public class Alianza {
 		aliados.remove(pj);
 	}
 	
-	public void añadirPersonaje(Personaje pj){
+	public void anadirPersonaje(Personaje pj){
 		aliados.add(pj);
 	}
 }
