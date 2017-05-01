@@ -9,11 +9,20 @@ package dominio;
  */
 public class Guerrero extends Casta {
 
+  /**
+   * <h3>Constructor parametrizado de Guerrero</h3>
+   * @param proCrit
+   * @param evasion
+   * @param danioCrit
+   */
 	public Guerrero(final double proCrit, final double evasion, final double danioCrit) {
 		super(proCrit, evasion, danioCrit);
 		this.nombreCasta = "Guerrero";
 	}
 
+	/**
+	 * <h3>Constructor por defecto de Guerrero</h3>
+	 */
 	public Guerrero() {
 		super();
 		this.nombreCasta = "Guerrero";
@@ -49,8 +58,8 @@ public class Guerrero extends Casta {
 	// Aumentar Defensa
 	/**
 	 * <h3><u>Aumentar Defensa</u></h3>
-	 * Implementacion del método abstracto habilidad2 declarado en la clase abstracta Casta.<p>
-	 * En este caso este método es el encargado de aumentar la defensa de
+	 * Implementacion del método abstracto habilidad2 declarado en la clase abstracta Casta.
+	 * <p>En este caso este método es el encargado de aumentar la defensa de
 	 * un caster de tipo Personaje (Guerrero).<br>
 	 * Nótese que el Personaje (Guerrero) es parámetro.
 	 * @param caster Personaje (Guerrero) a recibir el aumento de defensa.
@@ -69,6 +78,13 @@ public class Guerrero extends Casta {
 	}
 
 	// Ignorar Defensa
+	/**
+	 * <h3>Ignorar defensa</h3>
+	 * Implementacion del método abstracto habilidad2 declarado en la clase abstracta Casta
+	 * @param caster
+	 * @param atacado
+	 * @return boolean
+	 */
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);

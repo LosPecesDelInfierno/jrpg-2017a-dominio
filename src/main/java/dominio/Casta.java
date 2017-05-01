@@ -17,6 +17,9 @@ public abstract class Casta implements Serializable {
 
 	protected String[] habilidadesCasta;
 
+	/**
+	 * <h3>Constructor por defecto</h3>
+	 */
 	public Casta() {
 		this.probabilidadGolpeCritico = 0.2;
 		this.probabilidadEvitarDanio = 0.2;
@@ -41,38 +44,74 @@ public abstract class Casta implements Serializable {
 
 	public abstract boolean habilidad3(Personaje caster, Peleable atacado);
 
+	/**
+	 * <h3>Método getNombreCasta</h3>
+	 * Método que devuelve el nombre de la casta
+	 * @return
+	 */
 	public String getNombreCasta() {
 		return this.nombreCasta;
 	}
 
+	/**
+	 * <h3>Método getHabilidadesCasta</h3>
+	 * Método que devuelve las habilidades que posee la casta
+	 * @return
+	 */
 	public String[] getHabilidadesCasta() {
 		return habilidadesCasta;
 	}
 
+	/**
+	 * <h3>Método getProbabilidadGolpeCritico</h3>
+	 * Método que devuelve las probalidades de golpe critico
+	 * @return
+	 */
 	public double getProbabilidadGolpeCritico() {
 		return probabilidadGolpeCritico;
 	}
 
+	/**
+	 * <h3>Método setProbabilidadGolpeCritico</h3>
+	 * Método que setea la probalidad de colpe critico de una casta
+	 * @param probabilidadGolpeCritico
+	 */
 	public void setProbabilidadGolpeCritico(final double probabilidadGolpeCritico) {
 		this.probabilidadGolpeCritico = probabilidadGolpeCritico;
 	}
 
+  /**
+   * <h3>Método getProbabilidadEvitarDanio</h3>
+   * Método que devuelve la probabilidad de evitar el danio de una casta
+   * @return
+   */
 	public double getProbabilidadEvitarDanio() {
 		return probabilidadEvitarDanio;
 	}
 
+	/**
+	 * <h3>Método setProbabilidadEvitarDanio</h3>
+	 * Métodoque setea la probabilidad que tiene ua casta de evitar un danio
+	 * @param probabilidadEvitarDanio
+	 */
 	public void setProbabilidadEvitarDanio(final double probabilidadEvitarDanio) {
 		this.probabilidadEvitarDanio = probabilidadEvitarDanio;
 	}
 
+	/**
+	 * <h3>Método getDanioCritico</h3>
+	 * Método que devuelve el danio critico de una casta
+	 * @return
+	 */
 	public double getDanioCritico() {
 		return danioCritico;
 	}
-/**
- * <h3><u>Método setter de dañoCrítico</u></h3>
- * Setea el dañoCrítico deseado para la casta mediante el parámetro recibido.
- * @param danioCritico Es el double que representa el nuevo dañoCrítico deseado
- */
+
+  /**
+   * <h3><u>Método setter de dañoCrítico</u></h3>
+   * Setea el dañoCrítico deseado para la casta mediante el parámetro recibido.
+   * @param danioCritico Es el double que representa el nuevo dañoCrítico deseado
+   */
 	public void setDanioCritico(final double danioCritico) {
 		this.danioCritico = danioCritico;
 	}

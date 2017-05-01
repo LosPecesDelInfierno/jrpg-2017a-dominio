@@ -14,6 +14,12 @@ public class NonPlayableCharacter implements Peleable {
 	private int nivel;
 	private static final int dificultadAleatoria = -1;
 
+	/**
+	 * <h3>Constructor parametrizado de NonPlayableCharacter</h3>
+	 * @param nombre
+	 * @param nivel
+	 * @param dificultadNPC
+	 */
 	public NonPlayableCharacter(final String nombre, final int nivel, final int dificultadNPC) {
 		this.nombre = nombre;
 		this.nivel = nivel;
@@ -44,50 +50,97 @@ public class NonPlayableCharacter implements Peleable {
 		}
 	}
 
+	/**
+	 * <h3>Método otorgarExp</h3>
+	 */
 	public int otorgarExp() {
 		return this.nivel * 30;
 	}
 
+	 /**
+   * <h3>Método getFuerza</h3>
+   * @return int fuerza
+   */
 	public int getFuerza() {
 		return fuerza;
 	}
 
+	 /**
+   * <h3>Método setFuerza</h3>
+   * @param fuerza
+   */
 	public void setFuerza(final int fuerza) {
 		this.fuerza = fuerza;
 	}
 
+	 /**
+   * <h3>Método getNombre</h3>
+   * @return String nombre
+   */
 	public String getNombre() {
 		return nombre;
 	}
 
+	 /**
+   * <h3>Método setNombre</h3>
+   * @param nombre
+   */
 	public void setNombre(final String nombre) {
 		this.nombre = nombre;
 	}
 
+	 /**
+   * <h3>Método getNivel</h3>
+   * @return nivel
+   */
 	public int getNivel() {
 		return nivel;
 	}
 
+	 /**
+   * <h3>Método setNivel</h3>
+   * @param nivel
+   */
 	public void setNivel(final int nivel) {
 		this.nivel = nivel;
 	}
 
+	 /**
+   * <h3>Método estaVivo</h3>
+   * @return boolean
+   */
 	public boolean estaVivo() {
 		return salud > 0;
 	}
 
+	 /**
+   * <h3>Método getDefensa</h3>
+   * @return int defensa
+   */
 	public int getDefensa() {
 		return defensa;
 	}
 
+	 /**
+   * <h3>Método setDefensa</h3>
+   * @param defensa
+   */
 	public void setDefensa(final int defensa) {
 		this.defensa = defensa;
 	}
 
+	 /**
+   * <h3>Método getSalud</h3>
+   * @return  int salud
+   */
 	public int getSalud() {
 		return salud;
 	}
 
+	 /**
+   * <h3>Método setSalud</h3>
+   * @param salud
+   */
 	public void setSalud(final int salud) {
 		this.salud = salud;
 	}
@@ -126,17 +179,29 @@ public class NonPlayableCharacter implements Peleable {
 		return 0; // esquivo el golpe
 	}
 
+	 /**
+   * <h3>Método despuesDeTurno</h3>
+   */
 	public void despuesDeTurno() { }
 
+	 /**
+   * <h3>Método ganarExperiencia</h3>
+   */
 	public void ganarExperiencia(final int exp) {
 
 	}
 
+	 /**
+   * <h3>Método getAtaque</h3>
+   */
 	@Override
 	public int getAtaque() {
 		return fuerza;
 	}
 
+	 /**
+   * <h3>Método setAtaque</h3>
+   */
 	@Override
 	public void setAtaque(final int ataque) {
 		this.fuerza = ataque;

@@ -8,11 +8,20 @@ package dominio;
  */
 public class Asesino extends Casta {
 
+/**
+ * <h3>Constructor de Asesino</h3>
+ * @param probCrit
+ * @param evasion
+ * @param danioCrit
+ */
 	public Asesino(final double probCrit, final double evasion, final double danioCrit) {
 		super(probCrit, evasion, danioCrit);
 		this.nombreCasta = "Asesino";
 	}
 
+  /**
+   * <h3>Constructor de Asesino</h3>
+   */
 	public Asesino() {
 		super();
 		this.nombreCasta = "Asesino";
@@ -68,6 +77,10 @@ public class Asesino extends Casta {
 	}
 
 	// Robar
+	/**
+	 * <h3>Método habilidad3</h3>
+	 * Robar
+	 */
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
 		return false;
 	}

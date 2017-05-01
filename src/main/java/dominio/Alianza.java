@@ -22,17 +22,33 @@ public class Alianza {
 		this.aliados = new LinkedList<Personaje>();
 	}
 
+/**
+ * <h3>getAliados</h3>
+ * Retorna lista de aliados.
+ * @return aliados
+ */
 	public LinkedList<Personaje> getAliados() {
 		return aliados;
 	}
 
+/**
+ * <h3>Metodo setAliados</h3>
+ * Metodo encargado de setear la lista de aliados.
+ * @param aliados
+ */
 	public void setAliados(final LinkedList<Personaje> aliados) {
 		this.aliados = aliados;
 	}
 
+/**
+ * <h3>Metodo obtenerNombre</h3>
+ * Metodo que devuelve el nombre de la alianza.
+ * @return
+ */
 	public String obtenerNombre() {
 		return nombre;
 	}
+
 	/**
 	 * <h3><u>Método eliminarPersonaje</u></h3>
 	 * <p>Método encargado de la eliminación de un personaje de la alianza llamadora del método.</p>
@@ -42,6 +58,11 @@ public class Alianza {
 		aliados.remove(pj);
 	}
 
+/**
+ * <h3>Metodo anadirPersonaje</h3>
+ * Metodo encargado de anadir un personaje a la alianza
+ * @param pj
+ */
 	public void anadirPersonaje(final Personaje pj) {
 		aliados.add(pj);
 	}
