@@ -86,8 +86,9 @@ public abstract class Personaje implements Peleable, Serializable {
 
 	}
 
-	public Personaje(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta,
-	    final int experiencia, final int nivel,
+	public Personaje(final String nombre, final int salud, final int energia,
+	    final int fuerza, final int destreza, final int inteligencia,
+	    final Casta casta, final int experiencia, final int nivel,
 	    final int idPersonaje) {
 
 		this.nombre = nombre;
@@ -256,11 +257,12 @@ public abstract class Personaje implements Peleable, Serializable {
  * devuelve un entero distinto de cero.
  */
 	public int atacar(final Peleable atacado) {
-		if (salud == 0)
+		if (salud == 0) {
 			return 0;
+		}
 		if (atacado.getSalud() > 0) {
 			if (MyRandom.nextDouble() <= this.casta.getProbabilidadGolpeCritico() + this.destreza / 1000) {
-				return atacado.serAtacado(this.golpe_critico());
+				return atacado.serAtacado(this.golpeCritico());
 			} else {
 				return atacado.serAtacado(this.ataque);
 			}
@@ -268,7 +270,7 @@ public abstract class Personaje implements Peleable, Serializable {
 		return 0;
 	}
 
-	public int golpe_critico() {
+	public int golpeCritico() {
 		return (int) (this.ataque * this.getCasta().getDanioCritico());
 	}
 
@@ -313,57 +315,61 @@ public abstract class Personaje implements Peleable, Serializable {
  * <h3><u>Método serAtacado </u><h3>
  * <p>Este método será el encargado de proceder a dañar al objeto llamador.<br>
  * Recibirá el daño que se pretende recibir para luego de distintas evaluaciones concretar el ataque recibido.</p>
- * <p>En caso que se pueda evitar el ataque recibido ya sea por defensa o probabilidad de evitarlo, el método devolverá un cero.
+ * <p>En caso que se pueda evitar el ataque recibido ya sea por defensa oprobabilidad
+ * de evitarlo, el método devolverá un cero.
  * Caso contrario se procede a recibir el ataque y luego retornar el daño final.</p>
  * @param danio Es el daño que se pretende recibir (int).
  * @return Se devuelve un int representando el daño recibido (si NO hubo daño sera cero).
  */
-	public int serAtacado(int danio) {
+	public int serAtacado(final int danio) {
+	  int auxDanio = danio;
 		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDanio()) {
-			danio -= this.defensa;
-			if (danio > 0) {
-				if (salud <= danio) {
-					danio = salud;
+		  auxDanio -= this.defensa;
+			if (auxDanio > 0) {
+				if (salud <= auxDanio) {
+					auxDanio = salud;
 					salud = 0;
 				} else {
-					salud -= danio;
+					salud -= auxDanio;
 				}
-				return danio;
+				return auxDanio;
 			}
 			return 0;
 		}
 		return 0;
 	}
 
-	public int serRobadoSalud(int danio) {
-		danio -= this.defensa;
-		if (danio <= 0) {
+	public int serRobadoSalud(final int danio) {
+	  int auxDanio = danio;
+	  auxDanio -= this.defensa;
+		if (auxDanio <= 0) {
 			return 0;
 		}
-		if ((salud - danio) >= 0) {
-			salud -= danio;
+		if ((salud - auxDanio) >= 0) {
+			salud -= auxDanio;
 		} else {
-			danio = salud;// le queda menos salud que el daño inflingido
+		  auxDanio = salud; // le queda menos salud que el daño inflingido
 			salud = 0;
 		}
-		return danio;
+		return auxDanio;
 	}
 
-	public int serDesernegizado(int danio) {
-		danio -= this.defensa;
-		if (danio <= 0) {
+	public int serDesernegizado(final int danio) {
+	  int auxDanio = danio;
+	  auxDanio -= this.defensa;
+		if (auxDanio <= 0) {
 			return 0;
 		}
-		if ((energia - danio) >= 0) {
-			energia -= danio;
+		if ((energia - auxDanio) >= 0) {
+			energia -= auxDanio;
 		} else {
-			danio = energia;// le queda menos energia que el daño inflingido
+		  auxDanio = energia; // le queda menos energia que el daño inflingido
 			energia = 0;
 		}
-		return danio;
+		return auxDanio;
 	}
 
-	public void serCurado(int salud) {
+	public void serCurado(final int salud) {
 		if ((this.salud + salud) <= this.saludTope) {
 			this.salud += salud;
 		} else {
@@ -371,7 +377,7 @@ public abstract class Personaje implements Peleable, Serializable {
 		}
 	}
 
-	public void serEnergizado(int energia) {
+	public void serEnergizado(final int energia) {
 		if ((this.energia + energia) <= this.energiaTope) {
 			this.energia += energia;
 		} else {
@@ -379,8 +385,8 @@ public abstract class Personaje implements Peleable, Serializable {
 		}
 	}
 
-	public void crearAlianza(String nombre_alianza) {
-		this.clan = new Alianza(nombre_alianza);
+	public void crearAlianza(final String nombreAlianza) {
+		this.clan = new Alianza(nombreAlianza);
 		this.clan.anadirPersonaje(this);
 	}
 
@@ -391,23 +397,23 @@ public abstract class Personaje implements Peleable, Serializable {
 		}
 	}
 
-	public boolean aliar(Personaje nuevo_aliado) {
+	public boolean aliar(Personaje nuevoAliado) {
 		if (this.clan == null) {
 			Alianza a = new Alianza("Alianza 1");
 			this.clan = a;
 			a.anadirPersonaje(this);
 		}
 
-		if (nuevo_aliado.clan == null) {
-			nuevo_aliado.clan = this.clan;
-			this.clan.anadirPersonaje(nuevo_aliado);
+		if (nuevoAliado.clan == null) {
+			nuevoAliado.clan = this.clan;
+			this.clan.anadirPersonaje(nuevoAliado);
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public void AsignarPuntosSkills(int fuerza, int destreza, int inteligencia) {
+	public void AsignarPuntosSkills(final int fuerza, final int destreza, final int inteligencia) {
 		if (this.fuerza + fuerza <= 200) {
 			this.fuerza += fuerza;
 		}
@@ -437,7 +443,7 @@ public abstract class Personaje implements Peleable, Serializable {
 		this.experiencia -= acumuladorExperiencia;
 	}
 
-	public boolean ganarExperiencia(int exp) {
+	public boolean ganarExperiencia(final int exp) {
 		this.experiencia += exp;
 
 		if (experiencia >= Personaje.tablaDeNiveles[this.nivel + 1]) {
@@ -456,19 +462,19 @@ public abstract class Personaje implements Peleable, Serializable {
 		return super.clone();
 	}
 
-	public double distanciaCon(Personaje p) {
+	public double distanciaCon(final Personaje p) {
 		return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
 	}
 
-	public boolean habilidadCasta1(Peleable atacado) {
+	public boolean habilidadCasta1(final Peleable atacado) {
 		return this.getCasta().habilidad1(this, atacado);
 	}
 
-	public boolean habilidadCasta2(Peleable atacado) {
+	public boolean habilidadCasta2(final Peleable atacado) {
 		return this.getCasta().habilidad2(this, atacado);
 	}
 
-	public boolean habilidadCasta3(Peleable atacado) {
+	public boolean habilidadCasta3(final Peleable atacado) {
 		return this.getCasta().habilidad3(this, atacado);
 	}
 

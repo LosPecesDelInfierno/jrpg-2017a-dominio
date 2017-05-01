@@ -113,12 +113,13 @@ public class NonPlayableCharacter implements Peleable {
  * @param danio Es el daño a recibir por parte del NPC.
  * @return Un int que representa el daño causado, (si no se logra el ataque el retorno es 0)
  */
-	public int serAtacado(int danio) {
+	public int serAtacado(final int danio) {
+	  int danioRetorno = danio;
 		if (MyRandom.nextDouble() >= 0.15) {
-			danio -= this.getDefensa() / 2;
-			if (danio > 0) {
-				salud -= danio;
-				return danio;
+		  danioRetorno -= this.getDefensa() / 2;
+			if (danioRetorno > 0) {
+				salud -= danioRetorno;
+				return danioRetorno;
 			}
 			return 0; // no le hace daño ya que la defensa fue mayor
 		}

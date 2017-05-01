@@ -6,7 +6,7 @@ package dominio;
  */
 public class MyRandom {
 
-  public MyRandom(){
+  public MyRandom() {
     
   }
 

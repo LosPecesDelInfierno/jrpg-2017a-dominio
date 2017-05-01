@@ -1,8 +1,8 @@
 package dominio;
 /**
- *
- * Clase que define a un tipo de Personaje como "Elfo".
- * Por lo tanto extiende a la clase abstracta Personaje.
+ * <h3>Clase Elfo</h3>
+ * <p>Clase que define a un tipo de Personaje como "Elfo".<br>
+ * Por lo tanto extiende a la clase abstracta Personaje.</p>
  *
  */
 public class Elfo extends Personaje {

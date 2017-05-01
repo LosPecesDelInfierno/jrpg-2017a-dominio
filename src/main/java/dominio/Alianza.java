@@ -19,14 +19,14 @@ public class Alianza {
  */
 	public Alianza(final String nombre) {
 		this.nombre = nombre;
-		this.aliados = new LinkedList < Personaje>();
+		this.aliados = new LinkedList<Personaje>();
 	}
 
 	public LinkedList<Personaje> getAliados() {
 		return aliados;
 	}
 
-	public void setAliados(LinkedList<Personaje> aliados) {
+	public void setAliados(final LinkedList<Personaje> aliados) {
 		this.aliados = aliados;
 	}
 

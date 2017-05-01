@@ -25,8 +25,10 @@ public class Humano extends Personaje {
 		nombreRaza = "Humano";
 	}
 
-	public Humano(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta, 
-	    final int experiencia, final int nivel, final int idPersonaje) {
+	public Humano(final String nombre, final int salud, final int energia,
+	    final int fuerza, final int destreza, final int inteligencia,
+	    final Casta casta, final int experiencia, 
+	    final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 		nombreRaza = "Humano";
 
