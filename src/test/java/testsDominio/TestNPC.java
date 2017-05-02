@@ -1,4 +1,4 @@
-package tests_dominio;
+package testsDominio;
 
 import org.junit.Assert;
 import org.junit.Before;

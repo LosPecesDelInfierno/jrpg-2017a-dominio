@@ -9,11 +9,20 @@ package dominio;
  */
 public class Hechicero extends Casta {
 
+  /**
+   * <h3>Contructor parametrizado de Hechicero</h3>
+   * @param probCrit
+   * @param evasion
+   * @param danioCrit
+   */
 	public Hechicero(final double probCrit, final double evasion, final double danioCrit) {
 		super(probCrit, evasion, danioCrit);
 		this.nombreCasta = "Hechicero";
 	}
 
+  /**
+   *<h3>Constructor por defecto de Hechicero</h3> 
+   */
 	public Hechicero() {
 		super();
 		this.nombreCasta = "Hechicero";
@@ -48,8 +57,8 @@ public class Hechicero extends Casta {
 	// Curar Aliado
 	/**
 	 * <h3><u>Curar Aliado</u></h3>
-	 * Implementacion del método abstracto habilidad2 declarado en la clase abstracta Casta.<p>
-	 * En este caso el método es el encargado de curar a un Peleable aliado,
+	 * Implementacion del método abstracto habilidad2 declarado en la clase abstracta Casta.
+	 * <p>En este caso el método es el encargado de curar a un Peleable aliado,
 	 * por parte de un hechicero.<br>
 	 * Nótese que el Personaje que cura es parámetro.
 	 * @param caster Objeto de tipo Personaje encargado de la sanacion.
@@ -69,6 +78,13 @@ public class Hechicero extends Casta {
 	}
 
 	// Robar Energia y Salud
+  /**
+   *<h3>Robar Energia y Salud</h3>
+   * Implementacion del método abstracto habilidad3 declarado en la clase abstracta Casta.
+   * @param caster
+   * @param atacado
+   * @return boolean
+   */
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
 		if (caster.getEnergia() > 10) {
 			caster.setEnergia(caster.getEnergia() - 10);

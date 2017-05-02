@@ -1,12 +1,18 @@
 package dominio;
 /**
- *
- * Clase que define a un tipo de Personaje como "Elfo".
- * Por lo tanto extiende a la clase abstracta Personaje.
+ * <h3>Clase Elfo</h3>
+ * <p>Clase que define a un tipo de Personaje como "Elfo".<br>
+ * Por lo tanto extiende a la clase abstracta Personaje.</p>
  *
  */
 public class Elfo extends Personaje {
 
+  /**
+   * <h3>Constructor de Elfo</h3>
+   * @param nombre
+   * @param casta
+   * @param id
+   */
 	public Elfo(final String nombre, final Casta casta, final int id) {
 		super(nombre, casta, id);
 		energiaTope += 10;
@@ -19,8 +25,22 @@ public class Elfo extends Personaje {
 		habilidadesRaza[1] = "Ataque Bosque";
 	}
 
-	public Elfo(final String nombre, final int salud, final int energia, final int fuerza, final int destreza, final int inteligencia, final Casta casta,
-	    final int experiencia, final int nivel,
+	/**
+	 * <h3>Constructor de Elfo</h3>
+	 * @param nombre
+	 * @param salud
+	 * @param energia
+	 * @param fuerza
+	 * @param destreza
+	 * @param inteligencia
+	 * @param casta
+	 * @param experiencia
+	 * @param nivel
+	 * @param idPersonaje
+	 */
+	public Elfo(final String nombre, final int salud, final int energia,
+	    final int fuerza, final int destreza, final int inteligencia, 
+	    final Casta casta, final int experiencia, final int nivel,
 	    final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta,
 				experiencia, nivel, idPersonaje);

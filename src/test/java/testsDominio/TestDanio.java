@@ -1,4 +1,4 @@
-package tests_dominio;
+package testsDominio;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,8 +21,9 @@ public class TestDanio {
 			Assert.assertTrue(o.getSalud() == 0);
 			h.atacar(o);
 			Assert.assertTrue(o.getSalud() == 0);
-		} else
+		} else {
 			Assert.assertTrue(o.getSalud() == 0);
+		}
 	}
 
 	@Test

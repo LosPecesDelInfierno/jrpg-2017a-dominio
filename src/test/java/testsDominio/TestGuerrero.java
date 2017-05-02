@@ -1,4 +1,4 @@
-package tests_dominio;
+package testsDominio;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,11 +16,11 @@ public class TestGuerrero {
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
 		Assert.assertTrue(e.getSalud() == 100);
-		if (h.habilidadCasta1(e))
+		if (h.habilidadCasta1(e)) {
 			Assert.assertTrue(e.getSalud() < 100);
-
-		else
+		} else {
 			Assert.assertTrue(e.getSalud() == 100);
+		}
 	}
 
 	@Test
@@ -38,10 +38,11 @@ public class TestGuerrero {
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
 		Assert.assertTrue(e.getSalud() == 100);
-		if (h.habilidadCasta3(e))
+		if (h.habilidadCasta3(e)) {
 			Assert.assertTrue(e.getSalud() < 100);
-		else
+		} else {
 			Assert.assertTrue(e.getSalud() == 100);
+		}
 	}
 
 }

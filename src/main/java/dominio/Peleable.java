@@ -1,7 +1,7 @@
 package dominio;
 /**
- * 
- * 
+ *
+ *
  * Interfaz Peleable con la declaracion de los metodos a definirse en la clases que la implementen.
  *
  */

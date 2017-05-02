@@ -1,4 +1,4 @@
-package tests_dominio;
+package testsDominio;
 
 import org.junit.Test;
 
@@ -14,8 +14,9 @@ public class TestEnemigosExperiencia {
 		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, 0);
 		Personaje.cargarTablaNivel();
 		Assert.assertTrue(h.getExperiencia() == 0);
-		while (npc.estaVivo())
+		while (npc.estaVivo()) {
 			h.atacar(npc);
+		}
 		h.ganarExperiencia(npc.otorgarExp());
 		Assert.assertTrue(h.getExperiencia() == 30);
 	}
@@ -35,9 +36,10 @@ public class TestEnemigosExperiencia {
 		Personaje.cargarTablaNivel();
 		Assert.assertTrue(h.getExperiencia() == 0);
 		Assert.assertTrue(h2.getExperiencia() == 0);
-		
-		while (h2.estaVivo())
+	
+		while (h2.estaVivo()) {
 			h.atacar(h2);
+		}
 
 		h.ganarExperiencia(h2.otorgarExp());
 		Assert.assertTrue(h.getExperiencia() == 40);

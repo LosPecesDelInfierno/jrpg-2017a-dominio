@@ -6,6 +6,8 @@ package dominio;
  */
 public class MyRandom {
 
+  public MyRandom() { }
+
 /**
  * Genera un double
  * @return Devuelve un double de valor {@literal 0.49}
