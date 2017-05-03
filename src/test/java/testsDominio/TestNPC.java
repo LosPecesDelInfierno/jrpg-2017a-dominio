@@ -32,6 +32,7 @@ public class TestNPC {
 		Humano humano = new Humano("Lautaro", new Hechicero(), 1);
 		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, -1);
 		Assert.assertNotEquals(0, (humano.atacar(npc))); //13 de danio
+		Assert.assertEquals(0, npc.serAtacado(0));
 	}
 	@Test
 	public void testDespuesDeTurno(){

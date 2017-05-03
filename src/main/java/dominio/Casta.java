@@ -101,7 +101,7 @@ public abstract class Casta implements Serializable {
 	/**
 	 * <h3>Método getDanioCritico</h3>
 	 * Método que devuelve el danio critico de una casta
-	 * @return
+	 * @return double
 	 */
 	public double getDanioCritico() {
 		return danioCritico;

@@ -15,12 +15,10 @@ public class TestGuerrero {
 		Humano h = new Humano("Nico", 100, 100, 25, 20, 30, new Guerrero(0.2, 0.3, 1.5), 0, 1, 1);
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
-		Assert.assertTrue(e.getSalud() == 100);
-		if (h.habilidadCasta1(e)) {
-			Assert.assertTrue(e.getSalud() < 100);
-		} else {
-			Assert.assertTrue(e.getSalud() == 100);
-		}
+		Assert.assertEquals(100, e.getSalud());
+		Assert.assertTrue(h.habilidadCasta1(e));
+		h.setEnergia(0);
+		Assert.assertFalse(h.habilidadCasta1(e));
 	}
 
 	@Test

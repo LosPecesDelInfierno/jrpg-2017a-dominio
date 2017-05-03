@@ -18,11 +18,13 @@ public class TestAsesino {
 		Humano h2 = new Humano("Lautaro", new Hechicero(), 2);
 
 		Assert.assertEquals(105, h2.getSalud());
-		if	(h.habilidadCasta1(h2)) {
-			Assert.assertTrue(93==h2.getSalud());
-		} else {
-			Assert.assertEquals(105, h2.getSalud());
-		}
+		Assert.assertTrue(h.habilidadCasta1(h2));
+			//Assert.assertTrue(93==h2.getSalud());
+		//else {
+			//Assert.assertEquals(105, h2.getSalud());
+		//}
+		h.setEnergia(0);
+		Assert.assertFalse(h.habilidadCasta1(h2));
 	}
 
 	@Test

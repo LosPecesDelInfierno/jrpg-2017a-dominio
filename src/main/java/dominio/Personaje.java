@@ -360,11 +360,11 @@ public abstract class Personaje implements Peleable, Serializable {
 		if (auxDanio <= 0) {
 			return 0;
 		}
-		if ((energia - auxDanio) >= 0) {
-			energia -= auxDanio;
+		if ((this.energia - auxDanio) >= 0) {
+			this.energia -= auxDanio;
 		} else {
 		  auxDanio = energia; // le queda menos energia que el daño inflingido
-			energia = 0;
+			this.energia = 0;
 		}
 		return auxDanio;
 	}

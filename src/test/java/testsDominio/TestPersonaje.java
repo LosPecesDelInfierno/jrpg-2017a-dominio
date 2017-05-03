@@ -1,5 +1,7 @@
 package testsDominio;
 
+import static org.junit.Assert.*;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -83,5 +85,89 @@ public class TestPersonaje {
 		Assert.assertTrue(Integer.valueOf(o3.getFuerza()).equals(Integer.valueOf(10)));	
 		Assert.assertTrue(Integer.valueOf(o3.getDestreza()).equals(Integer.valueOf(15)));
 		Assert.assertTrue(Integer.valueOf(o3.getInteligencia()).equals(Integer.valueOf(10)));
+	}
+	@Test
+	public void testSetYGetNombreRaza(){
+		Orco o3 = new Orco("Hernan", new Asesino(), 3);
+		o3.setNombreRaza("nombre");
+		assertEquals("nombre",o3.getNombreRaza());
+	}
+	@Test
+	public void testSetYGetNombre(){
+		Orco o3 = new Orco("Hernan", new Asesino(), 3);
+		o3.setNombre("nombre");
+		assertEquals("nombre",o3.getNombre());
+	}
+	@Test
+	public void testSaludTope(){
+		Orco o3 = new Orco("Hernan", new Asesino(), 3);
+		o3.setSaludTope(5);
+		assertEquals(5,o3.getSaludTope());
+	}
+	@Test
+	public void testSetEnergiaTope(){
+		Orco o3 = new Orco("Hernan", new Asesino(), 3);
+		o3.setEnergiaTope(5);
+		assertEquals(5,o3.getEnergiaTope());
+	}
+	@Test
+	public void testReestablecerSaludYEnergia() {
+		Orco o3 = new Orco("Hernan", new Asesino(), 3);
+		o3.setEnergiaTope(5);
+		o3.setSaludTope(2);
+		o3.restablecerEnergia();
+		o3.restablecerSalud();
+		assertEquals(5,o3.getEnergia());
+		assertEquals(2,o3.getSalud());
+	}
+	
+	@Test
+	public void testSerRobadoSalud() {
+		Orco o3 = new Orco("Hernan", new Asesino(), 3);
+		o3.setDefensa(0);
+		o3.setSalud(5);
+		assertEquals(5, o3.serRobadoSalud(50));
+		assertEquals(0, o3.serRobadoSalud(0));
+	}
+	@Test
+	public void testSerAtacado() {
+		Asesino casta = new Asesino();
+		Orco o3 = new Orco("Hernan", casta, 3);
+		casta.setProbabilidadEvitarDanio(0.7);
+		assertEquals(0, o3.serAtacado(15));
+	}
+	@Test
+	public void testSerDesenergizado() {
+		Asesino casta = new Asesino();
+		Orco o3 = new Orco("Hernan", casta, 3);
+		assertEquals(0, o3.serDesernegizado(0));
+		o3.setEnergia(15);
+		o3.setDefensa(0);
+		assertEquals(15, o3.serDesernegizado(50));
+	}
+	@Test
+	public void testCrearAlianza() {
+		Asesino casta = new Asesino();
+		Orco o3 = new Orco("Hernan", casta, 3);
+		o3.crearAlianza("nombreAlianza");
+		assertEquals("nombreAlianza", o3.getClan().obtenerNombre());
+	}
+	@Test
+	public void testSalirDeAlianza() {
+		Asesino casta = new Asesino();
+		Orco o3 = new Orco("Hernan", casta, 3);
+		o3.crearAlianza("nombreAlianza");
+		assertEquals("nombreAlianza", o3.getClan().obtenerNombre());
+		o3.salirDeAlianza();
+		assertNull(o3.getClan());
+	}
+	@Test
+	public void testSerEnergizado() {
+		Asesino casta = new Asesino();
+		Orco o3 = new Orco("Hernan", casta, 3);
+		o3.setEnergiaTope(5);
+		o3.setEnergia(3);
+		o3.serEnergizado(10);
+		assertEquals(5, o3.getEnergia());
 	}
 }
