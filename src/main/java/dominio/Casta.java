@@ -43,6 +43,8 @@ public abstract class Casta implements Serializable {
 	public abstract boolean habilidad2(Personaje caster, Peleable atacado);
 
 	public abstract boolean habilidad3(Personaje caster, Peleable atacado);
+	
+	public abstract void mejorarAtributos(Personaje p);
 
 	/**
 	 * <h3>Método getNombreCasta</h3>

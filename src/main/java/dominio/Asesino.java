@@ -84,4 +84,9 @@ public class Asesino extends Casta {
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
 		return false;
 	}
+
+	@Override
+	public void mejorarAtributos(Personaje p) {
+		p.setDestreza(p.getDestreza() + 5);
+	}
 }

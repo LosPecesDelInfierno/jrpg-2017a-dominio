@@ -99,4 +99,9 @@ public class Hechicero extends Casta {
 		}
 		return false;
 	}
+
+	@Override
+	public void mejorarAtributos(Personaje p) {
+		p.setInteligencia(p.getInteligencia() + 5);
+	}
 }
