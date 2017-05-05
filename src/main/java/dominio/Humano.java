@@ -19,11 +19,12 @@ public class Humano extends Personaje {
  */
 	public Humano(final String nombre, final Casta casta, final int id) {
 		super(nombre, casta, id);
-		saludTope += 5;
-		energiaTope += 5;
-		salud = saludTope;
-		energia = energiaTope;
-		nombreRaza = "Humano";
+		
+		habilidadesRaza = new String[2]; 
+		habilidadesRaza[0] = "Incentivar";
+		habilidadesRaza[1] = "Golpe Fatal";
+		
+		setearAtributosRaza(5, 5, "Humano");
 	}
 
 	/**
@@ -46,7 +47,7 @@ public class Humano extends Personaje {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 		nombreRaza = "Humano";
 
-		habilidadesRaza = new String[2];
+		habilidadesRaza = new String[2]; 
 		habilidadesRaza[0] = "Incentivar";
 		habilidadesRaza[1] = "Golpe Fatal";
 	}
