@@ -2,7 +2,7 @@ package dominio;
 
 import java.util.LinkedList;
 /**
- * Clase encargada de agrupar con un nombre específico de alianza a los personajes que están
+ * Clase encargada de agrupar con un nombre especÃ­fico de alianza a los personajes que estan
  * aliados.
  *
  */
@@ -12,10 +12,10 @@ public class Alianza {
 	private LinkedList<Personaje> aliados;
 /**
  * <h3><u>Constructor de una Alianza</u></h3>
- * <p>Se recibirá un nombre (String) para definir la Alianza y
- * se asociará el miembro "aliados" a un nuevo LinkedList de personajes.<br>
+ * <p>Se recibirÃ¡ un nombre (String) para definir la Alianza y
+ * se asociarÃ¡ el miembro "aliados" a un nuevo LinkedList de personajes.<br>
  * Es importante saber dicho nombre no tiene la posibilidad de ser modificado luego de creada la Alianza.</p>
- * @param nombre Es un String que servirá de nombre de la Alianza a crear.
+ * @param nombre Es un String que servira de nombre de la Alianza a crear.
  */
 	public Alianza(final String nombre) {
 		this.nombre = nombre;
@@ -25,7 +25,7 @@ public class Alianza {
 /**
  * <h3>getAliados</h3>
  * Retorna lista de aliados.
- * @return aliados
+ * @return aliados pertenecientes a la alianza
  */
 	public LinkedList<Personaje> getAliados() {
 		return aliados;
@@ -34,7 +34,7 @@ public class Alianza {
 /**
  * <h3>Metodo setAliados</h3>
  * Metodo encargado de setear la lista de aliados.
- * @param aliados
+ * @param aliados lista con los integrantes de la alianza
  */
 	public void setAliados(final LinkedList<Personaje> aliados) {
 		this.aliados = aliados;
@@ -43,16 +43,16 @@ public class Alianza {
 /**
  * <h3>Metodo obtenerNombre</h3>
  * Metodo que devuelve el nombre de la alianza.
- * @return
+ * @return nombre de la alianza
  */
 	public String obtenerNombre() {
 		return nombre;
 	}
 
 	/**
-	 * <h3><u>Método eliminarPersonaje</u></h3>
-	 * <p>Método encargado de la eliminación de un personaje de la alianza llamadora del método.</p>
-	 * @param pj Objeto (de tipo Personaje) a eliminar del LinkedList compuesto por personajes aliados entre sí.
+	 * <h3><u>MÃ©todo eliminarPersonaje</u></h3>
+	 * <p>MÃ©todo encargado de la eliminaciÃ³n de un personaje de la alianza llamadora del mÃ©todo.</p>
+	 * @param pj Objeto (de tipo Personaje) a eliminar del LinkedList compuesto por personajes aliados entre sÃ­.
 	 */
 	public void eliminarPersonaje(final Personaje pj) {
 		aliados.remove(pj);
