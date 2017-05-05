@@ -5,14 +5,9 @@ package dominio;
  * Personaje no jugable, "manejado por la cpu".
  *
  */
-public class NonPlayableCharacter implements Peleable {
+public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 
-	private int salud;
-	private int fuerza;
-	private int defensa;
-	private String nombre;
-	private int nivel;
-	private static final int difAleatoria = -1; //Dificultad aleatoria
+	private static final int dificultadAleatoria = -1;
 
 	/**
 	 * <h3>Constructor parametrizado de NonPlayableCharacter</h3>
@@ -21,8 +16,8 @@ public class NonPlayableCharacter implements Peleable {
 	 * @param dificultadNPC dificultad de bots
 	 */
 	public NonPlayableCharacter(final String nombre, final int nivel, final int dificultadNPC) {
-		this.nombre = nombre;
-		this.nivel = nivel;
+		super(nombre, nivel);
+		//this.nombre = nombre;
 		int dificultad;
 		if (dificultadNPC == difAleatoria) {
 			dificultad = MyRandom.nextInt(3);
@@ -58,93 +53,7 @@ public class NonPlayableCharacter implements Peleable {
 		return this.nivel * 30;
 	}
 
-	 /**
-   * <h3>Método getFuerza</h3>
-   * @return int fuerza
-   */
-	public int getFuerza() {
-		return fuerza;
-	}
-
-	 /**
-   * <h3>Método setFuerza</h3>
-   * @param fuerza del peronaje
-   */
-	public void setFuerza(final int fuerza) {
-		this.fuerza = fuerza;
-	}
-
-	 /**
-   * <h3>Método getNombre</h3>
-   * @return String nombre
-   */
-	public String getNombre() {
-		return nombre;
-	}
-
-	 /**
-   * <h3>Método setNombre</h3>
-   * @param nombre .
-   */
-	public void setNombre(final String nombre) {
-		this.nombre = nombre;
-	}
-
-	 /**
-   * <h3>Método getNivel</h3>
-   * @return nivel
-   */
-	public int getNivel() {
-		return nivel;
-	}
-
-	 /**
-   * <h3>Método setNivel</h3>
-   * @param nivel .
-   */
-	public void setNivel(final int nivel) {
-		this.nivel = nivel;
-	}
-
-	 /**
-   * <h3>Método estaVivo</h3>
-   * @return boolean
-   */
-	public boolean estaVivo() {
-		return salud > 0;
-	}
-
-	 /**
-   * <h3>Método getDefensa</h3>
-   * @return int defensa
-   */
-	public int getDefensa() {
-		return defensa;
-	}
-
-	 /**
-   * <h3>Método setDefensa</h3>
-   * @param defensa .
-   */
-	public void setDefensa(final int defensa) {
-		this.defensa = defensa;
-	}
-
-	 /**
-   * <h3>Método getSalud</h3>
-   * @return  int salud
-   */
-	public int getSalud() {
-		return salud;
-	}
-
-	 /**
-   * <h3>Método setSalud</h3>
-   * @param salud .
-   */
-	public void setSalud(final int salud) {
-		this.salud = salud;
-	}
+	
 	/**
 	 * <h3><u>Método atacar</u></h3>
 	 * Método encargado de realizar un ataque por parte de un personaje no manejado por un jugador.<p>
@@ -180,11 +89,7 @@ public class NonPlayableCharacter implements Peleable {
 		return 0; // esquivo el golpe
 	}
 
-	 /**
-   * <h3>Método despuesDeTurno</h3>
-   */
-	public void despuesDeTurno() { }
-
+	 
 	 /**
    * <h3>Método ganarExperiencia</h3>
    * @param exp experiencia que gana pj

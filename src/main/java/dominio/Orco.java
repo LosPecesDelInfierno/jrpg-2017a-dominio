@@ -16,14 +16,10 @@ public class Orco extends Personaje {
    */
 	public Orco(final String nombre, final Casta casta, final int id) {
 		super(nombre, casta, id);
-		saludTope += 10;
-		salud = saludTope;
-		energia = energiaTope;
-		nombreRaza = "Orco";
-
 		habilidadesRaza = new String[2];
-		habilidadesRaza[0] = "Golpe Defensa";
+		habilidadesRaza[0] = "Golpe defensa";
 		habilidadesRaza[1] = "Mordisco de Vida";
+		setearAtributosRaza(10, 0, "Orco");
 	}
 
 	/**
@@ -46,7 +42,7 @@ public class Orco extends Personaje {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 		nombreRaza = "Orco";
 
-		habilidadesRaza = new String[2];
+		habilidadesRaza = new String[2]; 
 		habilidadesRaza[0] = "Golpe Defensa";
 		habilidadesRaza[1] = "Mordisco de Vida";
 	}

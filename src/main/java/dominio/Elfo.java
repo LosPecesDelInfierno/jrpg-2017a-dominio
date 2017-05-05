@@ -15,14 +15,10 @@ public class Elfo extends Personaje {
    */
 	public Elfo(final String nombre, final Casta casta, final int id) {
 		super(nombre, casta, id);
-		energiaTope += 10;
-		salud = saludTope;
-		energia = energiaTope;
-		nombreRaza = "Elfo";
-
 		habilidadesRaza = new String[2];
 		habilidadesRaza[0] = "Golpe Level";
 		habilidadesRaza[1] = "Ataque Bosque";
+		setearAtributosRaza(0, 10, "Elfo");
 	}
 
 	/**
