@@ -11,7 +11,7 @@ public class Hechicero extends Casta {
 
   /**
    * <h3>Contructor parametrizado de Hechicero</h3>
-   * @param proCrit probabilidad de hacer danio critico
+   * @param probCrit probabilidad de hacer danio critico
    * @param evasion capacidad de evadir
    * @param danioCrit danio critico que realiza
    */
@@ -21,7 +21,7 @@ public class Hechicero extends Casta {
 	}
 
   /**
-   *<h3>Constructor por defecto de Hechicero</h3> 
+   *<h3>Constructor por defecto de Hechicero</h3>
    */
 	public Hechicero() {
 		super();

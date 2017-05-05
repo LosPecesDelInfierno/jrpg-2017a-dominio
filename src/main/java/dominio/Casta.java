@@ -61,7 +61,7 @@ public abstract class Casta implements Serializable {
 	 * @return boolean
 	 */
 	public abstract boolean habilidad3(Personaje caster, Peleable atacado);
-	
+
 	/**
 	 * <h3>Mejorar atibutos del personaje</h3>
 	 * @param p personaje a mejorar
@@ -89,7 +89,7 @@ public abstract class Casta implements Serializable {
 	/**
 	 * <h3>Método getProbabilidadGolpeCritico</h3>
 	 * Método que devuelve las probalidades de golpe critico
-	 * @return probabilidadGolpeCritico Probabilidad que tiene un personaje de hacer un golpe critico. 
+	 * @return probabilidadGolpeCritico Probabilidad que tiene un personaje de hacer un golpe critico.
 	 */
 	public double getProbabilidadGolpeCritico() {
 		return probabilidadGolpeCritico;

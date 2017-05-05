@@ -9,9 +9,9 @@ public class Elfo extends Personaje {
 
   /**
    * <h3>Constructor de Elfo</h3>
-   * @param nombre
-   * @param casta
-   * @param id
+   * @param nombre del pesonaje
+   * @param casta del pesonaje
+   * @param id  del perosnaje
    */
 	public Elfo(final String nombre, final Casta casta, final int id) {
 		super(nombre, casta, id);
@@ -39,7 +39,7 @@ public class Elfo extends Personaje {
 	 * @param idPersonaje del personaje
 	 */
 	public Elfo(final String nombre, final int salud, final int energia,
-	    final int fuerza, final int destreza, final int inteligencia, 
+	    final int fuerza, final int destreza, final int inteligencia,
 	    final Casta casta, final int experiencia, final int nivel,
 	    final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta,

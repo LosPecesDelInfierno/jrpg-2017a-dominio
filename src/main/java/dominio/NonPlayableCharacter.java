@@ -12,19 +12,19 @@ public class NonPlayableCharacter implements Peleable {
 	private int defensa;
 	private String nombre;
 	private int nivel;
-	private static final int dificultadAleatoria = -1;
+	private static final int difAleatoria = -1; //Dificultad aleatoria
 
 	/**
 	 * <h3>Constructor parametrizado de NonPlayableCharacter</h3>
-	 * @param nombre
-	 * @param nivel
-	 * @param dificultadNPC
+	 * @param nombre del personaje
+	 * @param nivel del personaje
+	 * @param dificultadNPC dificultad de bots
 	 */
 	public NonPlayableCharacter(final String nombre, final int nivel, final int dificultadNPC) {
 		this.nombre = nombre;
 		this.nivel = nivel;
 		int dificultad;
-		if (dificultadNPC == dificultadAleatoria) {
+		if (dificultadNPC == difAleatoria) {
 			dificultad = MyRandom.nextInt(3);
 		} else {
 			dificultad = dificultadNPC;
@@ -52,6 +52,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	/**
 	 * <h3>Método otorgarExp</h3>
+	 * @return int experiencia a otorgar al personaje
 	 */
 	public int otorgarExp() {
 		return this.nivel * 30;
@@ -67,7 +68,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	 /**
    * <h3>Método setFuerza</h3>
-   * @param fuerza
+   * @param fuerza del peronaje
    */
 	public void setFuerza(final int fuerza) {
 		this.fuerza = fuerza;
@@ -83,7 +84,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	 /**
    * <h3>Método setNombre</h3>
-   * @param nombre
+   * @param nombre .
    */
 	public void setNombre(final String nombre) {
 		this.nombre = nombre;
@@ -99,7 +100,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	 /**
    * <h3>Método setNivel</h3>
-   * @param nivel
+   * @param nivel .
    */
 	public void setNivel(final int nivel) {
 		this.nivel = nivel;
@@ -123,7 +124,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	 /**
    * <h3>Método setDefensa</h3>
-   * @param defensa
+   * @param defensa .
    */
 	public void setDefensa(final int defensa) {
 		this.defensa = defensa;
@@ -139,7 +140,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	 /**
    * <h3>Método setSalud</h3>
-   * @param salud
+   * @param salud .
    */
 	public void setSalud(final int salud) {
 		this.salud = salud;
@@ -186,6 +187,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	 /**
    * <h3>Método ganarExperiencia</h3>
+   * @param exp experiencia que gana pj
    */
 	public void ganarExperiencia(final int exp) {
 
@@ -193,6 +195,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	 /**
    * <h3>Método getAtaque</h3>
+   * @return int fuerza
    */
 	@Override
 	public int getAtaque() {
@@ -201,6 +204,7 @@ public class NonPlayableCharacter implements Peleable {
 
 	 /**
    * <h3>Método setAtaque</h3>
+   * @param ataque (fuerza del pj)
    */
 	@Override
 	public void setAtaque(final int ataque) {
