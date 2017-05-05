@@ -47,6 +47,9 @@ public abstract class Personaje implements Peleable, Serializable {
 		return casta.getHabilidadesCasta();
 	}
 
+	/**
+	 * <h3>Cargar tabla de niveles</h3>
+	 */
 	public static void cargarTablaNivel() {
 		Personaje.tablaDeNiveles = new int[101];
 		Personaje.tablaDeNiveles[0] = 0;
@@ -56,6 +59,12 @@ public abstract class Personaje implements Peleable, Serializable {
 		}
 	}
 
+	/**
+	 * <h3>Contructor de Personaje</h3>
+	 * @param nombre del personaje
+	 * @param casta del personaje
+	 * @param id del personaje
+	 */
 	public Personaje(final String nombre, final Casta casta, final int id) {
 		this.nombre = nombre;
 		this.casta = casta;
@@ -78,6 +87,19 @@ public abstract class Personaje implements Peleable, Serializable {
 
 	}
 
+	/**
+	 * <h3>Contructor de Personaje</h3>
+	 * @param nombre del personaje
+	 * @param salud del personaje
+	 * @param energia del personaje
+	 * @param fuerza del personaje
+	 * @param destreza del personaje
+	 * @param inteligencia del personaje
+	 * @param casta del personaje
+	 * @param experiencia del personaje
+	 * @param nivel del personaje
+	 * @param idPersonaje del personaje
+	 */
 	public Personaje(final String nombre, final int salud, final int energia,
 	    final int fuerza, final int destreza, final int inteligencia,
 	    final Casta casta, final int experiencia, final int nivel,
@@ -103,30 +125,55 @@ public abstract class Personaje implements Peleable, Serializable {
 		this.magia = this.calcularPuntosDeMagia();
 	}
 
+	/**
+	 * <h3>Obtener nombre raza</h3>
+	 * @return nombreRaza del personaje
+	 */
 	public String getNombreRaza() {
 		return nombreRaza;
 	}
 
+	/**
+	 * <h3>Setear nombre raza</h3>
+	 * @param nombreRaza
+	 */
 	public void setNombreRaza(final String nombreRaza) {
 		this.nombreRaza = nombreRaza;
 	}
 
+	/**
+	 * <h3>Obtener nombre personaje</h3>
+	 * @return nombre personaje
+	 */
 	public String getNombre() {
 		return nombre;
 	}
-
+	
+	/**
+	 * <h3>Setear nombre personaje</h3>
+	 * @param nombre
+	 */
 	public void setNombre(final String nombre) {
 		this.nombre = nombre;
 	}
 
+	/**
+	 * <h3>Obtener ataque de personaje</h3>
+	 * @return ataque del personaje
+	 */
 	public int getAtaque() {
 		return ataque;
 	}
 
+	/**
+	 * <h3>setear araque del personaje</h3>
+	 * @param ataque del personaje
+	 */
 	public void setAtaque(final int ataque) {
 		this.ataque = ataque;
 	}
 
+	
 	public int getMagia() {
 		return magia;
 	}

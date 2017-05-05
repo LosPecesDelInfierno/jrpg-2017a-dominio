@@ -10,9 +10,9 @@ public class Orco extends Personaje {
 
   /**
    * <h3>Constructor de Orco</h3>
-   * @param nombre
-   * @param casta
-   * @param id
+   * @param nombre del personaje
+   * @param casta del personaje
+   * @param id del personaje
    */
 	public Orco(final String nombre, final Casta casta, final int id) {
 		super(nombre, casta, id);
@@ -28,16 +28,16 @@ public class Orco extends Personaje {
 
 	/**
 	 * <h3>Constructor de Orco</h3>
-	 * @param nombre
-	 * @param salud
-	 * @param energia
-	 * @param fuerza
-	 * @param destreza
-	 * @param inteligencia
-	 * @param casta
-	 * @param experiencia
-	 * @param nivel
-	 * @param idPersonaje
+	 * @param nombre del personaje
+	 * @param salud del personaje
+	 * @param energia del personaje
+	 * @param fuerza del personaje
+	 * @param destreza del personaje
+	 * @param inteligencia del personaje
+	 * @param casta del personaje
+	 * @param experiencia del personaje
+	 * @param nivel del personaje
+	 * @param idPersonaje del personaje
 	 */
 	public Orco(final String nombre, final int salud, final int energia,
 	    final int fuerza, final int destreza, final int inteligencia,

@@ -61,7 +61,7 @@ public class Alianza {
 /**
  * <h3>Metodo anadirPersonaje</h3>
  * Metodo encargado de anadir un personaje a la alianza
- * @param pj
+ * @param pj Personaje a agregar
  */
 	public void anadirPersonaje(final Personaje pj) {
 		aliados.add(pj);

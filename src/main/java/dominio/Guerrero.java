@@ -11,9 +11,9 @@ public class Guerrero extends Casta {
 
   /**
    * <h3>Constructor parametrizado de Guerrero</h3>
-   * @param proCrit
-   * @param evasion
-   * @param danioCrit
+   * @param proCrit probabilidad de hacer danio critico
+   * @param evasion capacidad de evadir
+   * @param danioCrit danio critico que realiza
    */
 	public Guerrero(final double proCrit, final double evasion, final double danioCrit) {
 		super(proCrit, evasion, danioCrit);
@@ -81,8 +81,8 @@ public class Guerrero extends Casta {
 	/**
 	 * <h3>Ignorar defensa</h3>
 	 * Implementacion del método abstracto habilidad2 declarado en la clase abstracta Casta
-	 * @param caster
-	 * @param atacado
+	 * @param caster De tipo Personaje encargado de obtener y setear energías.
+	 * @param atacado De tipo Peleable (no se utiliza)
 	 * @return boolean
 	 */
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
@@ -102,7 +102,7 @@ public class Guerrero extends Casta {
 	}
 
 	@Override
-	public void mejorarAtributos(Personaje p) {
+	public void mejorarAtributos(final Personaje p) {
 		p.setFuerza(p.getFuerza() + 5);
 	}
 }

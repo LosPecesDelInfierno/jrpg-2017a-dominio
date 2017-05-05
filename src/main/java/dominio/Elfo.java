@@ -27,16 +27,16 @@ public class Elfo extends Personaje {
 
 	/**
 	 * <h3>Constructor de Elfo</h3>
-	 * @param nombre
-	 * @param salud
-	 * @param energia
-	 * @param fuerza
-	 * @param destreza
-	 * @param inteligencia
-	 * @param casta
-	 * @param experiencia
-	 * @param nivel
-	 * @param idPersonaje
+	 * @param nombre del personaje
+	 * @param salud del personaje
+	 * @param energia del personaje
+	 * @param fuerza del personaje
+	 * @param destreza del personaje
+	 * @param inteligencia del personaje
+	 * @param casta del personaje
+	 * @param experiencia del personaje
+	 * @param nivel del pj
+	 * @param idPersonaje del personaje
 	 */
 	public Elfo(final String nombre, final int salud, final int energia,
 	    final int fuerza, final int destreza, final int inteligencia, 
@@ -59,7 +59,7 @@ public class Elfo extends Personaje {
 	 * caso contrario devuelve false.
 	 *
 	 * @param atacado Peleable a ser atacado por el Elfo.
-	 * @return true en caso de realizarse el ataque, false en caso contrario.
+	 * @return boolean true en caso de realizarse el ataque, false en caso contrario.
 	 */
 	public boolean habilidadRaza1(final Peleable atacado) {
 		if (this.getEnergia() > 10) {

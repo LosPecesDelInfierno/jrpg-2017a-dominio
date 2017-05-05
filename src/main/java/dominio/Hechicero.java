@@ -11,9 +11,9 @@ public class Hechicero extends Casta {
 
   /**
    * <h3>Contructor parametrizado de Hechicero</h3>
-   * @param probCrit
-   * @param evasion
-   * @param danioCrit
+   * @param proCrit probabilidad de hacer danio critico
+   * @param evasion capacidad de evadir
+   * @param danioCrit danio critico que realiza
    */
 	public Hechicero(final double probCrit, final double evasion, final double danioCrit) {
 		super(probCrit, evasion, danioCrit);
@@ -81,8 +81,8 @@ public class Hechicero extends Casta {
   /**
    *<h3>Robar Energia y Salud</h3>
    * Implementacion del método abstracto habilidad3 declarado en la clase abstracta Casta.
-   * @param caster
-   * @param atacado
+   * @param caster De tipo Personaje encargado de obtener y setear energías.
+   * @param atacado De tipo Peleable (no se utiliza)
    * @return boolean
    */
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
@@ -101,7 +101,7 @@ public class Hechicero extends Casta {
 	}
 
 	@Override
-	public void mejorarAtributos(Personaje p) {
+	public void mejorarAtributos(final Personaje p) {
 		p.setInteligencia(p.getInteligencia() + 5);
 	}
 }

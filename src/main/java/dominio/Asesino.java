@@ -10,9 +10,9 @@ public class Asesino extends Casta {
 
 /**
  * <h3>Constructor de Asesino</h3>
- * @param probCrit
- * @param evasion
- * @param danioCrit
+ * @param probCrit Probabilidad de critico
+ * @param evasion Evacion del personaje
+ * @param danioCrit Cantidad de danio critico
  */
 	public Asesino(final double probCrit, final double evasion, final double danioCrit) {
 		super(probCrit, evasion, danioCrit);
@@ -80,13 +80,16 @@ public class Asesino extends Casta {
 	/**
 	 * <h3>Método habilidad3</h3>
 	 * Robar
+	 * @param caster De tipo Personaje encargado de obtener y setear energías.
+	 * @param atacado De tipo Peleable (no se utiliza)
+	 * @return boolean
 	 */
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
 		return false;
 	}
 
 	@Override
-	public void mejorarAtributos(Personaje p) {
+	public void mejorarAtributos(final Personaje p) {
 		p.setDestreza(p.getDestreza() + 5);
 	}
 }

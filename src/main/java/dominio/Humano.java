@@ -7,6 +7,7 @@ package dominio;
  *
  */
 public class Humano extends Personaje {
+	private int diez = 10;
 /**
  * <h3><u>Método Constructor por defecto</u></h3>
  * Recibe los parámetros específicos del constructor parametrizado de su clase padre (nombre, casta , id),
@@ -27,16 +28,16 @@ public class Humano extends Personaje {
 
 	/**
 	 * <h3>Constructor parametrizado de Humano</h3>
-	 * @param nombre
-	 * @param salud
-	 * @param energia
-	 * @param fuerza
-	 * @param destreza
-	 * @param inteligencia
-	 * @param casta
-	 * @param experiencia
-	 * @param nivel
-	 * @param idPersonaje
+	 * @param nombre del personaje
+	 * @param salud del personaje
+	 * @param energia del personaje
+	 * @param fuerza del personaje
+	 * @param destreza del personaje
+	 * @param inteligencia del personaje
+	 * @param casta del personaje
+	 * @param experiencia del personaje
+	 * @param nivel del personaje
+	 * @param idPersonaje del personaje
 	 */
 	public Humano(final String nombre, final int salud, final int energia,
 	    final int fuerza, final int destreza, final int inteligencia,
@@ -54,12 +55,12 @@ public class Humano extends Personaje {
 	/**
 	 * <h3>Incentivar</h3>
 	 * Implementacion del método abstracto habilidad1 declarado en la clase abstracta Casta.
-	 * @param atacado
+	 * @param atacado Peleable a ser atacado por el Humano.
 	 * @return boolean
 	 */
 	public boolean habilidadRaza1(final Peleable atacado) {
-		if (this.getEnergia() > 10) {
-			this.setEnergia(this.getEnergia() - 10);
+		if (this.getEnergia() > diez) {
+			this.setEnergia(this.getEnergia() - diez);
 			atacado.setAtaque(atacado.getAtaque() + this.getMagia());
 			return true;
 		}
@@ -77,13 +78,13 @@ public class Humano extends Personaje {
 	 * @return true en caso de realizarse el ataque, false en caso contrario.
 	 */
 	public boolean habilidadRaza2(final Peleable atacado) {
-		if (this.getEnergia() > 10) {
+		if (this.getEnergia() > diez) {
 			if (atacado.serAtacado(atacado.getSalud() / 2) > 0) {
 				this.setEnergia(this.getEnergia() / 2);
 				return true;
 			}
 		}
-		this.setEnergia(this.getEnergia() - 10);
+		this.setEnergia(this.getEnergia() - diez);
 		return false;
 	}
 }

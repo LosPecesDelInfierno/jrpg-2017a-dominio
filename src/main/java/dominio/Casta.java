@@ -38,18 +38,40 @@ public abstract class Casta implements Serializable {
 		this.danioCritico = danioCrit;
 	}
 
+	/**
+	 * <h3>Habilidad 1</h3>
+	 * @param caster De tipo Personaje encargado de obtener y setear energías.
+	 * @param atacado De tipo Peleable (no se utiliza)
+	 * @return boolean
+	 */
 	public abstract boolean habilidad1(Personaje caster, Peleable atacado);
 
+	/**
+	 * <h3>Habilidad 2</h3>
+	 * @param caster De tipo Personaje encargado de obtener y setear energías.
+	 * @param atacado De tipo Peleable (no se utiliza)
+	 * @return boolean
+	 */
 	public abstract boolean habilidad2(Personaje caster, Peleable atacado);
 
+	/**
+	 * <h3>Habilidad 3</h3>
+	 * @param caster De tipo Personaje encargado de obtener y setear energías.
+	 * @param atacado De tipo Peleable (no se utiliza)
+	 * @return boolean
+	 */
 	public abstract boolean habilidad3(Personaje caster, Peleable atacado);
 	
+	/**
+	 * <h3>Mejorar atibutos del personaje</h3>
+	 * @param p personaje a mejorar
+	 */
 	public abstract void mejorarAtributos(Personaje p);
 
 	/**
 	 * <h3>Método getNombreCasta</h3>
 	 * Método que devuelve el nombre de la casta
-	 * @return
+	 * @return nombreCasta nombre de la casta
 	 */
 	public String getNombreCasta() {
 		return this.nombreCasta;
@@ -58,7 +80,7 @@ public abstract class Casta implements Serializable {
 	/**
 	 * <h3>Método getHabilidadesCasta</h3>
 	 * Método que devuelve las habilidades que posee la casta
-	 * @return
+	 * @return habilidadesCasta Habilidades de la casta
 	 */
 	public String[] getHabilidadesCasta() {
 		return habilidadesCasta;
@@ -67,7 +89,7 @@ public abstract class Casta implements Serializable {
 	/**
 	 * <h3>Método getProbabilidadGolpeCritico</h3>
 	 * Método que devuelve las probalidades de golpe critico
-	 * @return
+	 * @return probabilidadGolpeCritico Probabilidad que tiene un personaje de hacer un golpe critico. 
 	 */
 	public double getProbabilidadGolpeCritico() {
 		return probabilidadGolpeCritico;
@@ -76,7 +98,7 @@ public abstract class Casta implements Serializable {
 	/**
 	 * <h3>Método setProbabilidadGolpeCritico</h3>
 	 * Método que setea la probalidad de colpe critico de una casta
-	 * @param probabilidadGolpeCritico
+	 * @param probabilidadGolpeCritico Probabilidad que tiene un personaje de hacer un golpe critico.
 	 */
 	public void setProbabilidadGolpeCritico(final double probabilidadGolpeCritico) {
 		this.probabilidadGolpeCritico = probabilidadGolpeCritico;
@@ -85,7 +107,7 @@ public abstract class Casta implements Serializable {
   /**
    * <h3>Método getProbabilidadEvitarDanio</h3>
    * Método que devuelve la probabilidad de evitar el danio de una casta
-   * @return
+   * @return probabilidadEvitarDanio Probabilidad que tiene el personaje para evitar ser daniado
    */
 	public double getProbabilidadEvitarDanio() {
 		return probabilidadEvitarDanio;
@@ -94,7 +116,7 @@ public abstract class Casta implements Serializable {
 	/**
 	 * <h3>Método setProbabilidadEvitarDanio</h3>
 	 * Métodoque setea la probabilidad que tiene ua casta de evitar un danio
-	 * @param probabilidadEvitarDanio
+	 * @param probabilidadEvitarDanio Probabilidad que tiene el personaje para evitar ser daniado
 	 */
 	public void setProbabilidadEvitarDanio(final double probabilidadEvitarDanio) {
 		this.probabilidadEvitarDanio = probabilidadEvitarDanio;
@@ -103,7 +125,7 @@ public abstract class Casta implements Serializable {
 	/**
 	 * <h3>Método getDanioCritico</h3>
 	 * Método que devuelve el danio critico de una casta
-	 * @return double
+	 * @return danioCritico danio critico que posee un pj
 	 */
 	public double getDanioCritico() {
 		return danioCritico;
