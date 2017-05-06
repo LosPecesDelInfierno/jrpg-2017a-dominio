@@ -5,6 +5,7 @@ package dominio;
  *
  */
 public class MyRandom {
+	
 
   /**
    * <h3>Costructor por defecto</h3>

@@ -39,4 +39,14 @@ public interface Peleable {
 	public void setAtaque(int ataque);
 	public boolean estaVivo();
 	public String getNombre();
+	
+	/**
+	 * <h3>Sufre Danio Extra</h3>
+	 * Se utiliza para determinar si una instancia de clase (que
+	 * implementa a Peleable), debe sufrir un ataque extra cuando 
+	 * es víctima de alguna habilidad propia de una determinada
+	 * Casta.<p>
+	 * @return boolean 
+	 */
+	public boolean sufreDanioExtra();
 }

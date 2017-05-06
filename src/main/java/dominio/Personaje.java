@@ -86,6 +86,11 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	}
 
+	@Override
+	public boolean sufreDanioExtra() {
+		return true;
+	}
+
 	/**
 	 * <h3>Contructor de Personaje</h3>
 	 * @param nombre del personaje
