@@ -42,7 +42,7 @@ public class Orco extends Personaje {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 		nombreRaza = "Orco";
 
-		habilidadesRaza = new String[2]; 
+		habilidadesRaza = new String[2];
 		habilidadesRaza[0] = "Golpe Defensa";
 		habilidadesRaza[1] = "Mordisco de Vida";
 	}

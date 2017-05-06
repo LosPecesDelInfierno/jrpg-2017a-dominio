@@ -53,7 +53,7 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 		return this.nivel * 30;
 	}
 
-	
+
 	/**
 	 * <h3><u>Método atacar</u></h3>
 	 * Método encargado de realizar un ataque por parte de un personaje no manejado por un jugador.<p>
@@ -89,7 +89,7 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 		return 0; // esquivo el golpe
 	}
 
-	 
+ 
 	 /**
    * <h3>Método ganarExperiencia</h3>
    * @param exp experiencia que gana pj

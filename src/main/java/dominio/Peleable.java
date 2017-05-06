@@ -8,7 +8,7 @@ package dominio;
 public interface Peleable {
   /**
    * <h3>Metodo ser atacado</h3>
-   * @param danio
+   * @param danio personaje
    * @return int danio
    */
 	public int serAtacado(int danio);
@@ -19,16 +19,29 @@ public interface Peleable {
 	 */
 	public int getSalud();
 
+	/**
+	 * <h3>Metodo despues de turno</h3>
+	 */
 	public void despuesDeTurno();
 
 	/**
 	 * <h3>Metodo atacar</h3>
 	 * Ataca a otro personaje
-	 * @param atacado
-	 * @return int 
+	 * @param atacado personaje atacado
+	 * @return int
 	 */
 	public int atacar(Peleable atacado);
+
+	/**
+	 * <h3>Metodo otorgarExp</h3>
+	 * @return int experiencia
+	 */
 	public int otorgarExp();
+
+	/**
+	 * <h3>Metodo getAtaque</h3>
+	 * @return int ataque
+	 */
 	public int getAtaque();
 
 	/**
@@ -37,7 +50,17 @@ public interface Peleable {
 	 * @param ataque
 	 */
 	public void setAtaque(int ataque);
+
+	/**
+	 * <h3>Metodo estaVivo</h3>
+	 * @return boolean true/false
+	 */
 	public boolean estaVivo();
+
+	/**
+	 * <h3>Metodo getNombre</h3>
+	 * @return String nombre peleable
+	 */
 	public String getNombre();
 	
 	/**

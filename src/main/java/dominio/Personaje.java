@@ -33,7 +33,10 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	protected String[] habilidadesRaza;
 
-
+	/**
+	 * <h3>Metodo getHabilidadesRaza</h3>
+	 * @return String[] habilidades
+	 */
 	public String[] getHabilidadesRaza() {
 		return habilidadesRaza;
 	}
@@ -41,7 +44,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	/**
 	 * <h3>Metodo getHabilidadesCasta</h3>
 	 * metodo que devuelve las hhabilidades de casta que posee un personaje
-	 * @return
+	 * @return String casta
 	 */
 	public String[] getHabilidadesCasta() {
 		return casta.getHabilidadesCasta();
@@ -77,7 +80,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 		x = 0;
 		y = 0;
-		
+
 		ataque = this.calcularPuntosDeAtaque();
 		defensa = this.calcularPuntosDeDefensa();
 		magia = this.calcularPuntosDeMagia();
@@ -108,7 +111,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	    final int fuerza, final int destreza, final int inteligencia,
 	    final Casta casta, final int experiencia, final int nivel,
 	    final int idPersonaje) {
-		super(nombre, nivel); 
+		super(nombre, nivel);
 
 		this.salud = salud;
 		this.energia = energia;
@@ -145,7 +148,6 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.nombreRaza = nombreRaza;
 	}
 
-	
 	/**
 	 * <h3>Obtener ataque de personaje</h3>
 	 * @return ataque del personaje
@@ -195,6 +197,10 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		clan.anadirPersonaje(this);
 	}
 
+	/**
+	 * <h3>Metodo getEnergia</h3>
+	 * @return int energia
+	 */
 	public int getEnergia() {
 		return energia;
 	}
@@ -207,13 +213,17 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.energia = energia;
 	}
 
+	/**
+	 * <h3>Metodo getDestreza</h3>
+	 * @return int destreza
+	 */
 	public int getDestreza() {
 		return destreza;
 	}
 
 	/**
 	 * <h3>Metodo setDestreza</h3>
-	 * @param destreza a asignar al personaje 
+	 * @param destreza a asignar al personaje
 	 */
 	public void setDestreza(final int destreza) {
 		this.destreza = destreza;
@@ -267,6 +277,10 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.experiencia = experiencia;
 	}
 
+	/**
+	 * <h3>Metodo getIdPersonaje</h3>
+	 * @return int idPersonaje
+	 */
 	public int getIdPersonaje() {
 		return idPersonaje;
 	}
@@ -278,7 +292,11 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	public void setIdPersonaje(final int idPersonaje) {
 		this.idPersonaje = idPersonaje;
 	}
-	
+
+	/**
+	 * <h3>Metodo getSaludTope</h3>
+	 * @return int saludTope
+	 */
 	public int getSaludTope() {
 		return saludTope;
 	}
@@ -338,6 +356,10 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		return (int) (this.ataque * this.getCasta().getDanioCritico());
 	}
 
+	/**
+	 * <h3>Metodo puedeAtacar</h3>
+	 * @return boolean true/false
+	 */
 	public boolean puedeAtacar() {
 		return energia > 10;
 	}
@@ -441,9 +463,9 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
-	 * @param danio
-	 * @return
+	 * <h3>Metodo serDesernegizado</h3>
+	 * @param danio recibido
+	 * @return int danio
 	 */
 	public int serDesernegizado(final int danio) {
 	  int auxDanio = danio;
@@ -461,8 +483,8 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
-	 * @param salud
+	 * <h3>Metodo serCurado</h3>
+	 * @param salud a recuperar
 	 */
 	public void serCurado(final int salud) {
 		if ((this.salud + salud) <= this.saludTope) {
@@ -473,8 +495,8 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
-	 * @param energia
+	 * <h3>Metodo serEnergizado</h3>
+	 * @param energia a recibir
 	 */
 	public void serEnergizado(final int energia) {
 		if ((this.energia + energia) <= this.energiaTope) {
@@ -485,8 +507,8 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
-	 * @param nombreAlianza
+	 * <h3>Metodo crearAlianza</h3>
+	 * @param nombreAlianza que se va a crear
 	 */
 	public void crearAlianza(final String nombreAlianza) {
 		this.clan = new Alianza(nombreAlianza);
@@ -494,7 +516,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
+	 * <h3>Metodo salirDeAlianza</h3>
 	 */
 	public void salirDeAlianza() {
 		if (this.clan != null) {
@@ -504,9 +526,9 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
-	 * @param nuevoAliado
-	 * @return
+	 * <h3>Metodo aliar</h3>
+	 * @param nuevoAliado a agregar en la alianza
+	 * @return boolean true/false
 	 */
 	public boolean aliar(Personaje nuevoAliado) {
 		if (this.clan == null) {
@@ -525,12 +547,12 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
-	 * @param fuerza
-	 * @param destreza
-	 * @param inteligencia
+	 * <h3>Metodo asignarPuntosSkills</h3>
+	 * @param fuerza pj
+	 * @param destreza pj
+	 * @param inteligencia pj
 	 */
-	public void AsignarPuntosSkills(final int fuerza, final int destreza, final int inteligencia) {
+	public void asignarPuntosSkills(final int fuerza, final int destreza, final int inteligencia) {
 		if (this.fuerza + fuerza <= 200) {
 			this.fuerza += fuerza;
 		}
@@ -544,7 +566,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
+	 * <h3>Metodo subirNivel</h3>
 	 */
 	public void subirNivel() {
 
@@ -564,9 +586,9 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
-	 * @param exp
-	 * @return
+	 * <h3>Metodo ganarExperiencia</h3>
+	 * @param exp a asignar
+	 * @return boolean true/false
 	 */
 	public boolean ganarExperiencia(final int exp) {
 		this.experiencia += exp;
@@ -579,14 +601,14 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
+	 * <h3>Metodo otorgarExp</h3>
 	 */
 	public int otorgarExp() {
 		return this.nivel * 40;
 	}
 
 	/**
-	 * 
+	 * <h3>Sobrecarga metodo clone</h3>
 	 */
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
@@ -594,56 +616,62 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * 
-	 * @param p
-	 * @return
+	 * <h3>DistanciaCon</h3>
+	 * @param p personaje
+	 * @return double distancia
 	 */
 	public double distanciaCon(final Personaje p) {
 		return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
 	}
 
 	/**
-	 * 
-	 * @param atacado
-	 * @return
+	 * <h3>Metodo habilidadCasta1</h3>
+	 * @param atacado Peleable
+	 * @return boolean true/false
 	 */
 	public boolean habilidadCasta1(final Peleable atacado) {
 		return this.getCasta().habilidad1(this, atacado);
 	}
 
 	/**
-	 * 
-	 * @param atacado
-	 * @return
+	 * <h3>habilidadCasta2</h3>
+	 * @param atacado Peleable
+	 * @return boolean true/false
 	 */
 	public boolean habilidadCasta2(final Peleable atacado) {
 		return this.getCasta().habilidad2(this, atacado);
 	}
 
 	/**
-	 * 
-	 * @param atacado
-	 * @return
-	 */
+   * <h3>habilidadCasta3</h3>
+   * @param atacado Peleable
+   * @return boolean true/false
+   */
 	public boolean habilidadCasta3(final Peleable atacado) {
 		return this.getCasta().habilidad3(this, atacado);
 	}
 
 	/**
-	 * 
-	 * @param atacado
-	 * @return
-	 */
+   * <h3>habilidadRaza1</h3>
+   * @param atacado Peleable
+   * @return boolean true/false
+   */
 	public abstract boolean habilidadRaza1(Peleable atacado);
 
 	/**
-	 * 
-	 * @param atacado
-	 * @return
-	 */
+   * <h3>habilidadRaza2</h3>
+   * @param atacado Peleable
+   * @return boolean true/false
+   */
 	public abstract boolean habilidadRaza2(Peleable atacado);
 	
-	public void setearAtributosRaza(int salud, int energia, String nRaza){
+	/**
+	 * <h3>Metodo setearAtributosRaza</h3>
+	 * @param salud raza
+	 * @param energia raza
+	 * @param nRaza raza
+	 */
+	public void setearAtributosRaza(int salud, int energia, String nRaza) {
 		saludTope += salud;
 		energiaTope += energia;
 		nombreRaza = nRaza;
