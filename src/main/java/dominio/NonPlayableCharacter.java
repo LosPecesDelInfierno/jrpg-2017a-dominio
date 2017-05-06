@@ -19,7 +19,7 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 		super(nombre, nivel);
 		//this.nombre = nombre;
 		int dificultad;
-		if (dificultadNPC == difAleatoria) {
+		if (dificultadNPC == dificultadAleatoria) {
 			dificultad = MyRandom.nextInt(3);
 		} else {
 			dificultad = dificultadNPC;
