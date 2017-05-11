@@ -89,7 +89,14 @@ public class Asesino extends Casta {
 	}
 
 	@Override
-	public void mejorarAtributos(final Personaje p) {
-		p.setDestreza(p.getDestreza() + 5);
+	public int getBonusFuerza() {
+		return 0;
 	}
-}
+	@Override
+	public int getBonusInteligencia() {
+		return 0;
+	}
+	@Override
+	public int getBonusDestreza() {
+		return 5;
+	}}

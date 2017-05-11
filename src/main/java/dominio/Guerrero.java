@@ -102,7 +102,15 @@ public class Guerrero extends Casta {
 	}
 
 	@Override
-	public void mejorarAtributos(final Personaje p) {
-		p.setFuerza(p.getFuerza() + 5);
+	public int getBonusFuerza() {
+		return 5;
+	}
+	@Override
+	public int getBonusInteligencia() {
+		return 0;
+	}
+	@Override
+	public int getBonusDestreza() {
+		return 0;
 	}
 }

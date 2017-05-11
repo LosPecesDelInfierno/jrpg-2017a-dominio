@@ -73,10 +73,9 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.casta = casta;
 		this.idPersonaje = id;
 		experiencia = 0;
-		fuerza = 10;
-		inteligencia = 10;
-		destreza = 10;
-		casta.mejorarAtributos(this);
+		fuerza = 10 + casta.getBonusFuerza();
+		inteligencia = 10 + casta.getBonusInteligencia();
+		destreza = 10 + casta.getBonusDestreza();
 
 		x = 0;
 		y = 0;

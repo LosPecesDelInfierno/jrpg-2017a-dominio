@@ -63,11 +63,23 @@ public abstract class Casta implements Serializable {
 	public abstract boolean habilidad3(Personaje caster, Peleable atacado);
 
 	/**
-	 * <h3>Mejorar atibutos del personaje</h3>
-	 * @param p personaje a mejorar
+	 * <h3>Aumenta el nivel de fuerza</h3>
+	 * @return cantidad a incrementar
 	 */
-	public abstract void mejorarAtributos(Personaje p);
-
+	public abstract int getBonusFuerza();
+	
+	/**
+	 * <h3>Aumenta el nivel de inteligencia</h3>
+	 * @return cantidad a incrementar
+	 */
+	public abstract int getBonusInteligencia();
+	
+	/**
+	 * <h3>Aumenta el nivel de destreza</h3>
+	 * @return cantidad a incrementar
+	 */
+	public abstract int getBonusDestreza();
+	
 	/**
 	 * <h3>Método getNombreCasta</h3>
 	 * Método que devuelve el nombre de la casta
