@@ -28,16 +28,7 @@ public class Alianza {
  * @return aliados pertenecientes a la alianza
  */
 	public LinkedList<Personaje> getAliados() {
-		return aliados;
-	}
-
-/**
- * <h3>Metodo setAliados</h3>
- * Metodo encargado de setear la lista de aliados.
- * @param aliados lista con los integrantes de la alianza
- */
-	public void setAliados(final LinkedList<Personaje> aliados) {
-		this.aliados = aliados;
+		return (LinkedList<Personaje>) aliados.clone();
 	}
 
 /**

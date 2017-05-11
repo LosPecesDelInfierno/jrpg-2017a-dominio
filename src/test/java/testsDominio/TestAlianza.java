@@ -41,13 +41,6 @@ public class TestAlianza {
 	}
 
 	@Test
-	public void testSetAliados() {
-		listaAux.add(humano2);
-		alianzaPrueba.setAliados(listaAux);
-		assertEquals(listaAux, alianzaPrueba.getAliados());
-	}
-
-	@Test
 	public void testObtenerNombre() {
 		assertEquals("Alianza Probadora", alianzaPrueba.obtenerNombre());
 	}
