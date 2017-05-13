@@ -8,7 +8,7 @@ package dominio;
 public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 
 	private static final int dificultadAleatoria = -1;
-
+	
 	/**
 	 * <h3>Constructor parametrizado de NonPlayableCharacter</h3>
 	 * @param nombre del personaje
@@ -20,7 +20,7 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 		//this.nombre = nombre;
 		int dificultad;
 		if (dificultadNPC == dificultadAleatoria) {
-			dificultad = MyRandom.nextInt(3);
+			dificultad = randomGenerator.nextInt(3);
 		} else {
 			dificultad = dificultadNPC;
 		}
@@ -63,7 +63,7 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 	 * @return Un int que representa el daño causado, (si no se logra el ataque el retorno es 0)
 	 */
 	public int atacar(final Peleable atacado) {
-		if (MyRandom.nextDouble() <= 0.15) { // los NPC tienen 15% de golpes criticos
+		if (randomGenerator.nextDouble() <= 0.15) { // los NPC tienen 15% de golpes criticos
 			return atacado.serAtacado((int) (this.getAtaque() * 1.5));
 		} else {
 			return atacado.serAtacado(this.getAtaque());
@@ -78,7 +78,7 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
  */
 	public int serAtacado(final int danio) {
 	  int danioRetorno = danio;
-		if (MyRandom.nextDouble() >= 0.15) {
+		if (randomGenerator.nextDouble() >= 0.15) {
 		  danioRetorno -= this.getDefensa() / 2;
 			if (danioRetorno > 0) {
 				salud -= danioRetorno;

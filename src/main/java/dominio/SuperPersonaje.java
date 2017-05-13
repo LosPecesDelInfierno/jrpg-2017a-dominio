@@ -7,6 +7,7 @@ public abstract class SuperPersonaje {
 	protected int fuerza;
 	protected int defensa;
 	protected int nivel;
+	protected RandomGenerator randomGenerator;
 
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
@@ -16,6 +17,11 @@ public abstract class SuperPersonaje {
 	public SuperPersonaje(final String nombre, final int nivel) {
 		this.nombre = nombre;
 		this.nivel = nivel;
+		this.randomGenerator = new MyRandom();
+	}
+	
+	public void setRandomGenerator(RandomGeneratorStub randomGeneratorStub) {
+		this.randomGenerator = randomGeneratorStub;
 	}
 
 	/**

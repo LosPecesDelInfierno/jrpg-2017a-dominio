@@ -2,18 +2,18 @@ package testsDominio;
 
 import static org.junit.Assert.*;
 
-import java.util.Random;
-
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import dominio.MyRandom;
+import dominio.RandomGenerator;
+import dominio.RandomGeneratorStub;
 
 public class TestMyRandom {
 	
 	private static double dobleGenerico;
 	private static int valorEntero;
+	private RandomGenerator randomGenerator = new RandomGeneratorStub();
 	
 	@BeforeClass
 	public static void testVarGenerator(){
@@ -28,7 +28,7 @@ public class TestMyRandom {
 	
 	@Test
 	public void testNextDouble() {
-		double aux = MyRandom.nextDouble();
+		double aux = randomGenerator.nextDouble();
 		
 		boolean test = Double.valueOf(aux).equals(Double.valueOf(dobleGenerico));
 		assertTrue(test);
@@ -36,7 +36,7 @@ public class TestMyRandom {
 
 	@Test
 	public void testNextInt() {
-		int proxInt = MyRandom.nextInt(valorEntero);
+		int proxInt = randomGenerator.nextInt(valorEntero);
 		assertEquals(valorEntero-1, proxInt);
 	}
 

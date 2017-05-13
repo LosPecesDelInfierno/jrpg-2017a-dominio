@@ -338,7 +338,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 			return 0;
 		}
 		if (atacado.getSalud() > 0) {
-			if (MyRandom.nextDouble() <= this.casta.getProbabilidadGolpeCritico() + this.destreza / 1000) {
+			if (randomGenerator.nextDouble() <= this.casta.getProbabilidadGolpeCritico() + this.destreza / 1000) {
 				return atacado.serAtacado(this.golpeCritico());
 			} else {
 				return atacado.serAtacado(this.ataque);
@@ -425,7 +425,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
  */
 	public int serAtacado(final int danio) {
 	  int auxDanio = danio;
-		if (MyRandom.nextDouble() >= this.getCasta().getProbabilidadEvitarDanio()) {
+		if (randomGenerator.nextDouble() >= this.getCasta().getProbabilidadEvitarDanio()) {
 		  auxDanio -= this.defensa;
 			if (auxDanio > 0) {
 				if (salud <= auxDanio) {
