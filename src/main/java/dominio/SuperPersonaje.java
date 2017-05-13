@@ -20,8 +20,8 @@ public abstract class SuperPersonaje {
 		this.randomGenerator = new MyRandom();
 	}
 	
-	public void setRandomGenerator(RandomGeneratorStub randomGeneratorStub) {
-		this.randomGenerator = randomGeneratorStub;
+	public void setRandomGenerator(RandomGenerator randomGenerator) {
+		this.randomGenerator = randomGenerator;
 	}
 
 	/**
