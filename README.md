@@ -1,5 +1,5 @@
 # World Of Middle Earth (WOME) - dominio
-
+https://travis-ci.org/LosPecesDelInfierno/jrpg-2017a-dominio.svg?branch=master
 ## Sobre las personas
 
 > Para ver los participantes anteriores, referirse al archivo [humans.md](humans.md)
