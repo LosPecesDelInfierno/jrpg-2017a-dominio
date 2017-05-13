@@ -22,7 +22,7 @@
 
 ### Herramientas utilizadas
 
-* Java 1.7
+* Java 1.8
 * JUnit 4
 
 ## Cómo hacer andar el proyecto
