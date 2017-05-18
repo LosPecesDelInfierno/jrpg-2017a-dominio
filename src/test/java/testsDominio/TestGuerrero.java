@@ -17,7 +17,7 @@ public class TestGuerrero {
 
 		Assert.assertEquals(100, e.getSalud());
 		Assert.assertTrue(h.habilidadCasta1(e));
-		h.setEnergia(0);
+		h.serDesenergizado(h.getEnergia());
 		Assert.assertFalse(h.habilidadCasta1(e));
 	}
 

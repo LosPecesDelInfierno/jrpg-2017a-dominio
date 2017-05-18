@@ -34,7 +34,7 @@ public class TestHumano {
 			//Assert.assertTrue(h.getEnergia() == 90);
 			//Assert.assertTrue(e.getSalud() == 100);
 		}
-		h.setEnergia(0);
+		h.serDesenergizado(0);
 		Assert.assertFalse(h.habilidadRaza2(e));
 	}
 }

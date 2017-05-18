@@ -18,12 +18,12 @@ public class TestHechicero {
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
 		Assert.assertEquals(100, e.getSalud());
-		e.setSalud(65);
+		e.serRobadoSalud(35);
 		Assert.assertEquals(65, e.getSalud());
 		h.habilidadCasta2(e);
 		boolean test = e.getSalud() > 65;
 		Assert.assertTrue(test);
-		h.setEnergia(0);
+		h.serDesenergizado(h.getEnergia());
 		Assert.assertFalse(h.habilidadCasta2(e));
 	}
 
@@ -43,8 +43,8 @@ public class TestHechicero {
 		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
 		Assert.assertTrue(Integer.valueOf(e.getSalud()).equals(Integer.valueOf(100)));
-		h.setSalud(50);
-		h.setEnergia(50);
+		h.serRobadoSalud(50);
+		h.serDesenergizado(50);
 		h.habilidadCasta3(e);
 		boolean test = e.getSalud() < 100;	
 		Assert.assertTrue(test);

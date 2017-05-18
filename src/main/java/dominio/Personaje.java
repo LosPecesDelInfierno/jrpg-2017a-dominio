@@ -205,14 +205,6 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * <h3>Metodo setEnergia</h3>
-	 * @param energia a asignar al personaje
-	 */
-	public void setEnergia(final int energia) {
-		this.energia = energia;
-	}
-
-	/**
 	 * <h3>Metodo getDestreza</h3>
 	 * @return int destreza
 	 */
@@ -406,11 +398,11 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * <h3>Metodo serDesernegizado</h3>
+	 * <h3>Metodo serDesenergizado</h3>
 	 * @param danio recibido
 	 * @return int danio
 	 */
-	public int serDesernegizado(final int danio) {
+	public int serDesenergizado(final int danio) {
 	  int auxDanio = danio;
 	  auxDanio -= this.defensa;
 		if (auxDanio <= 0) {

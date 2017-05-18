@@ -19,10 +19,10 @@ public class TestOrco {
 		Assert.assertEquals(105, h.getSalud());
 		o.habilidadRaza1(h);
 		Assert.assertEquals(95, h.getSalud());
-		o.setDefensa(0);
+		o.perderDefensa();
 		o.habilidadRaza1(h);
 		Assert.assertEquals(95, h.getSalud());
-		o.setEnergia(5);
+		o.serDesenergizado(95);
 		o.habilidadRaza1(h);
 		Assert.assertEquals(95, h.getSalud());
 	}
@@ -33,9 +33,8 @@ public class TestOrco {
 		Orco o = new Orco("Nico", 100, 100, 80, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
 
 		Assert.assertEquals(100, h.getSalud());
-		o.setSalud(h.getSalud());
 		Assert.assertTrue(o.habilidadRaza2(h));
-		o.setEnergia(5);
+		o.serDesenergizado(95);
 		Assert.assertFalse(o.habilidadRaza2(h));
 		Assert.assertFalse(o.habilidadRaza2(h));
 	

@@ -119,9 +119,8 @@ public class TestPersonaje {
 	
 	@Test
 	public void testSerRobadoSalud() {
-		Orco o3 = new Orco("Hernan", new Asesino(), 3);
-		o3.setDefensa(0);
-		o3.setSalud(5);
+		Orco o3 = new Orco("Hernan",5,100,10,10,10, new Asesino(),1,1,3);
+		o3.perderDefensa();
 		assertEquals(5, o3.serRobadoSalud(50));
 		assertEquals(0, o3.serRobadoSalud(0));
 	}
@@ -134,12 +133,10 @@ public class TestPersonaje {
 	}
 	@Test
 	public void testSerDesenergizado() {
-		Asesino casta = new Asesino();
-		Orco o3 = new Orco("Hernan", casta, 3);
-		assertEquals(0, o3.serDesernegizado(0));
-		o3.setEnergia(15);
-		o3.setDefensa(0);
-		assertEquals(15, o3.serDesernegizado(50));
+		Orco o3 = new Orco("Hernan",100,15,10,10,10, new Asesino(),1,1,3);
+		assertEquals(0, o3.serDesenergizado(0));
+		o3.perderDefensa();
+		assertEquals(15, o3.serDesenergizado(50));
 	}
 	@Test
 	public void testCrearAlianza() {

@@ -48,14 +48,6 @@ public abstract class SuperPersonaje {
 		return salud;
 	}
 
-	 /**
-	   * <h3>Método setSalud</h3>
-	   * @param salud del personaje
-	   */ 
-	public void setSalud(final int salud) {
-		this.salud = salud;
-	}
-
 	/**
    * <h3>Método despuesDeTurno</h3>
    */
@@ -76,12 +68,21 @@ public abstract class SuperPersonaje {
 		return defensa;
 	}
 	/**
-  * <h3>Método setDefensa</h3>
-   * @param defensa del personaje
-   */
-	public void setDefensa(final int defensa) {
-		this.defensa = defensa;
+	 * <h3>Método mejorarDefensa</h3>
+	 * <p> Aumenta el nivel de defensa del personaje </p>
+	 * @param aumento de nivel de defensa del personaje
+	 */
+	public void mejorarDefensa(final int defensa) {
+		this.defensa += defensa;
 	}
+	/**
+	 * <h3>Método perderDefensa</h3>
+	 * <p>Deja al personaje sin defensas
+	 */
+	public void perderDefensa() { 
+		this.defensa = 0;
+	}
+	
 	 /**
    * <h3>Método estaVivo</h3>
    * @return boolean

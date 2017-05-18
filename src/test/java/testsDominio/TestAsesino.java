@@ -23,7 +23,7 @@ public class TestAsesino {
 		//else {
 			//Assert.assertEquals(105, h2.getSalud());
 		//}
-		h.setEnergia(0);
+		h.serDesenergizado(h.getEnergia());
 		Assert.assertFalse(h.habilidadCasta1(h2));
 	}
 
