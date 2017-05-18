@@ -221,27 +221,11 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * <h3>Metodo setDestreza</h3>
-	 * @param destreza a asignar al personaje
-	 */
-	public void setDestreza(final int destreza) {
-		this.destreza = destreza;
-	}
-
-	/**
 	 * <h3>Metodo getInteligencia</h3>
 	 * @return int inteligencia
 	 */
 	public int getInteligencia() {
 		return inteligencia;
-	}
-
-	/**
-	 * <h3>Metodo setInteligencia</h3>
-	 * @param inteligencia a asignar al personaje
-	 */
-	public void setInteligencia(final int inteligencia) {
-		this.inteligencia = inteligencia;
 	}
 
 	/**
@@ -253,27 +237,11 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * <h3>Metodo setCasta</h3>
-	 * @param casta a asignar al personaje
-	 */
-	public void setCasta(final Casta casta) {
-		this.casta = casta;
-	}
-
-	/**
 	 * <h3>Metoodo getExperiencia</h3>
 	 * @return int experiencia
 	 */
 	public int getExperiencia() {
 		return experiencia;
-	}
-
-	/**
-	 * <h3>Metoodo setExperiencia</h3>
-	 * @param experiencia a asignar al personaje
-	 */
-	public void setExperiencia(final int experiencia) {
-		this.experiencia = experiencia;
 	}
 
 	/**
@@ -285,14 +253,6 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * <h3>Metodo setIdPersonaje</h3>
-	 * @param idPersonaje del personaje
-	 */
-	public void setIdPersonaje(final int idPersonaje) {
-		this.idPersonaje = idPersonaje;
-	}
-
-	/**
 	 * <h3>Metodo getSaludTope</h3>
 	 * @return int saludTope
 	 */
@@ -301,27 +261,11 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * <h3>Metodo setSaludTope</h3>
-	 * @param saludTope que va a poseer el personaje
-	 */
-	public void setSaludTope(final int saludTope) {
-		this.saludTope = saludTope;
-	}
-
-	/**
 	 * <h3>Metodo getEnergiaTope</h3>
 	 * @return int energiaTope
 	 */
 	public int getEnergiaTope() {
 		return energiaTope;
-	}
-
-	/**
-	 * <h3>Metodo setEnergiaTope</h3>
-	 * @param energiaTope que va a poseer el personaje
-	 */
-	public void setEnergiaTope(final int energiaTope) {
-		this.energiaTope = energiaTope;
 	}
 
 /**

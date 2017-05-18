@@ -67,13 +67,7 @@ public abstract class SuperPersonaje {
 	public int getFuerza() {
 		return fuerza;
 	}
-	/**
-   * <h3>Método setFuerza</h3>
-   * @param fuerza del personaje
-   */
-	public void setFuerza(final int fuerza) {
-		this.fuerza = fuerza;
-	}
+
 	/**
    * <h3>Método getDefensa</h3>
    * @return int defensa
@@ -82,7 +76,7 @@ public abstract class SuperPersonaje {
 		return defensa;
 	}
 	/**
-   * <h3>Método setDefensa</h3>
+  * <h3>Método setDefensa</h3>
    * @param defensa del personaje
    */
 	public void setDefensa(final int defensa) {
@@ -102,12 +96,4 @@ public abstract class SuperPersonaje {
 	public int getNivel() {
 		return nivel;
 	}
-	/**
-   * <h3>Método setNivel</h3>
-   * @param nivel del personaje
-   */
-	public void setNivel(final int nivel) {
-		this.nivel = nivel;
-	}
-
 }

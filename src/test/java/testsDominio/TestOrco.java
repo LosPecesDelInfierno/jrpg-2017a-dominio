@@ -37,7 +37,6 @@ public class TestOrco {
 		Assert.assertTrue(o.habilidadRaza2(h));
 		o.setEnergia(5);
 		Assert.assertFalse(o.habilidadRaza2(h));
-		o.setFuerza(0);
 		Assert.assertFalse(o.habilidadRaza2(h));
 	
 	}

@@ -53,18 +53,6 @@ public class TestNPC {
 		Assert.assertEquals(20, npc.getAtaque());
 	}
 	@Test
-	public void testsetYGetFuerza(){
-		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, -1);
-		npc.setFuerza(20);
-		Assert.assertEquals(20, npc.getFuerza());
-	}
-	@Test
-	public void testsetYGetNivel(){
-		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, -1);
-		npc.setNivel(20);
-		Assert.assertEquals(20, npc.getNivel());
-	}
-	@Test
 	public void testsetYGetNombre(){
 		NonPlayableCharacter npc = new NonPlayableCharacter("Gigante", 1, -1);
 		npc.setNombre("Lautaro");

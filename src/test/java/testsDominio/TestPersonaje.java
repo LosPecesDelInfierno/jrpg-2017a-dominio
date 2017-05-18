@@ -101,24 +101,20 @@ public class TestPersonaje {
 	@Test
 	public void testSaludTope(){
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
-		o3.setSaludTope(5);
-		assertEquals(5,o3.getSaludTope());
+		assertEquals(100,o3.getSaludTope());
 	}
 	@Test
 	public void testSetEnergiaTope(){
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
-		o3.setEnergiaTope(5);
-		assertEquals(5,o3.getEnergiaTope());
+		assertEquals(110,o3.getEnergiaTope());
 	}
 	@Test
 	public void testReestablecerSaludYEnergia() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
-		o3.setEnergiaTope(5);
-		o3.setSaludTope(2);
 		o3.restablecerEnergia();
 		o3.restablecerSalud();
-		assertEquals(5,o3.getEnergia());
-		assertEquals(2,o3.getSalud());
+		assertEquals(100,o3.getEnergia());
+		assertEquals(110,o3.getSalud());
 	}
 	
 	@Test
@@ -165,9 +161,7 @@ public class TestPersonaje {
 	public void testSerEnergizado() {
 		Asesino casta = new Asesino();
 		Orco o3 = new Orco("Hernan", casta, 3);
-		o3.setEnergiaTope(5);
-		o3.setEnergia(3);
 		o3.serEnergizado(10);
-		assertEquals(5, o3.getEnergia());
+		assertEquals(100, o3.getEnergia());
 	}
 }
