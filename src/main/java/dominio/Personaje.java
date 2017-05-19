@@ -591,14 +591,14 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
    * @param atacado Peleable
    * @return boolean true/false
    */
-	public abstract boolean habilidadRaza1(Peleable atacado);
+	public abstract boolean habilidadRaza1(Personaje atacado);
 
 	/**
    * <h3>habilidadRaza2</h3>
    * @param atacado Peleable
    * @return boolean true/false
    */
-	public abstract boolean habilidadRaza2(Peleable atacado);
+	public abstract boolean habilidadRaza2(Personaje atacado);
 	
 	/**
 	 * <h3>Metodo setearAtributosRaza</h3>

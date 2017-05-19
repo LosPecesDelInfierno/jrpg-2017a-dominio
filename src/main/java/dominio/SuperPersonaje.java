@@ -21,7 +21,7 @@ public abstract class SuperPersonaje {
 	}
 	
 	public void setRandomGenerator(RandomGenerator randomGenerator) {
-		this.randomGenerator = randomGenerator;
+		this.randomGenerator = (RandomGeneratorStub) randomGenerator;
 	}
 
 	/**

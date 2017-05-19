@@ -19,7 +19,7 @@ public class Orco extends Personaje {
 		habilidadesRaza = new String[2];
 		habilidadesRaza[0] = "Golpe defensa";
 		habilidadesRaza[1] = "Mordisco de Vida";
-		setearAtributosRaza(10, 0, "Orco");
+		setearAtributosRaza(0, 10, "Orco");
 	}
 
 	/**
@@ -58,7 +58,7 @@ public class Orco extends Personaje {
 	 * @param atacado Peleable a ser atacado por el Orco.
 	 * @return true en caso de realizarse el ataque, false en caso contrario.
 	 */
-	public boolean habilidadRaza1(final Peleable atacado) {
+	public boolean habilidadRaza1(final Personaje atacado) {
 		if (this.getEnergia() > 10) {
 			this.serDesenergizado(10);
 			if (atacado.serAtacado(this.getDefensa() * 2) > 0) {
@@ -77,12 +77,13 @@ public class Orco extends Personaje {
 	 * @param atacado Peleable mordido por el Orco.
 	 * @return true en caso de realizarse la mordida, false en caso contrario.
 	 */
-	public boolean habilidadRaza2(final Peleable atacado) {
+	public boolean habilidadRaza2(final Personaje atacado) {
 		if (this.getEnergia() > 10) {
 			this.serDesenergizado(10);
 			int danioCausado = atacado.serAtacado(this.getFuerza());
+			System.out.println(danioCausado);
 			if (danioCausado > 0) {
-				this.serCurado(danioCausado);
+				atacado.serCurado(danioCausado);
 				return true;
 			}
 		}

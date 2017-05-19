@@ -72,4 +72,5 @@ public interface Peleable {
 	 * @return boolean 
 	 */
 	public boolean sufreDanioExtra();
+	//public void serCurado();
 }
