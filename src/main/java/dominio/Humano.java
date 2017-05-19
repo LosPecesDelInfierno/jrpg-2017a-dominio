@@ -59,7 +59,7 @@ public class Humano extends Personaje {
 	 * @param atacado Peleable a ser atacado por el Humano.
 	 * @return boolean
 	 */
-	public boolean habilidadRaza1(final Personaje atacado) {
+	public boolean habilidadRaza1(final Peleable atacado) {
 		if (this.getEnergia() > diez) {
 			this.serDesenergizado(diez);
 			atacado.setAtaque(atacado.getAtaque() + this.getMagia());
@@ -78,7 +78,7 @@ public class Humano extends Personaje {
 	 * @param atacado Peleable a ser atacado por el Humano.
 	 * @return true en caso de realizarse el ataque, false en caso contrario.
 	 */
-	public boolean habilidadRaza2(final Personaje atacado) {
+	public boolean habilidadRaza2(final Peleable atacado) {
 		if (this.getEnergia() > diez) {
 			if (atacado.serAtacado(atacado.getSalud() / 2) > 0) {
 				this.serDesenergizado(this.getEnergia() / 2);

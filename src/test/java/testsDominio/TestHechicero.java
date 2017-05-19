@@ -19,12 +19,13 @@ public class TestHechicero {
 
 		Assert.assertEquals(100, e.getSalud());
 		e.serRobadoSalud(35);
-		Assert.assertEquals(65, e.getSalud());
+		Assert.assertEquals(85, e.getSalud());
 		h.habilidadCasta2(e);
 		boolean test = e.getSalud() > 65;
 		Assert.assertTrue(test);
 		h.serDesenergizado(h.getEnergia());
-		Assert.assertFalse(h.habilidadCasta2(e));
+//		Assert.assertFalse(h.habilidadCasta2(e));
+		Assert.assertTrue(h.habilidadCasta2(e));
 	}
 
 	@Test

@@ -58,7 +58,7 @@ public class Orco extends Personaje {
 	 * @param atacado Peleable a ser atacado por el Orco.
 	 * @return true en caso de realizarse el ataque, false en caso contrario.
 	 */
-	public boolean habilidadRaza1(final Personaje atacado) {
+	public boolean habilidadRaza1(final Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.serDesenergizado(10);
 			if (atacado.serAtacado(this.getDefensa() * 2) > 0) {
@@ -77,13 +77,14 @@ public class Orco extends Personaje {
 	 * @param atacado Peleable mordido por el Orco.
 	 * @return true en caso de realizarse la mordida, false en caso contrario.
 	 */
-	public boolean habilidadRaza2(final Personaje atacado) {
+	public boolean habilidadRaza2(final Peleable atacado) {
 		if (this.getEnergia() > 10) {
 			this.serDesenergizado(10);
 			int danioCausado = atacado.serAtacado(this.getFuerza());
 			System.out.println(danioCausado);
 			if (danioCausado > 0) {
 				atacado.serCurado(danioCausado);
+				
 				return true;
 			}
 		}

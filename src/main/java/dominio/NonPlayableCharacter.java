@@ -119,4 +119,10 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 	public boolean sufreDanioExtra() {
 		return false;
 	}
+
+  @Override
+  public void serCurado(int danioCausado) {
+    // TODO Auto-generated method stub
+    
+  }
 }
