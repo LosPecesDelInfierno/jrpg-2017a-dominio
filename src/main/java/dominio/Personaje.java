@@ -1,6 +1,8 @@
 package dominio;
 
 import java.io.Serializable;
+
+import mensajeria.PaqueteAtacar;
 /**
  *
  * <p>Clase abstracta encargada de definir los métodos y atributos de un Personaje.<br>
@@ -613,4 +615,26 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.salud = saludTope;
 		this.energia = energiaTope;
 	}
+	
+	/**
+	 * <h3>metodo refreshAtacado</h3>
+	 * <p>Refresca el estado del personaje atacado a partir de un PaqueteAtacar
+	 * enviado desde otro cliente</p>
+	 * @param paquete
+	 */
+	public void refreshAtacado(PaqueteAtacar paquete) {
+		this.salud = paquete.getNuevaSaludEnemigo();
+		this.energia = paquete.getNuevaEnergiaEnemigo();
+	}
+	
+	/**
+	 * <h3>metodo refreshAtacado</h3>
+	 * <p>Refresca el estado del personaje atacante a partir de un PaqueteAtacar
+	 * enviado desde otro cliente</p>
+	 * @param paquete
+	 */
+	public void refreshAtacante(PaqueteAtacar paquete) {
+		this.salud = paquete.getNuevaSaludPersonaje();
+		this.energia = paquete.getNuevaEnergiaPersonaje();
+	}	
 }
