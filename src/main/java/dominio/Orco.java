@@ -81,7 +81,6 @@ public class Orco extends Personaje {
 		if (this.getEnergia() > 10) {
 			this.serDesenergizado(10);
 			int danioCausado = atacado.serAtacado(this.getFuerza());
-			System.out.println(danioCausado);
 			if (danioCausado > 0) {
 				atacado.serCurado(danioCausado);
 				
