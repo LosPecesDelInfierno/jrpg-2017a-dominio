@@ -6,6 +6,7 @@ import org.junit.Test;
 import dominio.Asesino;
 import dominio.Hechicero;
 import dominio.Humano;
+import dominio.RandomGeneratorStub;
 
 public class TestAsesino {
 
@@ -18,12 +19,9 @@ public class TestAsesino {
 		Humano h2 = new Humano("Lautaro", new Hechicero(), 2);
 
 		Assert.assertEquals(105, h2.getSalud());
+		h2.setRandomGenerator(new RandomGeneratorStub());
 		Assert.assertTrue(h.habilidadCasta1(h2));
-			//Assert.assertTrue(93==h2.getSalud());
-		//else {
-			//Assert.assertEquals(105, h2.getSalud());
-		//}
-		h.serDesenergizado(h.getEnergia());
+		h.serDesenergizado(Integer.valueOf(1500));
 		Assert.assertFalse(h.habilidadCasta1(h2));
 	}
 

@@ -18,7 +18,7 @@ public class TestOrco {
 		Orco o = new Orco("Hernan", new Guerrero(), 1);
 		
 		Assert.assertEquals(105, h.getSalud());
-		
+		h.setRandomGenerator(new RandomGeneratorStub());
 		o.habilidadRaza1(h);
 		Assert.assertEquals(95, h.getSalud());
 		o.perderDefensa();
@@ -37,7 +37,7 @@ public class TestOrco {
 		Assert.assertEquals(5, h.getSalud());
 		//System.out.println(h.getSaludTope());
 		//System.out.println(h.getSalud());
-    h.setRandomGenerator(new RandomGeneratorStub());
+		h.setRandomGenerator(new RandomGeneratorStub());
 		Assert.assertTrue(o.habilidadRaza2(h));
 		Assert.assertEquals(5, h.getSalud());
 		

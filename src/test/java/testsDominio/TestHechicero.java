@@ -3,20 +3,29 @@ package testsDominio;
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import dominio.Asesino;
 import dominio.Elfo;
 import dominio.Hechicero;
 import dominio.Humano;
+import dominio.RandomGeneratorStub;
 
 public class TestHechicero {
 
+	private Humano h;
+	private Elfo e;
+	@Before 
+	public void setear() {
+		h = new Humano("Nico", 100, 100, 55, 20, 50, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
+		e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
+		
+		e.setRandomGenerator(new RandomGeneratorStub());
+	}
 	@Test
 	public void testCurar() {
-		Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-
+		
 		Assert.assertEquals(100, e.getSalud());
 		e.serRobadoSalud(35);
 		Assert.assertEquals(85, e.getSalud());
@@ -30,9 +39,7 @@ public class TestHechicero {
 
 	@Test
 	public void testBolaDeFuego() {
-		Humano h = new Humano("Nico", 100, 100, 55, 20, 30, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
-
+		
 		Assert.assertTrue(Integer.valueOf(e.getSalud()).equals(Integer.valueOf(100)));
 		h.habilidadCasta1(e);
 		Assert.assertNotEquals(100, e.getSalud());
@@ -40,8 +47,6 @@ public class TestHechicero {
 
 	@Test
 	public void testRobarEnergiaYSalud() {
-		Humano h = new Humano("Nico", 100, 100, 55, 20, 50, new Hechicero(0.2, 0.3, 1.5), 0, 1, 1);
-		Elfo e = new Elfo("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 3, 1);
 
 		Assert.assertTrue(Integer.valueOf(e.getSalud()).equals(Integer.valueOf(100)));
 		h.serRobadoSalud(50);
