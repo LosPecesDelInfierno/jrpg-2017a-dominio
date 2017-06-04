@@ -1,5 +1,8 @@
 package dominio;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public abstract class SuperPersonaje {
 
 	protected int salud;
@@ -8,6 +11,7 @@ public abstract class SuperPersonaje {
 	protected int defensa;
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
+	protected List<Item> mochila;
 
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
@@ -18,6 +22,7 @@ public abstract class SuperPersonaje {
 		this.nombre = nombre;
 		this.nivel = nivel;
 		this.randomGenerator = new MyRandom();
+		this.mochila = new LinkedList<Item>();
 	}
 	
 	public void setRandomGenerator(RandomGenerator randomGenerator) {
@@ -96,5 +101,13 @@ public abstract class SuperPersonaje {
    */
 	public int getNivel() {
 		return nivel;
+	}
+	
+	public void agregarItem(Item item) {
+		this.mochila.add(item);
+	}
+	
+	public void removerItem(Item item) {
+		this.mochila.remove(item);
 	}
 }

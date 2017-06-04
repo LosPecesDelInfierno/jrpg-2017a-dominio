@@ -1,6 +1,10 @@
 package mensajeria;
 
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
+
+import dominio.Item;
 
 public class PaquetePersonaje extends Paquete implements Serializable, Cloneable {
 
@@ -17,9 +21,10 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	private int inteligencia;
 	private int nivel;
 	private int experiencia;
+	private List<Item> mochila = new LinkedList<Item>();
 
 	public PaquetePersonaje() {
-		estado = 0; //Estado.estadoOffline;
+		estado = 0; // Estado.estadoOffline;
 	}
 
 	public int getEstado() {
@@ -29,15 +34,15 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
-	
-	public int getMapa(){
+
+	public int getMapa() {
 		return idMapa;
 	}
-	
-	public void setMapa(int mapa){
+
+	public void setMapa(int mapa) {
 		idMapa = mapa;
 	}
-	
+
 	public int getNivel() {
 		return nivel;
 	}
@@ -58,16 +63,13 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public String getCasta() {
 		return casta;
 	}
-
 
 	public void setCasta(String casta) {
 		this.casta = casta;
@@ -77,66 +79,53 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 		return nombre;
 	}
 
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 
 	public String getRaza() {
 		return raza;
 	}
 
-
 	public void setRaza(String raza) {
 		this.raza = raza;
 	}
-
 
 	public int getSaludTope() {
 		return saludTope;
 	}
 
-
 	public void setSaludTope(int saludTope) {
 		this.saludTope = saludTope;
 	}
-
 
 	public int getEnergiaTope() {
 		return energiaTope;
 	}
 
-
 	public void setEnergiaTope(int energiaTope) {
 		this.energiaTope = energiaTope;
 	}
-
 
 	public int getFuerza() {
 		return fuerza;
 	}
 
-
 	public void setFuerza(int fuerza) {
 		this.fuerza = fuerza;
 	}
-
 
 	public int getDestreza() {
 		return destreza;
 	}
 
-
 	public void setDestreza(int destreza) {
 		this.destreza = destreza;
 	}
 
-
 	public int getInteligencia() {
 		return inteligencia;
 	}
-
 
 	public void setInteligencia(int inteligencia) {
 		this.inteligencia = inteligencia;
@@ -146,5 +135,12 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 		Object obj = null;
 		obj = super.clone();
 		return obj;
+	}
+
+	public void agregarItem(int id, int bonoAtaque, int bonoDefensa, int bonoMagia, int bonoSalud, int bonoEnergia,
+			int fuerzaRequerida, int destrezaRequerida, int inteligenciaRequerida, String nombre, String foto) {
+		Item item = new Item(id, bonoAtaque, bonoDefensa, bonoMagia, bonoSalud, bonoEnergia, fuerzaRequerida,
+				destrezaRequerida, inteligenciaRequerida, nombre, foto);
+		this.mochila.add(item);
 	}
 }
