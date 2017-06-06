@@ -143,4 +143,11 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 				destrezaRequerida, inteligenciaRequerida, nombre, foto);
 		this.mochila.add(item);
 	}
+	
+	public int getIdItem(int idx) {
+		if (mochila.size() > idx) {
+			return mochila.get(idx).getId();
+		}
+		return -1;
+	}
 }

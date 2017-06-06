@@ -104,10 +104,25 @@ public abstract class SuperPersonaje {
 	}
 	
 	public void agregarItem(Item item) {
-		this.mochila.add(item);
+		if(this.mochila.size() < 20) {
+			this.mochila.add(item);
+		}
+		
+		agregarAtributosItem(item);
 	}
 	
 	public void removerItem(Item item) {
 		this.mochila.remove(item);
+		removerAtributosItem(item);
+	}
+	
+	public void agregarAtributosItem(Item item) {
+		this.defensa += item.getBonoDefensa();
+		this.salud += item.getBonoSalud();
+	}
+
+	public void removerAtributosItem(Item item) {
+		this.defensa -= item.getBonoDefensa();
+		this.salud -= item.getBonoSalud();
 	}
 }
