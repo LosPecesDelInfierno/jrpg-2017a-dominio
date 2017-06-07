@@ -637,23 +637,5 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.salud = paquete.getNuevaSaludPersonaje();
 		this.energia = paquete.getNuevaEnergiaPersonaje();
 	}
-	
-	public void agregarAtributosItem(Item item) {
-		super.agregarAtributosItem(item);
-		this.ataque += item.getBonoAtaque();
-		this.magia += item.getBonoMagia();
-		this.saludTope += item.getBonoSalud();
-		this.energia += item.getBonoEnergia();
-		this.energiaTope += item.getBonoEnergia();
-	}
-
-	public void removerAtributosItem(Item item) {
-		super.removerAtributosItem(item);
-		this.ataque += item.getBonoAtaque();
-		this.magia += item.getBonoMagia();
-		this.saludTope += item.getBonoSalud();
-		this.energia += item.getBonoEnergia();
-		this.energiaTope += item.getBonoEnergia();		
-	}
 
 }

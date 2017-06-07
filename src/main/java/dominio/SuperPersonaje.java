@@ -11,7 +11,7 @@ public abstract class SuperPersonaje {
 	protected int defensa;
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
-	protected List<Item> mochila;
+	protected List<Item> inventario;
 
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
@@ -22,7 +22,7 @@ public abstract class SuperPersonaje {
 		this.nombre = nombre;
 		this.nivel = nivel;
 		this.randomGenerator = new MyRandom();
-		this.mochila = new LinkedList<Item>();
+		this.inventario = new LinkedList<Item>();
 	}
 	
 	public void setRandomGenerator(RandomGenerator randomGenerator) {
@@ -103,26 +103,5 @@ public abstract class SuperPersonaje {
 		return nivel;
 	}
 	
-	public void agregarItem(Item item) {
-		if(this.mochila.size() < 20) {
-			this.mochila.add(item);
-		}
-		
-		agregarAtributosItem(item);
-	}
-	
-	public void removerItem(Item item) {
-		this.mochila.remove(item);
-		removerAtributosItem(item);
-	}
-	
-	public void agregarAtributosItem(Item item) {
-		this.defensa += item.getBonoDefensa();
-		this.salud += item.getBonoSalud();
-	}
-
-	public void removerAtributosItem(Item item) {
-		this.defensa -= item.getBonoDefensa();
-		this.salud -= item.getBonoSalud();
-	}
+	// TODO: Métodos para manejar inventario
 }

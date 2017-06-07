@@ -21,7 +21,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	private int inteligencia;
 	private int nivel;
 	private int experiencia;
-	private List<Item> mochila = new LinkedList<Item>();
+	private List<Item> inventario = new LinkedList<Item>();
 
 	public PaquetePersonaje() {
 		estado = 0; // Estado.estadoOffline;
@@ -137,17 +137,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 		return obj;
 	}
 
-	public void agregarItem(int id, int bonoAtaque, int bonoDefensa, int bonoMagia, int bonoSalud, int bonoEnergia,
-			int fuerzaRequerida, int destrezaRequerida, int inteligenciaRequerida, String nombre, String foto) {
-		Item item = new Item(id, bonoAtaque, bonoDefensa, bonoMagia, bonoSalud, bonoEnergia, fuerzaRequerida,
-				destrezaRequerida, inteligenciaRequerida, nombre, foto);
-		this.mochila.add(item);
-	}
-	
-	public int getIdItem(int idx) {
-		if (mochila.size() > idx) {
-			return mochila.get(idx).getId();
-		}
-		return -1;
+	public void agregarItem(Item item) {
+		this.inventario.add(item);
 	}
 }
