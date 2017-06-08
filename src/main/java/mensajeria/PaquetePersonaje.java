@@ -21,6 +21,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	private int inteligencia;
 	private int nivel;
 	private int experiencia;
+	private boolean ganoBatalla;
 	private List<Item> inventario = new LinkedList<Item>();
 
 	public PaquetePersonaje() {
@@ -129,6 +130,14 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 
 	public void setInteligencia(int inteligencia) {
 		this.inteligencia = inteligencia;
+	}
+	
+	public boolean ganoBatalla() {
+		return this.ganoBatalla;
+	}
+	
+	public void setGanoBatalla(boolean val) {
+		this.ganoBatalla = val;
 	}
 
 	public Object clone() {
