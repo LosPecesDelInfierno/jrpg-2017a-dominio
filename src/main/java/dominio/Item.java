@@ -1,8 +1,8 @@
 package dominio;
 
 import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Item {
 	private int id;
@@ -11,7 +11,7 @@ public class Item {
 	private int fuerzaRequerida;
 	private int destrezaRequerida;
 	private int inteligenciaRequerida;
-	private List<ModificadorItem> modificadores; 
+	private Map<Integer, ModificadorItem> modificadores; 
 	private String foto;
 
 	public Item() { }
@@ -25,7 +25,7 @@ public class Item {
 		this.destrezaRequerida = destrezaRequerida;
 		this.inteligenciaRequerida = inteligenciaRequerida;
 		this.foto = foto;
-		this.modificadores = new LinkedList<ModificadorItem>();
+		this.modificadores = new HashMap<Integer,ModificadorItem>();
 	}
 
 	public int getId() {
@@ -57,13 +57,25 @@ public class Item {
 	}
 	
 	public void addModificador(ModificadorItem modificador) {
-		this.modificadores.add(modificador);
+		this.modificadores.put(modificador.getAtributoModificable(), modificador);
 	}
 	
-	public List<ModificadorItem> getModificadores() {
-		List<ModificadorItem> copia = null;
-		Collections.copy(this.modificadores, copia);
-		return copia;
+	public int incrementar(int valor, int atributo ) {
+		ModificadorItem aux = this.modificadores.get(atributo);
+		
+		if( aux != null ){
+			return aux.incrementar(valor);
+		}
+		return valor;
+	}
+	
+	public int decrementar(int valor, int atributo) {
+		ModificadorItem aux = this.modificadores.get(atributo);
+		
+		if( aux != null ){
+			return aux.decrementar(valor);
+		}
+		return valor;
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package mensajeria;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -148,5 +149,11 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 
 	public void agregarItem(Item item) {
 		this.inventario.add(item);
+	}
+	
+	public List<Item> getInventario() {
+		List<Item> copia = new LinkedList<Item>();
+		Collections.copy(this.inventario, copia);
+		return copia;
 	}
 }

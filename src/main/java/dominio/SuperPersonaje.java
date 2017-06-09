@@ -1,7 +1,7 @@
 package dominio;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class SuperPersonaje {
 
@@ -11,7 +11,7 @@ public abstract class SuperPersonaje {
 	protected int defensa;
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
-	protected List<Item> inventario;
+	protected Map<Integer,Item> inventario;
 
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
@@ -22,7 +22,7 @@ public abstract class SuperPersonaje {
 		this.nombre = nombre;
 		this.nivel = nivel;
 		this.randomGenerator = new MyRandom();
-		this.inventario = new LinkedList<Item>();
+		this.inventario = new HashMap<Integer,Item>();
 	}
 	
 	public void setRandomGenerator(RandomGenerator randomGenerator) {
@@ -103,5 +103,30 @@ public abstract class SuperPersonaje {
 		return nivel;
 	}
 	
-	// TODO: Métodos para manejar inventario
+	public void addItemInventario(Item item) {
+		// Si ya tengo un item de ese tipo lo tengo que sacar
+		Item aux = this.inventario.get(item.getIdTipoItem());
+		
+		if(aux != null) {
+			this.removeItemInventario(aux);
+		}
+		
+		this.inventario.put(item.getIdTipoItem(), item);
+		this.incrementarAtributos(item);
+	}
+	
+	public void removeItemInventario(Item item) {
+		this.inventario.remove(item.getIdTipoItem());
+		this.decrementarAtributos(item);
+	}
+	
+	public void incrementarAtributos(Item item) {
+		this.fuerza = item.incrementar(this.fuerza, AtributoModificable.FUERZA);
+		this.salud = item.incrementar(this.salud, AtributoModificable.SALUD);
+	}
+	
+	public void decrementarAtributos(Item item) {
+		this.fuerza = item.decrementar(this.fuerza, AtributoModificable.FUERZA);
+		this.salud = item.decrementar(this.salud, AtributoModificable.SALUD);		
+	}
 }
