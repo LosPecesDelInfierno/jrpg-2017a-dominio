@@ -648,6 +648,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.energiaTope = item.incrementar(this.energiaTope, AtributoModificable.ENERGIA);
 	}
 	
+
 	@Override
 	public void decrementarAtributos(Item item) {
 		super.decrementarAtributos(item);

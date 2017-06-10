@@ -130,9 +130,4 @@ public abstract class SuperPersonaje {
 		this.salud = item.decrementar(this.salud, AtributoModificable.SALUD);		
 	}
 	
-	public void aplicarEfectoItems() {
-		for(Map.Entry<Integer, Item> items : inventario.entrySet()) {
-			this.incrementarAtributos(items.getValue());
-		}
-	}
 }
