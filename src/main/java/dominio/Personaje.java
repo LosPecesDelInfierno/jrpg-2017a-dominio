@@ -23,6 +23,11 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	protected int inteligencia;
 	protected Casta casta;
 
+	protected int bonusInteligencia;
+	protected int bonusEnergia;
+	protected int bonusDestreza;
+	
+	
 	protected int x;
 	protected int y;
 
@@ -203,7 +208,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int energia
 	 */
 	public int getEnergia() {
-		return energia;
+		return energia + bonusEnergia;
 	}
 
 	/**
@@ -211,7 +216,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int destreza
 	 */
 	public int getDestreza() {
-		return destreza;
+		return destreza + bonusDestreza;
 	}
 
 	/**
@@ -219,7 +224,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int inteligencia
 	 */
 	public int getInteligencia() {
-		return inteligencia;
+		return inteligencia + bonusInteligencia;
 	}
 
 	/**
@@ -251,7 +256,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int saludTope
 	 */
 	public int getSaludTope() {
-		return saludTope;
+		return saludTope + bonusSalud;
 	}
 
 	/**
@@ -259,7 +264,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int energiaTope
 	 */
 	public int getEnergiaTope() {
-		return energiaTope;
+		return energiaTope + bonusEnergia;
 	}
 
 /**
@@ -637,14 +642,20 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.salud = paquete.getNuevaSaludPersonaje();
 		this.energia = paquete.getNuevaEnergiaPersonaje();
 	}
+	
+	@Override
+	protected void reiniciarBonus() {
+		super.reiniciarBonus();
+		this.bonusInteligencia = 0;
+		this.bonusDestreza = 0;
+		this.bonusEnergia = 0;
+	}
 
 	@Override
 	public void incrementarAtributos(Item item) {
 		super.incrementarAtributos(item);
-		this.inteligencia = item.incrementar(this.inteligencia, AtributoModificable.INTELIGENCIA);
-		this.destreza = item.incrementar(this.destreza, AtributoModificable.DESTREZA);
-		this.saludTope = item.incrementar(this.saludTope, AtributoModificable.SALUD);
-		this.energia = item.incrementar(this.energia, AtributoModificable.ENERGIA);
-		this.energiaTope = item.incrementar(this.energiaTope, AtributoModificable.ENERGIA);
+		this.bonusInteligencia = item.incrementar(getInteligencia(), AtributoModificable.INTELIGENCIA);
+		this.bonusDestreza = item.incrementar(getDestreza(), AtributoModificable.DESTREZA);
+		this.bonusEnergia = item.incrementar(getEnergia(), AtributoModificable.ENERGIA);
 	}
 }

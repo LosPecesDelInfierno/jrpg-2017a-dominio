@@ -12,7 +12,9 @@ public abstract class SuperPersonaje {
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
 	protected Map<Integer, Item> inventario;
-
+	protected int bonusFuerza;
+	protected int bonusSalud;
+	
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
 	 * 
@@ -57,7 +59,7 @@ public abstract class SuperPersonaje {
 	 * @return int salud
 	 */
 	public int getSalud() {
-		return salud;
+		return salud + bonusSalud;
 	}
 
 	/**
@@ -72,7 +74,7 @@ public abstract class SuperPersonaje {
 	 * @return int fuerza
 	 */
 	public int getFuerza() {
-		return fuerza;
+		return fuerza + bonusFuerza;
 	}
 
 	/**
@@ -126,17 +128,24 @@ public abstract class SuperPersonaje {
 
 	public void addItemInventario(Item item) {
 		this.inventario.put(item.getIdTipoItem(), item);
+		recalcularBonusItems();
 	}
-
-	public void incrementarAtributos(Item item) {
-		this.fuerza = item.incrementar(this.fuerza, AtributoModificable.FUERZA);
-		this.salud = item.incrementar(this.salud, AtributoModificable.SALUD);
-	}
-
-	public void aplicarEfectoItems() {
+	
+	private void recalcularBonusItems() {
+		reiniciarBonus();
 		for (Item item : inventario.values()) {
 			this.incrementarAtributos(item);
 		}
+	}
+	
+	protected void reiniciarBonus() {
+		this.bonusFuerza = 0;
+		this.bonusSalud = 0;
+	}
+	
+	public void incrementarAtributos(Item item) {
+		this.bonusFuerza = item.incrementar(getFuerza(), AtributoModificable.FUERZA);
+		this.bonusSalud = item.incrementar(getSalud(), AtributoModificable.SALUD);
 	}
 
 }
