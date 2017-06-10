@@ -3,6 +3,7 @@ package dominio;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class Item {
 	private int id;
@@ -57,11 +58,11 @@ public class Item {
 	}
 	
   public String getDescripcionItem() {
-    String descripcion = "Fuerza " + getFuerzaRequerida() + 
-        ", Destreza " + getDestrezaRequerida() + 
-        ", Inteligencia " + getInteligenciaRequerida();
-    
-    return descripcion;
+    String descripcion = "";
+    for (ModificadorItem modificador : this.modificadores.values()) {
+      descripcion += modificador.toString() + ", ";
+    }
+    return descripcion.substring(0, descripcion.length() - 2);
   }
 	
 	public void addModificador(ModificadorItem modificador) {

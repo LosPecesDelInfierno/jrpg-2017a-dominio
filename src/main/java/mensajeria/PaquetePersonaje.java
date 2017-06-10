@@ -152,8 +152,9 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	}
 	
 	public List<Item> getInventario() {
-		List<Item> copia = new LinkedList<Item>();
-		Collections.copy(this.inventario, copia);
-		return copia;
+//		List<Item> copia = new LinkedList<Item>();
+//		Collections.copy(this.inventario, copia);
+//		return copia;
+	  return this.inventario;
 	}
 }

@@ -23,6 +23,12 @@ public class ModificadorItem {
 		return esPorcentaje;
 	}
 	
+	@Override
+  public String toString() {
+	  String val = (this.valor > 0 ? "+" : "") + this.valor + (this.esPorcentaje ? "%" : "");
+	  return val + " de " + AtributoModificable.getNombre(this.atributoModificable);
+  }
+	
 	public int incrementar(int valorInicial) {
 		if(this.esPorcentaje) {
 			return valorInicial + (valorInicial * this.valor / 100);
