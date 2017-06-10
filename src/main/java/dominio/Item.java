@@ -58,11 +58,11 @@ public class Item {
 	}
 	
   public String getDescripcionItem() {
-    String descripcion = "";
+    String descripcion = this.nombre + " (";
     for (ModificadorItem modificador : this.modificadores.values()) {
       descripcion += modificador.toString() + ", ";
     }
-    return descripcion.substring(0, descripcion.length() - 2);
+    return descripcion.substring(0, descripcion.length() - 2) + ")";
   }
 	
 	public void addModificador(ModificadorItem modificador) {
@@ -73,14 +73,6 @@ public class Item {
 		ModificadorItem aux = this.modificadores.get(atributo);
 		if( aux != null ){
 			return aux.incrementar(valor);
-		}
-		return valor;
-	}
-	
-	public int decrementar(int valor, int atributo) {
-		ModificadorItem aux = this.modificadores.get(atributo);
-		if( aux != null ){
-			return aux.decrementar(valor);
 		}
 		return valor;
 	}

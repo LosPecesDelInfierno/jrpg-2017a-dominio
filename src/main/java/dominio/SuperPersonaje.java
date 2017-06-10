@@ -11,123 +11,132 @@ public abstract class SuperPersonaje {
 	protected int defensa;
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
-	protected Map<Integer,Item> inventario;
+	protected Map<Integer, Item> inventario;
 
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
-	 * @param nombre personaje
-	 * @param nivel personaje
+	 * 
+	 * @param nombre
+	 *            personaje
+	 * @param nivel
+	 *            personaje
 	 */
 	public SuperPersonaje(final String nombre, final int nivel) {
 		this.nombre = nombre;
 		this.nivel = nivel;
 		this.randomGenerator = new MyRandom();
-		this.inventario = new HashMap<Integer,Item>();
+		this.inventario = new HashMap<Integer, Item>();
 	}
-	
+
 	public void setRandomGenerator(RandomGenerator randomGenerator) {
 		this.randomGenerator = (RandomGeneratorStub) randomGenerator;
 	}
 
 	/**
 	 * <h3>Obtener nombre personaje</h3>
+	 * 
 	 * @return nombre personaje
 	 */
 	public String getNombre() {
 		return nombre;
-	} 								
+	}
 
 	/**
 	 * <h3>Setear nombre personaje</h3>
-	 * @param nombre personaje
+	 * 
+	 * @param nombre
+	 *            personaje
 	 */
 	public void setNombre(final String nombre) {
 		this.nombre = nombre;
 	}
 
 	/**
-	   * <h3>Método getSalud</h3>
-	   * @return int salud
-	   */ 
+	 * <h3>Método getSalud</h3>
+	 * 
+	 * @return int salud
+	 */
 	public int getSalud() {
 		return salud;
 	}
 
 	/**
-   * <h3>Método despuesDeTurno</h3>
-   */
-	public void despuesDeTurno() { }
+	 * <h3>Método despuesDeTurno</h3>
+	 */
+	public void despuesDeTurno() {
+	}
+
 	/**
-   * <h3>Método getFuerza</h3>
-   * @return int fuerza
-   */
+	 * <h3>Método getFuerza</h3>
+	 * 
+	 * @return int fuerza
+	 */
 	public int getFuerza() {
 		return fuerza;
 	}
 
 	/**
-   * <h3>Método getDefensa</h3>
-   * @return int defensa
-   */
+	 * <h3>Método getDefensa</h3>
+	 * 
+	 * @return int defensa
+	 */
 	public int getDefensa() {
 		return defensa;
 	}
+
 	/**
 	 * <h3>Método mejorarDefensa</h3>
-	 * <p> Aumenta el nivel de defensa del personaje </p>
-	 * @param aumento de nivel de defensa del personaje
+	 * <p>
+	 * Aumenta el nivel de defensa del personaje
+	 * </p>
+	 * 
+	 * @param aumento
+	 *            de nivel de defensa del personaje
 	 */
 	public void mejorarDefensa(final int defensa) {
 		this.defensa += defensa;
 	}
+
 	/**
 	 * <h3>Método perderDefensa</h3>
-	 * <p>Deja al personaje sin defensas
+	 * <p>
+	 * Deja al personaje sin defensas
 	 */
-	public void perderDefensa() { 
+	public void perderDefensa() {
 		this.defensa = 0;
 	}
-	
-	 /**
-   * <h3>Método estaVivo</h3>
-   * @return boolean
-   */
+
+	/**
+	 * <h3>Método estaVivo</h3>
+	 * 
+	 * @return boolean
+	 */
 	public boolean estaVivo() {
 		return salud > 0;
 	}
+
 	/**
-   * <h3>Método getNivel</h3>
-   * @return nivel
-   */
+	 * <h3>Método getNivel</h3>
+	 * 
+	 * @return nivel
+	 */
 	public int getNivel() {
 		return nivel;
 	}
-	
+
 	public void addItemInventario(Item item) {
-		// Si ya tengo un item de ese tipo lo tengo que sacar
-		Item aux = this.inventario.get(item.getIdTipoItem());
-		
-		if(aux != null) {
-			this.removeItemInventario(aux);
-		}
-		
 		this.inventario.put(item.getIdTipoItem(), item);
-		this.incrementarAtributos(item);
 	}
-	
-	public void removeItemInventario(Item item) {
-		this.inventario.remove(item.getIdTipoItem());
-		this.decrementarAtributos(item);
-	}
-	
+
 	public void incrementarAtributos(Item item) {
 		this.fuerza = item.incrementar(this.fuerza, AtributoModificable.FUERZA);
 		this.salud = item.incrementar(this.salud, AtributoModificable.SALUD);
 	}
-	
-	public void decrementarAtributos(Item item) {
-		this.fuerza = item.decrementar(this.fuerza, AtributoModificable.FUERZA);
-		this.salud = item.decrementar(this.salud, AtributoModificable.SALUD);		
+
+	public void aplicarEfectoItems() {
+		for (Item item : inventario.values()) {
+			this.incrementarAtributos(item);
+		}
 	}
-	
+
 }

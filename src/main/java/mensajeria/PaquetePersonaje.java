@@ -1,9 +1,12 @@
 package mensajeria;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import dominio.Item;
 
@@ -23,7 +26,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	private int nivel;
 	private int experiencia;
 	private boolean ganoBatalla;
-	private List<Item> inventario = new LinkedList<Item>();
+	private Map<Integer, Item> inventario = new HashMap<Integer, Item>();
 
 	public PaquetePersonaje() {
 		estado = 0; // Estado.estadoOffline;
@@ -148,13 +151,10 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	}
 
 	public void agregarItem(Item item) {
-		this.inventario.add(item);
+		this.inventario.put(item.getIdTipoItem(), item);
 	}
 	
-	public List<Item> getInventario() {
-//		List<Item> copia = new LinkedList<Item>();
-//		Collections.copy(this.inventario, copia);
-//		return copia;
-	  return this.inventario;
+	public Collection<Item> getInventario() {
+	  return this.inventario.values();
 	}
 }
