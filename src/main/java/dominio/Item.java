@@ -70,7 +70,6 @@ public class Item {
 	
 	public int incrementar(int valor, int atributo ) {
 		ModificadorItem aux = this.modificadores.get(atributo);
-		
 		if( aux != null ){
 			return aux.incrementar(valor);
 		}
@@ -79,7 +78,6 @@ public class Item {
 	
 	public int decrementar(int valor, int atributo) {
 		ModificadorItem aux = this.modificadores.get(atributo);
-		
 		if( aux != null ){
 			return aux.decrementar(valor);
 		}
