@@ -56,6 +56,14 @@ public class Item {
 		return foto;
 	}
 	
+  public String getDescripcionItem() {
+    String descripcion = "Fuerza " + getFuerzaRequerida() + 
+        ", Destreza " + getDestrezaRequerida() + 
+        ", Inteligencia " + getInteligenciaRequerida();
+    
+    return descripcion;
+  }
+	
 	public void addModificador(ModificadorItem modificador) {
 		this.modificadores.put(modificador.getAtributoModificable(), modificador);
 	}
