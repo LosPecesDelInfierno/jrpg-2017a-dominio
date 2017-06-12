@@ -11,7 +11,21 @@ sourceCompatibility = 1.7
 version = '0.1'
 test.ignoreFailures = true
 
-defaultTasks 'clean', 'compileJava', 'test', 'checkstyleMain', 'pmd', 'findbugsMain', 'jacocoTestReport'
+defaultTasks 'clean', 'compileJava', 'test', 'fatJar' , 'checkstyleMain', 'pmd', 'findbugsMain', 'jacocoTestReport'
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main/resources'
+            srcDirs 'src/main/java'
+        }
+        resources {
+            srcDirs 'recursos'
+            
+        }
+    }
+ }
+
 
 repositories {
 	mavenCentral()
@@ -33,14 +47,23 @@ dependencies {
 	}
 	dependencies {
 		classpath group: 'net.saliman', name: 'gradle-cobertura-plugin', version: '1.1.0'
+		
 	}
 }*/
 
 // Tareas
 
+test {
+    SecurityManager manager = System.getSecurityManager();
+    if (manager == null) {
+        println("there is no security manager!");
+    }
+}
+
 checkstyle {
 	configFile = new File(rootDir, "src/test/resources/sun_checks.xml")
 	ignoreFailures = true
+	toolVersion "5.9"
 }
 
 /*cobertura {
@@ -79,6 +102,7 @@ task pmd (dependsOn: compileJava) << {
         }
     }
 }
+
 task fatJar(type: Jar) {
 	manifest { 
     	attributes "Main-Class": "frames.MenuInicio"
