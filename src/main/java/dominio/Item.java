@@ -74,7 +74,7 @@ public class Item {
 		if( aux != null ){
 			return aux.incrementar(valor);
 		}
-		return valor;
+		return 0;
 	}
 
 	@Override
@@ -98,6 +98,4 @@ public class Item {
 			return false;
 		return true;
 	}
-	
-	
 }

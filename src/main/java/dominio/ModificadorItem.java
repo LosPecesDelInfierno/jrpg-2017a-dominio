@@ -31,9 +31,9 @@ public class ModificadorItem {
 	
 	public int incrementar(int valorInicial) {
 		if(this.esPorcentaje) {
-			return valorInicial + (valorInicial * this.valor / 100);
+			return (valorInicial * this.valor / 100);
 		}
-		return valorInicial + this.valor;
+		return this.valor;
 	}
 	
 	public int decrementar(int valorInicial) {
