@@ -79,6 +79,21 @@ task pmd (dependsOn: compileJava) << {
         }
     }
 }
+task fatJar(type: Jar) {
+	manifest { 
+    	attributes "Main-Class": "frames.MenuInicio"
+  	}
+
+    baseName = 'jrpg-dominio'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    from('src/main/java/frames') {
+    	include '*.png'
+    	include '*.jpg'
+    	into 'frames'
+  	}
+ 	
+    with jar
+}
 
 findbugs {
     ignoreFailures = true
