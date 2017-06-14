@@ -13,6 +13,7 @@ import dominio.Item;
 public class PaquetePersonaje extends Paquete implements Serializable, Cloneable {
 
 	private int id;
+	private String idUsuario;
 	private int idMapa;
 	private int estado;
 	private String casta;
@@ -142,6 +143,14 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	
 	public void setGanoBatalla(boolean val) {
 		this.ganoBatalla = val;
+	}
+	
+	public String getUsuario() {
+		return this.idUsuario;
+	}
+	
+	public void setUsuario(String usuario) {
+		this.idUsuario = usuario;
 	}
 
 	public Object clone() {

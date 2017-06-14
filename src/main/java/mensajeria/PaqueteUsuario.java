@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 
-	private int idPj;
 	private String username;
 	private String password;
 	private boolean inicioSesion;
@@ -13,19 +12,10 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 		
 	}
 
-	public PaqueteUsuario(int pj, String user, String pw){
-		idPj = pj;
+	public PaqueteUsuario(String user, String pw){
 		username = user;
 		password = pw;
 		inicioSesion = false;
-	}
-	
-	public int getIdPj() {
-		return idPj;
-	}
-
-	public void setIdPj(int idPj) {
-		this.idPj = idPj;
 	}
 
 	public String getUsername() {
