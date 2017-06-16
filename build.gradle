@@ -38,9 +38,6 @@ dependencies {
 
 // Tareas
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
-}
 checkstyle {
 	configFile = new File(rootDir, "src/test/resources/sun_checks.xml")
 	ignoreFailures = true
