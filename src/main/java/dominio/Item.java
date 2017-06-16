@@ -1,9 +1,7 @@
 package dominio;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 
 public class Item {
 	private int id;
