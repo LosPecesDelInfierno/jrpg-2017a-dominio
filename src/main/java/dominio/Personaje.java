@@ -14,7 +14,7 @@ import mensajeria.PaqueteAtacar;
  */
 public abstract class Personaje extends SuperPersonaje implements Peleable, Serializable {
 
-  protected int energia; // base
+  protected int energia;
   protected int ataque; // depende de la fuerza
   protected int magia; // depende de la inteligencia
   protected String nombreRaza;
@@ -223,7 +223,9 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
   public void setBonus(int bonusSalud, int bonusEnergia, int bonusFuerza, int bonusDestreza,
       int bonusInteligencia) {
+    this.salud += bonusSalud;
     this.bonusSalud = bonusSalud;
+    this.energia += bonusEnergia;
     this.bonusEnergia = bonusEnergia;
     this.bonusFuerza = bonusFuerza;
     this.bonusDestreza = bonusDestreza;
@@ -278,7 +280,11 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
   }
 
   public int getEnergiaBase() {
-    return energia;
+    return energiaTope;
+  }
+  
+  public int getSaludBase() {
+    return saludTope;
   }
 
   public int getDestrezaBase() {

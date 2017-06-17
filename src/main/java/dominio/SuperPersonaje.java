@@ -5,9 +5,9 @@ import java.util.Map;
 
 public abstract class SuperPersonaje {
 
-	protected int salud; //base
+	protected int salud;
 	protected String nombre;
-	protected int fuerza; //base
+	protected int fuerza;
 	protected int defensa;
 	protected int bonusFuerza;
 	protected int bonusSalud;
@@ -49,10 +49,6 @@ public abstract class SuperPersonaje {
 	 */
 	public void setNombre(final String nombre) {
 		this.nombre = nombre;
-	}
-
-	public int getSaludBase() {
-	  return salud;
 	}
 	
 	public int getFuerzaBase() {
