@@ -22,10 +22,6 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	protected int destreza;
 	protected int inteligencia;
 	protected Casta casta;
-
-	protected int bonusInteligencia;
-	protected int bonusEnergia;
-	protected int bonusDestreza;
 	
 	
 	protected int x;
@@ -216,7 +212,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int destreza
 	 */
 	public int getDestreza() {
-		return destreza + bonusDestreza;
+		return destreza;
 	}
 
 	/**
@@ -224,7 +220,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int inteligencia
 	 */
 	public int getInteligencia() {
-		return inteligencia + bonusInteligencia;
+		return inteligencia;
 	}
 
 	/**
@@ -236,7 +232,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	}
 
 	/**
-	 * <h3>Metoodo getExperiencia</h3>
+	 * <h3>Metodo getExperiencia</h3>
 	 * @return int experiencia
 	 */
 	public int getExperiencia() {
@@ -256,7 +252,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int saludTope
 	 */
 	public int getSaludTope() {
-		return saludTope + bonusSalud;
+		return saludTope;
 	}
 
 	/**
@@ -264,7 +260,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int energiaTope
 	 */
 	public int getEnergiaTope() {
-		return energiaTope + bonusEnergia;
+		return energiaTope;
 	}
 
 /**
@@ -643,26 +639,4 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		this.energia = paquete.getNuevaEnergiaPersonaje();
 	}
 	
-	@Override
-	protected void reiniciarBonus() {
-		super.reiniciarBonus();
-		this.bonusInteligencia = 0;
-		this.bonusDestreza = 0;
-		this.bonusEnergia = 0;
-	}
-
-	@Override
-	public void incrementarAtributos(Item item) {
-		super.incrementarAtributos(item);
-		this.bonusInteligencia += item.incrementar(this.inteligencia, AtributoModificable.INTELIGENCIA);
-		this.bonusDestreza += item.incrementar(this.destreza, AtributoModificable.DESTREZA);
-		this.bonusEnergia += item.incrementar(this.energia, AtributoModificable.ENERGIA);
-	}
-	
-	@Override
-	public boolean puedeUsarItem(Item item) {
-		if(item.getFuerzaRequerida() <= this.getFuerza() && item.getDestrezaRequerida() <= this.getDestreza() && item.getInteligenciaRequerida() <= this.getInteligencia())
-			return true;
-		return false;
-	}
 }

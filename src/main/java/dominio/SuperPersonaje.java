@@ -11,9 +11,6 @@ public abstract class SuperPersonaje {
 	protected int defensa;
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
-	protected Map<Integer, Item> inventario;
-	protected int bonusFuerza;
-	protected int bonusSalud;
 	
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
@@ -27,7 +24,6 @@ public abstract class SuperPersonaje {
 		this.nombre = nombre;
 		this.nivel = nivel;
 		this.randomGenerator = new MyRandom();
-		this.inventario = new HashMap<Integer, Item>();
 	}
 
 	public void setRandomGenerator(RandomGenerator randomGenerator) {
@@ -74,7 +70,7 @@ public abstract class SuperPersonaje {
 	 * @return int fuerza
 	 */
 	public int getFuerza() {
-		return fuerza + bonusFuerza;
+		return fuerza;
 	}
 
 	/**
@@ -124,57 +120,6 @@ public abstract class SuperPersonaje {
 	 */
 	public int getNivel() {
 		return nivel;
-	}
-
-	/**
-	 * <h3>metodo addItemInventario</h3>
-	 * <p> Metodo para agregar un item a un personaje</p>
-	 * @param paquete
-	 */
-	public void addItemInventario(Item item) {
-		if(this.puedeUsarItem(item)) {
-		  this.inventario.put(item.getIdTipoItem(), item);
-		  recalcularBonusItems();
-		}
-	}
-	
-	public boolean puedeUsarItem(Item item) {
-		if(item.getFuerzaRequerida() <= this.getFuerza())
-			return true;
-		return false;
-	}
-	
-	/**
-	 * <h3>metodo recalcularBonusItems</h3>
-	 * 
-	 * @param paquete
-	 */
-	private void recalcularBonusItems() {
-		reiniciarBonus();
-		for (Item item : inventario.values()) {
-			this.incrementarAtributos(item);
-		}
-	}
-	
-	/**
-	 * <h3>metodo reiniciarBonus</h3>
-	 * 
-	 * @param paquete
-	 */
-	protected void reiniciarBonus() {
-		this.bonusFuerza = 0;
-		this.bonusSalud = 0;
-	}
-	
-	/**
-	 * <h3>Metodo incrementar Atributos</h3>
-	 * <p> Metodo para incrementar los atributos de un personaje
-	 * segun los efectos de los Items que este posea</p>
-	 * @param paquete
-	 */
-	public void incrementarAtributos(Item item) {
-		this.bonusFuerza += item.incrementar(this.fuerza, AtributoModificable.FUERZA);
-		this.bonusSalud += item.incrementar(this.salud, AtributoModificable.SALUD);
 	}
 
 }

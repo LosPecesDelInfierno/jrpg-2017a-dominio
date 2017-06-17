@@ -26,7 +26,7 @@ public class TestItem {
 		ModificadorItem fuerza = new ModificadorItem(AtributoModificable.FUERZA, 10, false);
 		item.addModificador(fuerza);
 		Assert.assertTrue(Integer.valueOf(25).equals(Integer.valueOf(h.getFuerza())));
-		h.addItemInventario(item);
+//		h.addItemInventario(item);
 		Assert.assertTrue(Integer.valueOf(35).equals(Integer.valueOf(h.getFuerza())));
 	}
 	
@@ -35,7 +35,7 @@ public class TestItem {
 		ModificadorItem inteligencia = new ModificadorItem(AtributoModificable.INTELIGENCIA, 20, true);
 		item.addModificador(inteligencia);
 		Assert.assertTrue(Integer.valueOf(30).equals(Integer.valueOf(h.getInteligencia())));
-		h.addItemInventario(item);
+//		h.addItemInventario(item);
 		Assert.assertTrue(Integer.valueOf(36).equals(Integer.valueOf(h.getInteligencia())));
 	}
 	
@@ -54,7 +54,7 @@ public class TestItem {
 		Assert.assertTrue(Integer.valueOf(100).equals(Integer.valueOf(h.getSalud())));
 		Assert.assertTrue(Integer.valueOf(100).equals(Integer.valueOf(h.getEnergia())));
 		Assert.assertTrue(Integer.valueOf(25).equals(Integer.valueOf(h.getFuerza())));
-		h.addItemInventario(item);
+//		h.addItemInventario(item);
 		Assert.assertTrue(Integer.valueOf(34).equals(Integer.valueOf(h.getInteligencia())));
 		Assert.assertTrue(Integer.valueOf(110).equals(Integer.valueOf(h.getSalud())));
 		Assert.assertTrue(Integer.valueOf(105).equals(Integer.valueOf(h.getEnergia())));
@@ -75,10 +75,10 @@ public class TestItem {
 		item3.addModificador(salud3);
 		item4.addModificador(salud4);
 		Assert.assertTrue(Integer.valueOf(100).equals(Integer.valueOf(h.getSalud())));
-		h.addItemInventario(item);
-		h.addItemInventario(item2);
-		h.addItemInventario(item3);
-		h.addItemInventario(item4);
+//		h.addItemInventario(item);
+//		h.addItemInventario(item2);
+//		h.addItemInventario(item3);
+//		h.addItemInventario(item4);
 		System.out.println(h.getSalud());
 		Assert.assertTrue(Integer.valueOf(141).equals(Integer.valueOf(h.getSalud())));
 	}
@@ -89,7 +89,7 @@ public class TestItem {
 		ModificadorItem salud = new ModificadorItem(AtributoModificable.SALUD, 10, false);
 		item.addModificador(salud);
 		Assert.assertTrue(Integer.valueOf(100).equals(Integer.valueOf(g.getSalud())));
-		g.addItemInventario(item);
+//		g.addItemInventario(item);
 		Assert.assertTrue(Integer.valueOf(100).equals(Integer.valueOf(g.getSalud())));
 		
 	}

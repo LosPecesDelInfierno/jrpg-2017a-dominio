@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import dominio.AtributoModificable;
 import dominio.Item;
 
 public class PaquetePersonaje extends Paquete implements Serializable, Cloneable {
@@ -28,6 +29,12 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	private int experiencia;
 	private boolean ganoBatalla;
 	private Map<Integer, Item> inventario = new HashMap<Integer, Item>();
+	
+	private int bonusFuerza;
+  private int bonusSalud;
+	private int bonusInteligencia;
+	private int bonusEnergia;
+  private int bonusDestreza;
 
 	public PaquetePersonaje() {
 		estado = 0; // Estado.estadoOffline;
@@ -98,7 +105,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	}
 
 	public int getSaludTope() {
-		return saludTope;
+		return saludTope + bonusSalud;
 	}
 
 	public void setSaludTope(int saludTope) {
@@ -106,7 +113,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	}
 
 	public int getEnergiaTope() {
-		return energiaTope;
+		return energiaTope + bonusEnergia;
 	}
 
 	public void setEnergiaTope(int energiaTope) {
@@ -114,7 +121,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	}
 
 	public int getFuerza() {
-		return fuerza;
+		return fuerza + bonusFuerza;
 	}
 
 	public void setFuerza(int fuerza) {
@@ -126,16 +133,36 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 	}
 
 	public void setDestreza(int destreza) {
-		this.destreza = destreza;
+		this.destreza = destreza  + bonusDestreza;
 	}
 
 	public int getInteligencia() {
-		return inteligencia;
+		return inteligencia + bonusInteligencia;
 	}
 
 	public void setInteligencia(int inteligencia) {
 		this.inteligencia = inteligencia;
 	}
+	
+	public int getSaludBase() {
+	  return this.saludTope;
+	}
+	
+	public int getEnergiaBase() {
+    return this.energiaTope;
+  }
+	
+	public int getFuerzaBase() {
+    return this.fuerza;
+  }
+	
+	public int getDestrezaBase() {
+    return this.destreza;
+  }
+	
+	public int getInteligenciaBase() {
+    return this.inteligencia;
+  }
 	
 	public boolean ganoBatalla() {
 		return this.ganoBatalla;
@@ -158,9 +185,40 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
 		obj = super.clone();
 		return obj;
 	}
+	
+	public void equipar(List<Item> items) {
+	  for (Item item : items) {
+      this.agregarItem(item);
+    }
+	  calcularBonusItems();
+	}
 
 	public void agregarItem(Item item) {
 		this.inventario.put(item.getIdTipoItem(), item);
+		calcularBonusItems();
+	}
+	
+	private void calcularBonusItems() {
+	  reiniciarBonusItems();
+    for (Item item : inventario.values()) {
+      this.incrementarAtributos(item);
+    }
+	}
+	
+	private void incrementarAtributos(Item item) {
+    this.bonusFuerza += item.incrementar(this.fuerza, AtributoModificable.FUERZA);
+    this.bonusSalud += item.incrementar(this.saludTope, AtributoModificable.SALUD);
+    this.bonusInteligencia += item.incrementar(this.inteligencia, AtributoModificable.INTELIGENCIA);
+    this.bonusDestreza += item.incrementar(this.destreza, AtributoModificable.DESTREZA);
+    this.bonusEnergia += item.incrementar(this.energiaTope, AtributoModificable.ENERGIA);
+  }
+	
+	private void reiniciarBonusItems() {
+	  this.bonusFuerza = 0;
+	  this.bonusSalud = 0;
+	  this.bonusInteligencia = 0;
+    this.bonusDestreza = 0;
+    this.bonusEnergia = 0;
 	}
 	
 	public Collection<Item> getInventario() {
