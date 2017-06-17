@@ -51,13 +51,21 @@ public abstract class SuperPersonaje {
 		this.nombre = nombre;
 	}
 
+	public int getSaludBase() {
+	  return salud;
+	}
+	
+	public int getFuerzaBase() {
+	  return fuerza;
+	}
+	
 	/**
 	 * <h3>Método getSalud</h3>
 	 * 
 	 * @return int salud
 	 */
 	public int getSalud() {
-		return salud + bonusSalud;
+		return salud;
 	}
 
 	/**
