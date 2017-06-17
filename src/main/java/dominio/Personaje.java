@@ -247,7 +247,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
    * @return int energia
    */
   public int getEnergia() {
-    return energia + bonusEnergia;
+    return energia;
   }
 
   /**
