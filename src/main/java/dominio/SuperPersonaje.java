@@ -65,7 +65,7 @@ public abstract class SuperPersonaje {
 	 * @return int salud
 	 */
 	public int getSalud() {
-		return salud;
+		return salud + bonusSalud;
 	}
 
 	/**
