@@ -208,7 +208,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @return int energia
 	 */
 	public int getEnergia() {
-		return energia + bonusEnergia;
+		return energia;
 	}
 
 	/**
@@ -654,9 +654,9 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	@Override
 	public void incrementarAtributos(Item item) {
 		super.incrementarAtributos(item);
-		this.bonusInteligencia += item.incrementar(getInteligencia(), AtributoModificable.INTELIGENCIA);
-		this.bonusDestreza += item.incrementar(getDestreza(), AtributoModificable.DESTREZA);
-		this.bonusEnergia += item.incrementar(getEnergia(), AtributoModificable.ENERGIA);
+		this.bonusInteligencia += item.incrementar(this.inteligencia, AtributoModificable.INTELIGENCIA);
+		this.bonusDestreza += item.incrementar(this.destreza, AtributoModificable.DESTREZA);
+		this.bonusEnergia += item.incrementar(this.energia, AtributoModificable.ENERGIA);
 	}
 	
 	@Override

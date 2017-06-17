@@ -59,7 +59,7 @@ public abstract class SuperPersonaje {
 	 * @return int salud
 	 */
 	public int getSalud() {
-		return salud + bonusSalud;
+		return salud;
 	}
 
 	/**
@@ -132,9 +132,10 @@ public abstract class SuperPersonaje {
 	 * @param paquete
 	 */
 	public void addItemInventario(Item item) {
-		this.inventario.put(item.getIdTipoItem(), item);
-		if(this.puedeUsarItem(item))
-			recalcularBonusItems();
+		if(this.puedeUsarItem(item)) {
+		  this.inventario.put(item.getIdTipoItem(), item);
+		  recalcularBonusItems();
+		}
 	}
 	
 	public boolean puedeUsarItem(Item item) {
@@ -166,14 +167,14 @@ public abstract class SuperPersonaje {
 	}
 	
 	/**
-	 * <h3>metodo incrementarAtributos</h3>
+	 * <h3>Metodo incrementar Atributos</h3>
 	 * <p> Metodo para incrementar los atributos de un personaje
 	 * segun los efectos de los Items que este posea</p>
 	 * @param paquete
 	 */
 	public void incrementarAtributos(Item item) {
-		this.bonusFuerza += item.incrementar(getFuerza(), AtributoModificable.FUERZA);
-		this.bonusSalud += item.incrementar(getSalud(), AtributoModificable.SALUD);
+		this.bonusFuerza += item.incrementar(this.fuerza, AtributoModificable.FUERZA);
+		this.bonusSalud += item.incrementar(this.salud, AtributoModificable.SALUD);
 	}
 
 }
