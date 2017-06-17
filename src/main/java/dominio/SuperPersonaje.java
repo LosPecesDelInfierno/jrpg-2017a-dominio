@@ -5,10 +5,12 @@ import java.util.Map;
 
 public abstract class SuperPersonaje {
 
-	protected int salud;
+	protected int salud; //base
 	protected String nombre;
-	protected int fuerza;
+	protected int fuerza; //base
 	protected int defensa;
+	protected int bonusFuerza;
+	protected int bonusSalud;
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
 	
@@ -55,7 +57,7 @@ public abstract class SuperPersonaje {
 	 * @return int salud
 	 */
 	public int getSalud() {
-		return salud;
+		return salud + bonusSalud;
 	}
 
 	/**
@@ -70,7 +72,7 @@ public abstract class SuperPersonaje {
 	 * @return int fuerza
 	 */
 	public int getFuerza() {
-		return fuerza;
+		return fuerza + bonusFuerza;
 	}
 
 	/**
