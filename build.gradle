@@ -7,7 +7,7 @@ apply plugin: 'jacoco'
 
 // Configuración
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 version = '0.1'
 test.ignoreFailures = true
 
@@ -94,6 +94,7 @@ task fatJar(type: Jar) {
 
 findbugs {
     ignoreFailures = true
+	toolVersion "3.0.1"
 }
 
 
