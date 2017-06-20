@@ -244,4 +244,8 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
   public Collection<Item> getInventario() {
     return this.inventario.values();
   }
+  
+  public Item getItem(int tipo) {
+	  return inventario.get(tipo);
+  }
 }
