@@ -16,4 +16,5 @@ public class Comando {
 	public static final int ACTUALIZARPERSONAJE = 11;
 	public static final int MENSAJE = 12;
 	public static final int COMERCIO = 13;
+	public static final int INTERCAMBIAR = 14;
 }
