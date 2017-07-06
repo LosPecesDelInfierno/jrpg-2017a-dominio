@@ -12,20 +12,16 @@ public class PaqueteIntercambio extends Paquete implements Serializable, Cloneab
 	private int idEnemigo;
 	private boolean[] objetosPersonaje = { false, false, false, false, false, false, false, false };
 	private boolean[] objetosEnemigo = { false, false, false, false, false, false, false, false };
-	private List<String> listaPersonaje;
-	private List<String> listaEnemigo;
+	private List<String> listaPersonaje = new ArrayList<>();
+	private List<String> listaEnemigo = new ArrayList<>();
 
 	public PaqueteIntercambio() {
 		setComando(Comando.INTERCAMBIAR);
-		listaPersonaje = new ArrayList<>();
-		listaEnemigo = new ArrayList<>();
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
-
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -68,18 +64,27 @@ public class PaqueteIntercambio extends Paquete implements Serializable, Cloneab
 	}
 	
 	public void addDescripcionEnemigo(String desc) {
-		listaEnemigo.add(desc);
+		listaEnemigo.add(new String(desc));
 	}
 	
+	public void setListaPersonaje(List<String> lista) {
+		listaPersonaje.addAll(lista);
+	}
+	
+	public void setListaEnemigo(List<String> lista) {
+		listaEnemigo.addAll(lista);
+	}
+
 	public List<String> getListaPersonaje() {
-		List<String> aux = new ArrayList<String>();
-		Collections.copy(aux, listaPersonaje);
-		return aux;
+		return listaPersonaje;
 	}
 	
 	public List<String> getListaEnemigo() {
-		List<String> aux = new ArrayList<String>();
-		Collections.copy(aux, listaEnemigo);
-		return aux;
+		return listaEnemigo;
+	}
+	
+	public void reiniciarListas() {
+		listaEnemigo.clear();
+		listaPersonaje.clear();
 	}
 }
