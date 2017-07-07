@@ -36,7 +36,7 @@ public class PaquetePersonaje extends Paquete implements Serializable, Cloneable
   private int bonusEnergia;
   private int bonusDestreza;
 
-  public PaquetePersonaje() {
+	public PaquetePersonaje() {
     estado = 0; // Estado.estadoOffline;
   }
 

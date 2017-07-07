@@ -10,8 +10,9 @@ public class PaqueteAtacar extends Paquete implements Serializable, Cloneable {
 	private int nuevaEnergiaPersonaje;
 	private int nuevaSaludEnemigo;
 	private int nuevaEnergiaEnemigo;
-	
-	public PaqueteAtacar(int id, int idEnemigo, int nuevaSalud, int nuevaEnergia, int nuevaSaludEnemigo, int nuevaEnergiaEnemigo) {
+
+	public PaqueteAtacar(int id, int idEnemigo, int nuevaSalud, int nuevaEnergia, int nuevaSaludEnemigo,
+			int nuevaEnergiaEnemigo) {
 		setComando(Comando.ATACAR);
 		this.id = id;
 		this.idEnemigo = idEnemigo;
@@ -36,7 +37,7 @@ public class PaqueteAtacar extends Paquete implements Serializable, Cloneable {
 	public void setIdEnemigo(int idEnemigo) {
 		this.idEnemigo = idEnemigo;
 	}
-	
+
 	public int getNuevaSaludPersonaje() {
 		return nuevaSaludPersonaje;
 	}
@@ -68,7 +69,5 @@ public class PaqueteAtacar extends Paquete implements Serializable, Cloneable {
 	public void setNuevaEnergiaEnemigo(int nuevaEnergiaEnemigo) {
 		this.nuevaEnergiaEnemigo = nuevaEnergiaEnemigo;
 	}
-
-
 
 }

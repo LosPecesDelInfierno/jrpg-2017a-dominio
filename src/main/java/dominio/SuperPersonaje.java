@@ -14,6 +14,7 @@ public abstract class SuperPersonaje {
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
 	
+	
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
 	 * 

@@ -7,12 +7,12 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	private String username;
 	private String password;
 	private boolean inicioSesion;
-	
-	public PaqueteUsuario(){
-		
+
+	public PaqueteUsuario() {
+
 	}
 
-	public PaqueteUsuario(String user, String pw){
+	public PaqueteUsuario(String user, String pw) {
 		username = user;
 		password = pw;
 		inicioSesion = false;
@@ -33,7 +33,7 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public boolean isInicioSesion() {
 		return inicioSesion;
 	}
@@ -41,12 +41,11 @@ public class PaqueteUsuario extends Paquete implements Serializable, Cloneable {
 	public void setInicioSesion(boolean inicioSesion) {
 		this.inicioSesion = inicioSesion;
 	}
-	
+
 	public Object clone() {
 		Object obj = null;
 		obj = super.clone();
 		return obj;
 	}
-	
-	
+
 }

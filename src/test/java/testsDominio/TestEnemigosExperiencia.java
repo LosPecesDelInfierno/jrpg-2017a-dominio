@@ -36,7 +36,7 @@ public class TestEnemigosExperiencia {
 		Personaje.cargarTablaNivel();
 		Assert.assertTrue(h.getExperiencia() == 0);
 		Assert.assertTrue(h2.getExperiencia() == 0);
-	
+
 		while (h2.estaVivo()) {
 			h.atacar(h2);
 		}

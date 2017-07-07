@@ -14,8 +14,13 @@ public abstract class Casta implements Serializable {
 	protected double probabilidadEvitarDanio;
 	protected double danioCritico;
 	protected String nombreCasta;
-
+	
 	protected String[] habilidadesCasta;
+	
+	public static final int CANT_HABILIDADES = 3;
+	public static final int HABILIDAD_1 = 0;
+	public static final int HABILIDAD_2 = 1;
+	public static final int HABILIDAD_3 = 2;
 
 	/**
 	 * <h3>Constructor por defecto</h3>

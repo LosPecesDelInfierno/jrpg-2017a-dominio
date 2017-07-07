@@ -10,7 +10,7 @@ public class TestAtributos {
 	@Test
 	public void testIncrementarFuerza() {
 		Humano h = new Humano("Nicolas", new Guerrero(), 1);
-		
+
 		Assert.assertTrue(h.getAtaque() == 22);
 		h.asignarPuntosSkills(10, 0, 0);
 		Assert.assertTrue(h.getAtaque() > 22);

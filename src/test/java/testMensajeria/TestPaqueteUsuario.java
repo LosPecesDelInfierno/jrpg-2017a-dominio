@@ -16,7 +16,7 @@ public class TestPaqueteUsuario {
 		Assert.assertEquals("contraseña", p.getPassword());
 		Assert.assertFalse(p.isInicioSesion());
 	}
-	
+
 	@Test
 	public void testSetters() {
 		pu.setComando(2);
@@ -25,7 +25,7 @@ public class TestPaqueteUsuario {
 		pu.setMensaje("Hola");
 		pu.setPassword("passwordPrueba");
 		pu.setUsername("UsuarioPrueba");
-		
+
 		Assert.assertEquals(2, pu.getComando());
 		Assert.assertTrue(pu.isInicioSesion());
 		Assert.assertEquals("192.231.111", pu.getIp());
@@ -33,6 +33,5 @@ public class TestPaqueteUsuario {
 		Assert.assertEquals("UsuarioPrueba", pu.getUsername());
 		Assert.assertEquals("passwordPrueba", pu.getPassword());
 
-		
 	}
 }

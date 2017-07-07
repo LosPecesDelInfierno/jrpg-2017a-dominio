@@ -16,7 +16,7 @@ public class TestOrco {
 	public void testGolpeDefensivo() {
 		Humano h = new Humano("Nicolas", new Guerrero(), 1);
 		Orco o = new Orco("Hernan", new Guerrero(), 1);
-		
+
 		Assert.assertEquals(105, h.getSalud());
 		h.setRandomGenerator(new RandomGeneratorStub());
 		o.habilidadRaza1(h);
@@ -38,6 +38,6 @@ public class TestOrco {
 		h.setRandomGenerator(new RandomGeneratorStub());
 		Assert.assertTrue(o.habilidadRaza2(h));
 		Assert.assertEquals(5, h.getSalud());
-		
+
 	}
 }

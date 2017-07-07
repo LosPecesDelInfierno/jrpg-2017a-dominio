@@ -1,4 +1,5 @@
 package dominio;
+
 import java.util.Random;
 
 /**
@@ -9,6 +10,7 @@ import java.util.Random;
 public class MyRandom extends RandomGenerator {
 
 	private Random random;
+
 	/**
 	 * <h3>Costructor por defecto</h3>
 	 */
@@ -18,6 +20,7 @@ public class MyRandom extends RandomGenerator {
 
 	/**
 	 * Genera un double
+	 * 
 	 * @return Devuelve un double de valor aleatorio
 	 */
 	@Override
@@ -27,7 +30,10 @@ public class MyRandom extends RandomGenerator {
 
 	/**
 	 * Genera un nuevo int a partir del int recibido.
-	 * @param val Valor (int) en el que se basará para la creacion de un nuevo entero.
+	 * 
+	 * @param val
+	 *            Valor (int) en el que se basará para la creacion de un nuevo
+	 *            entero.
 	 * @return int de valor menor que val.
 	 */
 	@Override

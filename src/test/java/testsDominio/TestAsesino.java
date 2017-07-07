@@ -11,8 +11,9 @@ import dominio.RandomGeneratorStub;
 public class TestAsesino {
 
 	@Test
-	public void testRobar() { }
-	
+	public void testRobar() {
+	}
+
 	@Test
 	public void testCritico() {
 		Humano h = new Humano("Nicolas", new Asesino(), 1);

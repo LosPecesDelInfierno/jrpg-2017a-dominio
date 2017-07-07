@@ -3,13 +3,12 @@ package testMensajeria;
 import org.junit.Assert;
 import org.junit.Test;
 
-
 import mensajeria.Comando;
 import mensajeria.PaqueteAtacar;
 
 public class TestPaqueteAtacar {
 	PaqueteAtacar pa;
-	
+
 	@Test
 	public void testSeters() {
 		pa = new PaqueteAtacar(3, 2, 200, 89, 19, 13);
@@ -19,7 +18,6 @@ public class TestPaqueteAtacar {
 		Assert.assertEquals(89, pa.getNuevaEnergiaPersonaje());
 		Assert.assertEquals(19, pa.getNuevaSaludEnemigo());
 		Assert.assertEquals(13, pa.getNuevaEnergiaEnemigo());
-		
 
 		pa.setComando(Comando.ATACAR);
 		pa.setId(23);
@@ -30,7 +28,7 @@ public class TestPaqueteAtacar {
 		pa.setNuevaEnergiaPersonaje(200);
 		pa.setNuevaSaludEnemigo(120);
 		pa.setNuevaSaludPersonaje(230);
-		
+
 		Assert.assertEquals(Comando.ATACAR, pa.getComando());
 		Assert.assertEquals("192.111.200", pa.getIp());
 		Assert.assertEquals("mensajePrueba", pa.getMensaje());

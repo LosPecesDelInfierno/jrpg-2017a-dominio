@@ -31,7 +31,7 @@ public class PaqueteFinalizarComercio extends Paquete implements Serializable, C
 	public boolean aceptaIntercambio() {
 		return this.aceptado;
 	}
-	
+
 	public void aceptaIntercambio(boolean aceptado) {
 		this.aceptado = aceptado;
 	}

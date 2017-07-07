@@ -30,7 +30,7 @@ public class TestPersonaje {
 		Assert.assertTrue(Integer.valueOf(aux).equals(Integer.valueOf(105)));
 		aux = h3.getEnergia();
 		Assert.assertTrue(Integer.valueOf(aux).equals(Integer.valueOf(105)));
-		Assert.assertTrue(Integer.valueOf(h3.getFuerza()).equals(Integer.valueOf(10)));	
+		Assert.assertTrue(Integer.valueOf(h3.getFuerza()).equals(Integer.valueOf(10)));
 		Assert.assertTrue(Integer.valueOf(h3.getDestreza()).equals(Integer.valueOf(15)));
 		Assert.assertTrue(Integer.valueOf(h3.getInteligencia()).equals(Integer.valueOf(10)));
 	}
@@ -56,7 +56,7 @@ public class TestPersonaje {
 		Assert.assertTrue(Integer.valueOf(aux).equals(Integer.valueOf(100)));
 		aux = e3.getEnergia();
 		Assert.assertTrue(Integer.valueOf(aux).equals(Integer.valueOf(110)));
-		Assert.assertTrue(Integer.valueOf(e3.getFuerza()).equals(Integer.valueOf(10)));	
+		Assert.assertTrue(Integer.valueOf(e3.getFuerza()).equals(Integer.valueOf(10)));
 		Assert.assertTrue(Integer.valueOf(e3.getDestreza()).equals(Integer.valueOf(15)));
 		Assert.assertTrue(Integer.valueOf(e3.getInteligencia()).equals(Integer.valueOf(10)));
 	}
@@ -80,55 +80,61 @@ public class TestPersonaje {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
 		Assert.assertTrue(Integer.valueOf(o3.getSalud()).equals(Integer.valueOf(100)));
 		Assert.assertTrue(Integer.valueOf(o3.getEnergia()).equals(Integer.valueOf(110)));
-		Assert.assertTrue(Integer.valueOf(o3.getFuerza()).equals(Integer.valueOf(10)));	
+		Assert.assertTrue(Integer.valueOf(o3.getFuerza()).equals(Integer.valueOf(10)));
 		Assert.assertTrue(Integer.valueOf(o3.getDestreza()).equals(Integer.valueOf(15)));
 		Assert.assertTrue(Integer.valueOf(o3.getInteligencia()).equals(Integer.valueOf(10)));
 	}
+
 	@Test
-	public void testSetYGetNombreRaza(){
+	public void testSetYGetNombreRaza() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
 		o3.setNombreRaza("nombre");
-		assertEquals("nombre",o3.getNombreRaza());
+		assertEquals("nombre", o3.getNombreRaza());
 	}
+
 	@Test
-	public void testSetYGetNombre(){
+	public void testSetYGetNombre() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
 		o3.setNombre("nombre");
-		assertEquals("nombre",o3.getNombre());
+		assertEquals("nombre", o3.getNombre());
 	}
+
 	@Test
-	public void testSaludTope(){
+	public void testSaludTope() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
-		assertEquals(100,o3.getSaludTope());
+		assertEquals(100, o3.getSaludTope());
 	}
+
 	@Test
-	public void testSetEnergiaTope(){
+	public void testSetEnergiaTope() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
-		assertEquals(110,o3.getEnergiaTope());
+		assertEquals(110, o3.getEnergiaTope());
 	}
-	
+
 	@Test
-	public void testSetGetMagia(){
+	public void testSetGetMagia() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
 		o3.setMagia(19);
-		assertEquals(19,o3.getMagia());
+		assertEquals(19, o3.getMagia());
 	}
+
 	@Test
 	public void testReestablecerSaludYEnergia() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
 		o3.restablecerEnergia();
 		o3.restablecerSalud();
-		assertEquals(110,o3.getEnergia());
-		assertEquals(100,o3.getSalud());
+		assertEquals(110, o3.getEnergia());
+		assertEquals(100, o3.getSalud());
 	}
-	
+
 	@Test
 	public void testSerRobadoSalud() {
-		Orco o3 = new Orco("Hernan",5,100,10,10,10, new Asesino(),1,1,3);
+		Orco o3 = new Orco("Hernan", 5, 100, 10, 10, 10, new Asesino(), 1, 1, 3);
 		o3.perderDefensa();
 		assertEquals(5, o3.serRobadoSalud(50));
 		assertEquals(0, o3.serRobadoSalud(0));
 	}
+
 	@Test
 	public void testSerAtacado() {
 		Asesino casta = new Asesino();
@@ -136,13 +142,15 @@ public class TestPersonaje {
 		casta.setProbabilidadEvitarDanio(0.7);
 		assertEquals(0, o3.serAtacado(15));
 	}
+
 	@Test
 	public void testSerDesenergizado() {
-		Orco o3 = new Orco("Hernan",100,15,10,10,10, new Asesino(),1,1,3);
+		Orco o3 = new Orco("Hernan", 100, 15, 10, 10, 10, new Asesino(), 1, 1, 3);
 		assertEquals(0, o3.serDesenergizado(0));
 		o3.perderDefensa();
 		assertEquals(15, o3.serDesenergizado(50));
 	}
+
 	@Test
 	public void testCrearAlianza() {
 		Asesino casta = new Asesino();
@@ -150,6 +158,7 @@ public class TestPersonaje {
 		o3.crearAlianza("nombreAlianza");
 		assertEquals("nombreAlianza", o3.getClan().obtenerNombre());
 	}
+
 	@Test
 	public void testSalirDeAlianza() {
 		Asesino casta = new Asesino();
@@ -159,13 +168,14 @@ public class TestPersonaje {
 		o3.salirDeAlianza();
 		assertNull(o3.getClan());
 	}
+
 	@Test
 	public void testSerEnergizado() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
 		o3.serEnergizado(10);
 		assertEquals(110, o3.getEnergia());
 	}
-	
+
 	@Test
 	public void testSetBonus() {
 		Orco o3 = new Orco("Hernan", new Asesino(), 3);
@@ -176,10 +186,10 @@ public class TestPersonaje {
 		destreza = o3.getDestreza();
 		inteligencia = o3.getInteligencia();
 		o3.setBonus(2, 3, 1, 4, 2);
-		Assert.assertTrue(Integer.valueOf(o3.getSalud()).equals(Integer.valueOf(salud+2)));
-		Assert.assertTrue(Integer.valueOf(o3.getEnergia()).equals(Integer.valueOf(energia+3)));
-		Assert.assertTrue(Integer.valueOf(o3.getFuerza()).equals(Integer.valueOf(fuerza+1)));
-		Assert.assertTrue(Integer.valueOf(o3.getDestreza()).equals(Integer.valueOf(destreza+4)));
-		Assert.assertTrue(Integer.valueOf(o3.getInteligencia()).equals(Integer.valueOf(inteligencia+2)));
+		Assert.assertTrue(Integer.valueOf(o3.getSalud()).equals(Integer.valueOf(salud + 2)));
+		Assert.assertTrue(Integer.valueOf(o3.getEnergia()).equals(Integer.valueOf(energia + 3)));
+		Assert.assertTrue(Integer.valueOf(o3.getFuerza()).equals(Integer.valueOf(fuerza + 1)));
+		Assert.assertTrue(Integer.valueOf(o3.getDestreza()).equals(Integer.valueOf(destreza + 4)));
+		Assert.assertTrue(Integer.valueOf(o3.getInteligencia()).equals(Integer.valueOf(inteligencia + 2)));
 	}
 }

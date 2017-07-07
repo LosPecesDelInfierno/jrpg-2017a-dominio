@@ -7,15 +7,15 @@ public class PaqueteDePersonajes extends Paquete implements Serializable, Clonea
 
 	private Map<Integer, PaquetePersonaje> personajes;
 
-	public PaqueteDePersonajes(){
+	public PaqueteDePersonajes() {
 
 	}
-	
-	public PaqueteDePersonajes(Map<Integer, PaquetePersonaje> personajes){
+
+	public PaqueteDePersonajes(Map<Integer, PaquetePersonaje> personajes) {
 		this.personajes = personajes;
 	}
-	
-	public Map<Integer, PaquetePersonaje> getPersonajes(){
+
+	public Map<Integer, PaquetePersonaje> getPersonajes() {
 		return personajes;
 	}
 

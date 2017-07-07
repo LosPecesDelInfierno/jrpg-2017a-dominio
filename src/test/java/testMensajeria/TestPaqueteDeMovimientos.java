@@ -24,10 +24,9 @@ public class TestPaqueteDeMovimientos {
 		Map<Integer, PaqueteMovimiento> mapaReturn = new HashMap<>();
 		pm = new PaqueteDeMovimientos(mapa);
 		mapaReturn = pm.getPersonajes();
-		
+
 		Assert.assertEquals(mapaReturn.get(0).getIdPersonaje(), 23);
 		Assert.assertEquals(mapaReturn.get(1).getIdPersonaje(), 22);
-	
 
 	}
 	

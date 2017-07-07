@@ -15,20 +15,20 @@ public class TestPaquete {
 		Assert.assertEquals("192.129.399", p.getIp());
 		Assert.assertEquals(2, p.getComando());
 	}
-	
+
 	@Test
 	public void testConstructor2() {
 		Paquete p = new Paquete("mensaje", 2);
 		Assert.assertEquals("mensaje", p.getMensaje());
 		Assert.assertEquals(2, p.getComando());
 	}
-	
+
 	@Test
 	public void testConstructor3() {
 		Paquete p = new Paquete(6);
 		Assert.assertEquals(6, p.getComando());
 	}
-	
+
 	@Test
 	public void testComandos() {
 		Comando c = new Comando();

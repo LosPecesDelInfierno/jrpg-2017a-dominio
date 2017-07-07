@@ -8,14 +8,14 @@ import mensajeria.PaqueteBatalla;
 
 public class TestPaqueteBatalla {
 	PaqueteBatalla pb = new PaqueteBatalla();
-	
+
 	@Test
 	public void testTurno() {
 		Assert.assertFalse(pb.isMiTurno());
 		pb.setMiTurno(true);
 		Assert.assertTrue(pb.isMiTurno());
 	}
-	
+
 	@Test
 	public void Seters() {
 		Assert.assertEquals(Comando.BATALLA, pb.getComando());

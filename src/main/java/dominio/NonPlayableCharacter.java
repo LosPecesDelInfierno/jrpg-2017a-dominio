@@ -122,7 +122,7 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 
   @Override
   public void serCurado(int danioCausado) {
-    // TODO Auto-generated method stub
+		// TODO Auto-generated method stub
     
   }
 }

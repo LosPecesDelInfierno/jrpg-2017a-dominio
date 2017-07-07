@@ -21,7 +21,7 @@ public class TestAlianza {
 	private static LinkedList<Personaje> listaAux = new LinkedList<Personaje>();
 	private static Humano humano1;
 	private static Humano humano2;
-	
+
 	@Before
 	public void setUpBeforeClass() throws Exception {
 		alianzaPrueba = new Alianza("Alianza Probadora");
