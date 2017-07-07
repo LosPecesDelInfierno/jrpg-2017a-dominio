@@ -9,6 +9,7 @@ import dominio.AtributoModificable;
 import dominio.Humano;
 import dominio.Item;
 import dominio.ModificadorItem;
+import dominio.TipoItem;
 import mensajeria.PaquetePersonaje;
 
 
@@ -20,9 +21,40 @@ public class TestItem {
 	private PaquetePersonaje pp;
 	@Before
 	public void setear() {
-		item = new Item(1, "Espada", 4, 10, 10, 10, "Foto");
+		item = new Item(1, "Espada", TipoItem.ARMA, 10, 10, 10, "Foto");
 		h = new Humano("Nico", 100, 100, 25, 20, 30, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
 		pp = new PaquetePersonaje();
+	}
+	
+	@Test
+	public void Item() {
+		Item aux  = new Item();
+		Assert.assertFalse(aux.equals(item));
+		aux = item;
+		Assert.assertTrue(aux.equals(item));
+		
+		Assert.assertTrue(Integer.valueOf(item.getId()).equals(Integer.valueOf(1)));
+		Assert.assertEquals("Espada", item.getNombre());
+		Assert.assertTrue(Integer.valueOf(item.getIdTipoItem()).equals(Integer.valueOf(TipoItem.ARMA)));
+		Assert.assertTrue(Integer.valueOf(item.getFuerzaRequerida()).equals(Integer.valueOf(10)));
+		Assert.assertTrue(Integer.valueOf(item.getDestrezaRequerida()).equals(Integer.valueOf(10)));
+		Assert.assertTrue(Integer.valueOf(item.getInteligenciaRequerida()).equals(Integer.valueOf(10)));
+		Assert.assertEquals("Foto", item.getFoto());
+	}
+	
+	@Test
+	public void testDescripcion() {
+		ModificadorItem fuerza = new ModificadorItem(AtributoModificable.FUERZA, 10, false);
+		item.addModificador(fuerza);
+		ModificadorItem inteligencia = new ModificadorItem(AtributoModificable.INTELIGENCIA, 11, false);
+		item.addModificador(inteligencia);
+		ModificadorItem destreza = new ModificadorItem(AtributoModificable.DESTREZA, 23, false);
+		item.addModificador(destreza);
+		ModificadorItem salud = new ModificadorItem(AtributoModificable.SALUD, 14, false);
+		item.addModificador(salud);
+		ModificadorItem energia = new ModificadorItem(AtributoModificable.ENERGIA, 12, false);
+		item.addModificador(energia);
+		Assert.assertEquals("Espada (+10 de Fuerza, +11 de Inteligencia, +23 de Destreza, +14 de Salud, +12 de Energía)", item.getDescripcionItem());
 	}
 	
 	@Test
@@ -73,7 +105,6 @@ public class TestItem {
 		Assert.assertTrue(Integer.valueOf(110).equals(Integer.valueOf(pp.getSaludTope())));
 		Assert.assertTrue(Integer.valueOf(80).equals(Integer.valueOf(pp.getEnergiaTope())));
 		Assert.assertTrue(Integer.valueOf(33).equals(Integer.valueOf(pp.getFuerza())));
-		
 	}
 	
 	@Test
@@ -90,7 +121,6 @@ public class TestItem {
 		item3.addModificador(salud3);
 		item4.addModificador(salud4);
 		pp.setSaludTope(180); // Salud Base es 180
-		//System.out.println(pp.getSaludBase());
 		Assert.assertTrue(Integer.valueOf(180).equals(Integer.valueOf(pp.getSaludTope())));
 		pp.agregarItem(item);
 		pp.agregarItem(item2);
@@ -101,13 +131,8 @@ public class TestItem {
 	}
 	
 	@Test
-	public void PJAtributosNoSuficientes() {
-		Humano g = new Humano("Nico", 100, 100, 10, 10, 5, new Asesino(0.2, 0.3, 1.5), 0, 1, 1);
-		ModificadorItem salud = new ModificadorItem(AtributoModificable.SALUD, 10, false);
-		item.addModificador(salud);
-		Assert.assertTrue(Integer.valueOf(100).equals(Integer.valueOf(g.getSalud())));
-//		g.addItemInventario(item);
-		Assert.assertTrue(Integer.valueOf(100).equals(Integer.valueOf(g.getSalud())));
-		
+	public void tipoItem() {
+		TipoItem t = new TipoItem();
+		Assert.assertEquals(4, t.ARMA);
 	}
 }

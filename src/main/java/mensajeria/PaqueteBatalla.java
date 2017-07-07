@@ -16,7 +16,6 @@ public class PaqueteBatalla extends Paquete implements Serializable, Cloneable {
 		return id;
 	}
 
-
 	public void setId(int id) {
 		this.id = id;
 	}

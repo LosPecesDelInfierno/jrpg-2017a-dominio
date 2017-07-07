@@ -56,4 +56,23 @@ public class TestNPC {
 		npc.setNombre("Lautaro");
 		Assert.assertEquals("Lautaro", npc.getNombre());
 	}
+	 
+	@Test
+	public void testDificulades() {
+		NonPlayableCharacter npc0 = new NonPlayableCharacter("Gigante0", 1, 0);
+		NonPlayableCharacter npc1 = new NonPlayableCharacter("Gigante1", 1, 1);
+		NonPlayableCharacter npc2 = new NonPlayableCharacter("Gigante2", 1, 2);
+		
+		Assert.assertEquals(10, npc0.getFuerza());
+		Assert.assertEquals(30, npc0.getSalud());
+		Assert.assertEquals(2, npc0.getDefensa());
+		
+		Assert.assertEquals(20, npc1.getFuerza());
+		Assert.assertEquals(40, npc1.getSalud());
+		Assert.assertEquals(5, npc1.getDefensa());
+		
+		Assert.assertEquals(30, npc2.getFuerza());
+		Assert.assertEquals(50, npc2.getSalud());
+		Assert.assertEquals(4, npc2.getDefensa());
+	}
 }

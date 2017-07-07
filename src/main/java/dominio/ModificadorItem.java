@@ -35,14 +35,4 @@ public class ModificadorItem {
 		}
 		return this.valor;
 	}
-	
-	public int decrementar(int valorInicial) {
-		if(this.esPorcentaje && valorInicial != 0) {
-			return valorInicial - (valorInicial * this.valor / 100);
-		}
-		else if(valorInicial > this.valor) {
-			return valorInicial - this.valor;
-		}
-		return 0;
-	}
 }
