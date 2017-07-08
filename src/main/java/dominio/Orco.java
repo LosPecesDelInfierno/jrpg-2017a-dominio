@@ -8,7 +8,8 @@ package dominio;
  */
 public class Orco extends Personaje {
 
-	private static int ENERGIANECESARIA = 10;
+	private static final int ENERGIANECESARIA = 10;
+
 	/**
 	 * <h3>Constructor de Orco</h3>
 	 *
@@ -51,9 +52,8 @@ public class Orco extends Personaje {
 	 * @param idPersonaje
 	 *            del personaje
 	 */
-	public Orco(final String nombre, final int salud, final int energia, final int fuerza,
-			final int destreza, final int inteligencia, final Casta casta, final int experiencia,
-			final int nivel, final int idPersonaje) {
+	public Orco(final String nombre, final int salud, final int energia, final int fuerza, final int destreza,
+			final int inteligencia, final Casta casta, final int experiencia, final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 		nombreRaza = "Orco";
 

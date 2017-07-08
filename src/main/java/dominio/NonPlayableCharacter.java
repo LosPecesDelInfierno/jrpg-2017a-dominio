@@ -7,7 +7,7 @@ package dominio;
  */
 public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 
-	private static final int dificultadAleatoria = -1;
+	private static final int DIFICULTAD_ALEATORIA = -1;
 
 	/**
 	 * <h3>Constructor parametrizado de NonPlayableCharacter</h3>
@@ -23,7 +23,7 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 		super(nombre, nivel);
 		// this.nombre = nombre;
 		int dificultad;
-		if (dificultadNPC == dificultadAleatoria) {
+		if (dificultadNPC == DIFICULTAD_ALEATORIA) {
 			dificultad = randomGenerator.nextInt(3);
 		} else {
 			dificultad = dificultadNPC;

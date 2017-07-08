@@ -9,7 +9,7 @@ package dominio;
  */
 public class Asesino extends Casta {
 
-	private static int ENERGIANECESARIA = 10;
+	private static final int ENERGIANECESARIA = 10;
 	/**
 	 * <h3>Constructor de Asesino</h3>
 	 * @param probCrit

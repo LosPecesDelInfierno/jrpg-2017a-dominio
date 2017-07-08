@@ -222,6 +222,20 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		return clan;
 	}
 
+	/**
+	 * <h3Metodo setClan</h3>
+	 *
+	 * @param bonusSalud
+	 *            del bonus
+	 * @param bonusEnergia
+	 * 			  del bonus
+	 * @param bonusFuerza
+	 *            del bonus
+	 * @param bonusDestreza
+	 *            del bonus
+	 * @param bonusInteligencia
+	 *            del bonus     
+	 */
 	public void setBonus(final int bonusSalud, final int bonusEnergia,
 			final int bonusFuerza, final int bonusDestreza,
 			final int bonusInteligencia) {
@@ -281,18 +295,38 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 		return casta;
 	}
 
+	/**
+	 * <h3>Metodo getEnergiaBase</h3>
+	 *
+	 * @return energiaTope
+	 */
 	public int getEnergiaBase() {
 		return energiaTope;
 	}
 
+	/**
+	 * <h3>Metodo getSaludBase</h3>
+	 *
+	 * @return saludTope
+	 */
 	public int getSaludBase() {
 		return saludTope;
 	}
 
+	/**
+	 * <h3>Metodo getDestrezaBase</h3>
+	 *
+	 * @return destreza
+	 */
 	public int getDestrezaBase() {
 		return destreza;
 	}
 
+	/**
+	 * <h3>Metodo getInteligenciaBase</h3>
+	 *
+	 * @return inteligencia
+	 */
 	public int getInteligenciaBase() {
 		return inteligencia;
 	}
@@ -646,6 +680,8 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo otorgarExp</h3>
+	 * 
+	 * @return nivel
 	 */
 	public int otorgarExp() {
 		return this.nivel * 40;

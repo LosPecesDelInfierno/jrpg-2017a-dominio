@@ -1,5 +1,12 @@
 package dominio;
 
+/**
+*
+* <p>
+* Clase RandomGeneratorStub para generar numeros aleatorios
+* </p>
+*
+*/
 public class RandomGeneratorStub extends RandomGenerator {
 
 	@Override

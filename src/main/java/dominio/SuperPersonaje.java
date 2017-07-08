@@ -3,6 +3,13 @@ package dominio;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+*
+* <p>
+* Clase abstracta con atributos comunes a Personaje y NPC
+* </p>
+*
+*/
 public abstract class SuperPersonaje {
 
 	protected int salud;
@@ -52,6 +59,11 @@ public abstract class SuperPersonaje {
 		this.nombre = nombre;
 	}
 
+	/**
+	 * <h3>Método getFuerzaBase</h3>
+	 *
+	 * @return int fuerza
+	 */
 	public int getFuerzaBase() {
 	  return fuerza;
 	}

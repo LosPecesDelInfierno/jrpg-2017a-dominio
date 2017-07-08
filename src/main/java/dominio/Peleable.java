@@ -83,5 +83,11 @@ public interface Peleable {
 	 */
 	boolean sufreDanioExtra();
 
+	/**
+	 * <h3>Metodo serCurado</h3>
+	 *
+	 * @param int danioCausado
+	 * 					del personaje
+	 */
 	void serCurado(int danioCausado);
 }

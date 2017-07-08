@@ -9,7 +9,7 @@ package dominio;
  */
 public class Hechicero extends Casta {
 
-	private static int ENERGIANECESARIA = 10;
+	private static final int ENERGIANECESARIA = 10;
 
 	/**
 	 * <h3>Contructor parametrizado de Hechicero</h3>

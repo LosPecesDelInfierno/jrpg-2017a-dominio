@@ -148,7 +148,6 @@ public abstract class Casta implements Serializable {
 	/**
 	 * <h3>Método getProbabilidadEvitarDanio</h3> Método que devuelve la
 	 * probabilidad de evitar el danio de una casta
-	 * 
 	 * @return probabilidadEvitarDanio Probabilidad que tiene el personaje para
 	 *         evitar ser daniado
 	 */

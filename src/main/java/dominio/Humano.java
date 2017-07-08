@@ -7,7 +7,7 @@ package dominio;
  *
  */
 public class Humano extends Personaje {
-	private int ENERGIANECESARIA = 10;
+	private static final int ENERGIANECESARIA = 10;
 
 	/**
 	 * <h3><u>Método Constructor por defecto</u></h3> Recibe los parámetros

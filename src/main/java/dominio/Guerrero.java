@@ -9,7 +9,7 @@ package dominio;
  */
 public class Guerrero extends Casta {
 
-	private static int ENERGIANECESARIA = 10;
+	private static final int ENERGIANECESARIA = 10;
 
 	/**
 	 * <h3>Constructor parametrizado de Guerrero</h3>
