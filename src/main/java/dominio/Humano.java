@@ -7,7 +7,7 @@ package dominio;
  *
  */
 public class Humano extends Personaje {
-	private int diez = 10;
+	private int ENERGIANECESARIA = 10;
 
 	/**
 	 * <h3><u>Método Constructor por defecto</u></h3> Recibe los parámetros
@@ -15,7 +15,7 @@ public class Humano extends Personaje {
 	 * casta , id), llama al constructor parametrizado padre con dichos
 	 * parametros y define por defecto saludTope, energiaTope, salud, energia y
 	 * nombreRaza
-	 * 
+	 *
 	 * @param nombre
 	 *            Es un String que representa el nombre del Humano a crear.
 	 * @param casta
@@ -35,7 +35,7 @@ public class Humano extends Personaje {
 
 	/**
 	 * <h3>Constructor parametrizado de Humano</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            del personaje
 	 * @param salud
@@ -57,8 +57,9 @@ public class Humano extends Personaje {
 	 * @param idPersonaje
 	 *            del personaje
 	 */
-	public Humano(final String nombre, final int salud, final int energia, final int fuerza, final int destreza,
-			final int inteligencia, final Casta casta, final int experiencia, final int nivel, final int idPersonaje) {
+	public Humano(final String nombre, final int salud, final int energia, final int fuerza,
+			final int destreza,final int inteligencia, final Casta casta, final int experiencia,
+			final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 		nombreRaza = "Humano";
 
@@ -71,14 +72,14 @@ public class Humano extends Personaje {
 	/**
 	 * <h3>Incentivar</h3> Implementacion del método abstracto habilidad1
 	 * declarado en la clase abstracta Casta.
-	 * 
+	 *
 	 * @param atacado
 	 *            Peleable a ser atacado por el Humano.
 	 * @return boolean
 	 */
 	public boolean habilidadRaza1(final Peleable atacado) {
-		if (this.getEnergia() > diez) {
-			this.serDesenergizado(diez);
+		if (this.getEnergia() > ENERGIANECESARIA) {
+			this.serDesenergizado(ENERGIANECESARIA);
 			atacado.setAtaque(atacado.getAtaque() + this.getMagia());
 			return true;
 		}
@@ -99,13 +100,13 @@ public class Humano extends Personaje {
 	 * @return true en caso de realizarse el ataque, false en caso contrario.
 	 */
 	public boolean habilidadRaza2(final Peleable atacado) {
-		if (this.getEnergia() > diez) {
+		if (this.getEnergia() > ENERGIANECESARIA) {
 			if (atacado.serAtacado(atacado.getSalud() / 2) > 0) {
 				this.serDesenergizado(this.getEnergia() / 2);
 				return true;
 			}
 		}
-		this.serDesenergizado(diez);
+		this.serDesenergizado(ENERGIANECESARIA);
 		return false;
 	}
 }

@@ -8,16 +8,20 @@ package dominio;
 public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 
 	private static final int dificultadAleatoria = -1;
-	
+
 	/**
 	 * <h3>Constructor parametrizado de NonPlayableCharacter</h3>
-	 * @param nombre del personaje
-	 * @param nivel del personaje
-	 * @param dificultadNPC dificultad de bots
+	 *
+	 * @param nombre
+	 *            del personaje
+	 * @param nivel
+	 *            del personaje
+	 * @param dificultadNPC
+	 *            dificultad de bots
 	 */
 	public NonPlayableCharacter(final String nombre, final int nivel, final int dificultadNPC) {
 		super(nombre, nivel);
-		//this.nombre = nombre;
+		// this.nombre = nombre;
 		int dificultad;
 		if (dificultadNPC == dificultadAleatoria) {
 			dificultad = randomGenerator.nextInt(3);
@@ -41,45 +45,57 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 			this.defensa = 4 + (nivel - 1) * 4;
 			break;
 		default:
-	    break;
+			break;
 		}
 	}
 
 	/**
 	 * <h3>Método otorgarExp</h3>
+	 *
 	 * @return int experiencia a otorgar al personaje
 	 */
 	public int otorgarExp() {
 		return this.nivel * 30;
 	}
 
-
 	/**
-	 * <h3><u>Método atacar</u></h3>
-	 * Método encargado de realizar un ataque por parte de un personaje no manejado por un jugador.<p>
-	 * Pseudo-aleatoriamente puede ser un 50% más fuerte, en caso de que el numero aleatorio sea menor
-	 * a la probalidad que tiene los NPC de lograr un golpe crítico.
-	 * @param atacado Es el Peleable a atacar por parte del NPC.
-	 * @return Un int que representa el daño causado, (si no se logra el ataque el retorno es 0)
+	 * <h3><u>Método atacar</u></h3> Método encargado de realizar un ataque por
+	 * parte de un personaje no manejado por un jugador.
+	 * <p>
+	 * Pseudo-aleatoriamente puede ser un 50% más fuerte, en caso de que el
+	 * numero aleatorio sea menor a la probalidad que tiene los NPC de lograr un
+	 * golpe crítico.
+	 *
+	 * @param atacado
+	 *            Es el Peleable a atacar por parte del NPC.
+	 * @return Un int que representa el daño causado, (si no se logra el ataque
+	 *         el retorno es 0)
 	 */
 	public int atacar(final Peleable atacado) {
-		if (randomGenerator.nextDouble() <= 0.15) { // los NPC tienen 15% de golpes criticos
+		if (randomGenerator.nextDouble() <= 0.15) { // los NPC tienen 15% de
+													// golpes criticos
 			return atacado.serAtacado((int) (this.getAtaque() * 1.5));
 		} else {
 			return atacado.serAtacado(this.getAtaque());
 		}
 	}
-/**
- * <h3><u>Método serAtacado</u></h3>
- * Método encargado de recepcionar un ataque por parte de un personaje no manejado por un jugador.<p>
- * Si la defensa es mayor o se esquiva el golpe el NPC no recibe daño alguno.
- * @param danio Es el daño a recibir por parte del NPC.
- * @return Un int que representa el daño causado, (si no se logra el ataque el retorno es 0)
- */
+
+	/**
+	 * <h3><u>Método serAtacado</u></h3> Método encargado de recepcionar un
+	 * ataque por parte de un personaje no manejado por un jugador.
+	 * <p>
+	 * Si la defensa es mayor o se esquiva el golpe el NPC no recibe daño
+	 * alguno.
+	 *
+	 * @param danio
+	 *            Es el daño a recibir por parte del NPC.
+	 * @return Un int que representa el daño causado, (si no se logra el ataque
+	 *         el retorno es 0)
+	 */
 	public int serAtacado(final int danio) {
-	  int danioRetorno = danio;
+		int danioRetorno = danio;
 		if (randomGenerator.nextDouble() >= 0.15) {
-		  danioRetorno -= this.getDefensa() / 2;
+			danioRetorno -= this.getDefensa() / 2;
 			if (danioRetorno > 0) {
 				salud -= danioRetorno;
 				return danioRetorno;
@@ -89,40 +105,44 @@ public class NonPlayableCharacter extends SuperPersonaje implements Peleable {
 		return 0; // esquivo el golpe
 	}
 
- 
-	 /**
-   * <h3>Método ganarExperiencia</h3>
-   * @param exp experiencia que gana pj
-   */
+	/**
+	 * <h3>Método ganarExperiencia</h3>
+	 *
+	 * @param exp
+	 *            experiencia que gana pj
+	 */
 	public void ganarExperiencia(final int exp) {
 
 	}
 
-	 /**
-   * <h3>Método getAtaque</h3>
-   * @return int fuerza
-   */
+	/**
+	 * <h3>Método getAtaque</h3>
+	 *
+	 * @return int fuerza
+	 */
 	@Override
 	public int getAtaque() {
 		return fuerza;
 	}
 
-	 /**
-   * <h3>Método setAtaque</h3>
-   * @param ataque (fuerza del pj)
-   */
+	/**
+	 * <h3>Método setAtaque</h3>
+	 * 
+	 * @param ataque
+	 *            (fuerza del pj)
+	 */
 	@Override
 	public void setAtaque(final int ataque) {
 		this.fuerza = ataque;
 	}
+
 	@Override
 	public boolean sufreDanioExtra() {
 		return false;
 	}
 
-  @Override
-  public void serCurado(int danioCausado) {
+	@Override
+	public void serCurado(final int danioCausado) {
 		// TODO Auto-generated method stub
-    
-  }
+	}
 }

@@ -5,7 +5,7 @@ public class ModificadorItem {
 	private int valor;
 	private boolean esPorcentaje;
 
-	public ModificadorItem(int idAtributoModificable, int valor, boolean esPorcentaje) {
+	public ModificadorItem(final int idAtributoModificable, final int valor, final boolean esPorcentaje) {
 		this.atributoModificable = idAtributoModificable;
 		this.valor = valor;
 		this.esPorcentaje = esPorcentaje;
@@ -29,7 +29,7 @@ public class ModificadorItem {
 		return val + " de " + AtributoModificable.getNombre(this.atributoModificable);
 	}
 
-	public int incrementar(int valorInicial) {
+	public int incrementar(final int valorInicial) {
 		if (this.esPorcentaje) {
 			return (valorInicial * this.valor / 100);
 		}

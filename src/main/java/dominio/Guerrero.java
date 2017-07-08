@@ -9,9 +9,11 @@ package dominio;
  */
 public class Guerrero extends Casta {
 
+	private static int ENERGIANECESARIA = 10;
+
 	/**
 	 * <h3>Constructor parametrizado de Guerrero</h3>
-	 * 
+	 *
 	 * @param proCrit
 	 *            probabilidad de hacer danio critico
 	 * @param evasion
@@ -45,7 +47,7 @@ public class Guerrero extends Casta {
 	 * En este caso el método es el encargado de producir un Ataque Doble por
 	 * parte de un guerrero hacia un objeto Peleable.<br>
 	 * Nótese que en este caso el Personaje (Guerrero) que ataca es parámetro.
-	 * 
+	 *
 	 * @param caster
 	 *            Objeto de tipo Personaje encargado del ataque.
 	 * @param atacado
@@ -54,8 +56,8 @@ public class Guerrero extends Casta {
 	 *         devuelve un boolean true, caso contrario devuelve false.
 	 */
 	public boolean habilidad1(final Personaje caster, final Peleable atacado) {
-		if (caster.getEnergia() > 10) {
-			caster.serDesenergizado(10);
+		if (caster.getEnergia() > ENERGIANECESARIA) {
+			caster.serDesenergizado(ENERGIANECESARIA);
 			if (atacado.serAtacado(caster.ataque * 2) > 0) {
 				return true;
 			}
@@ -71,7 +73,7 @@ public class Guerrero extends Casta {
 	 * En este caso este método es el encargado de aumentar la defensa de un
 	 * caster de tipo Personaje (Guerrero).<br>
 	 * Nótese que el Personaje (Guerrero) es parámetro.
-	 * 
+	 *
 	 * @param caster
 	 *            Personaje (Guerrero) a recibir el aumento de defensa.
 	 * @param atacado
@@ -81,8 +83,8 @@ public class Guerrero extends Casta {
 	 *         devuelve un boolean true, caso contrario devuelve false.
 	 */
 	public boolean habilidad2(final Personaje caster, final Peleable atacado) {
-		if (caster.getEnergia() > 10) {
-			caster.serDesenergizado(10);
+		if (caster.getEnergia() > ENERGIANECESARIA) {
+			caster.serDesenergizado(ENERGIANECESARIA);
 			caster.mejorarDefensa(caster.magia);
 			return true;
 		}
@@ -93,7 +95,7 @@ public class Guerrero extends Casta {
 	/**
 	 * <h3>Ignorar defensa</h3> Implementacion del método abstracto habilidad2
 	 * declarado en la clase abstracta Casta
-	 * 
+	 *
 	 * @param caster
 	 *            De tipo Personaje encargado de obtener y setear energías.
 	 * @param atacado
@@ -101,8 +103,8 @@ public class Guerrero extends Casta {
 	 * @return boolean
 	 */
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
-		if (caster.getEnergia() > 10) {
-			caster.serDesenergizado(10);
+		if (caster.getEnergia() > ENERGIANECESARIA) {
+			caster.serDesenergizado(ENERGIANECESARIA);
 			if (atacado.sufreDanioExtra()) {
 				int defensaOriginal = ((Personaje) atacado).getDefensa();
 				((Personaje) atacado).perderDefensa();

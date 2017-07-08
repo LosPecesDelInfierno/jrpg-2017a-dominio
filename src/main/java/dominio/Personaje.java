@@ -45,7 +45,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getHabilidadesRaza</h3>
-	 * 
+	 *
 	 * @return String[] habilidades
 	 */
 	public String[] getHabilidadesRaza() {
@@ -55,7 +55,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	/**
 	 * <h3>Metodo getHabilidadesCasta</h3> metodo que devuelve las hhabilidades
 	 * de casta que posee un personaje
-	 * 
+	 *
 	 * @return String casta
 	 */
 	public String[] getHabilidadesCasta() {
@@ -76,7 +76,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Contructor de Personaje</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            del personaje
 	 * @param casta
@@ -111,7 +111,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Contructor de Personaje</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            del personaje
 	 * @param salud
@@ -133,8 +133,9 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @param idPersonaje
 	 *            del personaje
 	 */
-	public Personaje(final String nombre, final int salud, final int energia, final int fuerza, final int destreza,
-			final int inteligencia, final Casta casta, final int experiencia, final int nivel, final int idPersonaje) {
+	public Personaje(final String nombre, final int salud, final int energia, final int fuerza,
+			final int destreza, final int inteligencia, final Casta casta, final int experiencia,
+			final int nivel, final int idPersonaje) {
 		super(nombre, nivel);
 
 		this.salud = salud;
@@ -157,7 +158,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Obtener nombre raza</h3>
-	 * 
+	 *
 	 * @return nombreRaza del personaje
 	 */
 	public String getNombreRaza() {
@@ -166,7 +167,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Setear nombre raza</h3>
-	 * 
+	 *
 	 * @param nombreRaza
 	 *            nombre de raza del personaje
 	 */
@@ -176,7 +177,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Obtener ataque de personaje</h3>
-	 * 
+	 *
 	 * @return ataque del personaje
 	 */
 	public int getAtaque() {
@@ -185,7 +186,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>setear araque del personaje</h3>
-	 * 
+	 *
 	 * @param ataque
 	 *            del personaje
 	 */
@@ -195,7 +196,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getMagia</h3>
-	 * 
+	 *
 	 * @return int magia del personaje
 	 */
 	public int getMagia() {
@@ -204,7 +205,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo setMagia</h3>
-	 * 
+	 *
 	 * @param magia
 	 *            magia a asignar al personaje
 	 */
@@ -214,14 +215,16 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getClan</h3>
-	 * 
+	 *
 	 * @return Alianza clan al que pertenece el personaje
 	 */
 	public Alianza getClan() {
 		return clan;
 	}
 
-	public void setBonus(int bonusSalud, int bonusEnergia, int bonusFuerza, int bonusDestreza, int bonusInteligencia) {
+	public void setBonus(final int bonusSalud, final int bonusEnergia,
+			final int bonusFuerza, final int bonusDestreza,
+			final int bonusInteligencia) {
 		this.salud += bonusSalud;
 		this.bonusSalud = bonusSalud;
 		this.energia += bonusEnergia;
@@ -233,7 +236,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3Metodo setClan</h3>
-	 * 
+	 *
 	 * @param clan
 	 *            al que va a pertenecer el personaje
 	 */
@@ -244,7 +247,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getEnergia</h3>
-	 * 
+	 *
 	 * @return int energia
 	 */
 	public int getEnergia() {
@@ -253,7 +256,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getDestreza</h3>
-	 * 
+	 *
 	 * @return int destreza
 	 */
 	public int getDestreza() {
@@ -262,7 +265,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getInteligencia</h3>
-	 * 
+	 *
 	 * @return int inteligencia
 	 */
 	public int getInteligencia() {
@@ -271,7 +274,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getCasta</h3>
-	 * 
+	 *
 	 * @return int casta
 	 */
 	public Casta getCasta() {
@@ -296,7 +299,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getExperiencia</h3>
-	 * 
+	 *
 	 * @return int experiencia
 	 */
 	public int getExperiencia() {
@@ -305,7 +308,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getIdPersonaje</h3>
-	 * 
+	 *
 	 * @return int idPersonaje
 	 */
 	public int getIdPersonaje() {
@@ -314,7 +317,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getSaludTope</h3>
-	 * 
+	 *
 	 * @return int saludTope
 	 */
 	public int getSaludTope() {
@@ -323,7 +326,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo getEnergiaTope</h3>
-	 * 
+	 *
 	 * @return int energiaTope
 	 */
 	public int getEnergiaTope() {
@@ -340,7 +343,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * 0. Si es posible el ataque, se procederá y se retornará un int distinto
 	 * de cero.
 	 * </p>
-	 * 
+	 *
 	 * @param atacado
 	 *            Es un Objeto del tipo Peleable al cual se intenta atacar.
 	 * @return En caso de No poder concretar el ataque devuelve un cero, caso
@@ -362,7 +365,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo golpeCritico</h3>
-	 * 
+	 *
 	 * @return int valor del golpe critico
 	 */
 	public int golpeCritico() {
@@ -371,7 +374,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo puedeAtacar</h3>
-	 * 
+	 *
 	 * @return boolean true/false
 	 */
 	public boolean puedeAtacar() {
@@ -380,7 +383,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo calcularPuntosDeAtaque</h3>
-	 * 
+	 *
 	 * @return int posibles puntos de ataque
 	 */
 	public int calcularPuntosDeAtaque() {
@@ -389,7 +392,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo calcularPuntosDeDefensa</h3>
-	 * 
+	 *
 	 * @return int posibles puntos de defensa
 	 */
 	public int calcularPuntosDeDefensa() {
@@ -398,7 +401,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo calcualrPuntosDeMagia</h3>
-	 * 
+	 *
 	 * @return int puntos de inteligencia
 	 */
 	public int calcularPuntosDeMagia() {
@@ -441,7 +444,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * oprobabilidad de evitarlo, el método devolverá un cero. Caso contrario se
 	 * procede a recibir el ataque y luego retornar el daño final.
 	 * </p>
-	 * 
+	 *
 	 * @param danio
 	 *            Es el daño que se pretende recibir (int).
 	 * @return Se devuelve un int representando el daño recibido (si NO hubo
@@ -467,7 +470,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo serRobadoSalud</h3>
-	 * 
+	 *
 	 * @param danio
 	 *            a recibir
 	 * @return int danio
@@ -489,7 +492,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo serDesenergizado</h3>
-	 * 
+	 *
 	 * @param danio
 	 *            recibido
 	 * @return int danio
@@ -511,7 +514,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo serCurado</h3>
-	 * 
+	 *
 	 * @param salud
 	 *            a recuperar
 	 */
@@ -525,7 +528,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo serEnergizado</h3>
-	 * 
+	 *
 	 * @param energia
 	 *            a recibir
 	 */
@@ -539,7 +542,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo crearAlianza</h3>
-	 * 
+	 *
 	 * @param nombreAlianza
 	 *            que se va a crear
 	 */
@@ -560,12 +563,12 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo aliar</h3>
-	 * 
+	 *
 	 * @param nuevoAliado
 	 *            a agregar en la alianza
 	 * @return boolean true/false
 	 */
-	public boolean aliar(Personaje nuevoAliado) {
+	public boolean aliar(final Personaje nuevoAliado) {
 		if (this.clan == null) {
 			Alianza a = new Alianza("Alianza 1");
 			this.clan = a;
@@ -583,7 +586,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo asignarPuntosSkills</h3>
-	 * 
+	 *
 	 * @param fuerza
 	 *            pj
 	 * @param destreza
@@ -626,7 +629,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo ganarExperiencia</h3>
-	 * 
+	 *
 	 * @param exp
 	 *            a asignar
 	 * @return boolean true/false
@@ -650,6 +653,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Sobrecarga metodo clone</h3>
+	 * @return dominio
 	 */
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
@@ -658,7 +662,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>DistanciaCon</h3>
-	 * 
+	 *
 	 * @param p
 	 *            personaje
 	 * @return double distancia
@@ -669,7 +673,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo habilidadCasta1</h3>
-	 * 
+	 *
 	 * @param atacado
 	 *            Peleable
 	 * @return boolean true/false
@@ -680,7 +684,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>habilidadCasta2</h3>
-	 * 
+	 *
 	 * @param atacado
 	 *            Peleable
 	 * @return boolean true/false
@@ -691,7 +695,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>habilidadCasta3</h3>
-	 * 
+	 *
 	 * @param atacado
 	 *            Peleable
 	 * @return boolean true/false
@@ -702,7 +706,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>habilidadRaza1</h3>
-	 * 
+	 *
 	 * @param atacado
 	 *            Peleable
 	 * @return boolean true/false
@@ -711,7 +715,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>habilidadRaza2</h3>
-	 * 
+	 *
 	 * @param atacado
 	 *            Peleable
 	 * @return boolean true/false
@@ -720,7 +724,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 
 	/**
 	 * <h3>Metodo setearAtributosRaza</h3>
-	 * 
+	 *
 	 * @param salud
 	 *            raza
 	 * @param energia
@@ -728,7 +732,7 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * @param nRaza
 	 *            raza
 	 */
-	public void setearAtributosRaza(int salud, int energia, String nRaza) {
+	public void setearAtributosRaza(final int salud, final int energia, final String nRaza) {
 		saludTope += salud;
 		energiaTope += energia;
 		nombreRaza = nRaza;
@@ -742,10 +746,10 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * Refresca el estado del personaje atacado a partir de un PaqueteAtacar
 	 * enviado desde otro cliente
 	 * </p>
-	 * 
-	 * @param paquete
+	 *
+	 * @param paquete Paquete atacar
 	 */
-	public void refreshAtacado(PaqueteAtacar paquete) {
+	public void refreshAtacado(final PaqueteAtacar paquete) {
 		this.salud = paquete.getNuevaSaludEnemigo();
 		this.energia = paquete.getNuevaEnergiaEnemigo();
 	}
@@ -756,10 +760,10 @@ public abstract class Personaje extends SuperPersonaje implements Peleable, Seri
 	 * Refresca el estado del personaje atacante a partir de un PaqueteAtacar
 	 * enviado desde otro cliente
 	 * </p>
-	 * 
-	 * @param paquete
+	 *
+	 * @param paquete Paquete atacar
 	 */
-	public void refreshAtacante(PaqueteAtacar paquete) {
+	public void refreshAtacante(final PaqueteAtacar paquete) {
 		this.salud = paquete.getNuevaSaludPersonaje();
 		this.energia = paquete.getNuevaEnergiaPersonaje();
 	}

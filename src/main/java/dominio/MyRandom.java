@@ -20,7 +20,7 @@ public class MyRandom extends RandomGenerator {
 
 	/**
 	 * Genera un double
-	 * 
+	 *
 	 * @return Devuelve un double de valor aleatorio
 	 */
 	@Override
@@ -30,7 +30,7 @@ public class MyRandom extends RandomGenerator {
 
 	/**
 	 * Genera un nuevo int a partir del int recibido.
-	 * 
+	 *
 	 * @param val
 	 *            Valor (int) en el que se basará para la creacion de un nuevo
 	 *            entero.

@@ -8,7 +8,8 @@ package dominio;
  *
  */
 public class Asesino extends Casta {
-	
+
+	private static int ENERGIANECESARIA = 10;
 	/**
 	 * <h3>Constructor de Asesino</h3>
 	 * @param probCrit
@@ -52,8 +53,8 @@ public class Asesino extends Casta {
 	 *         devuelve un boolean true, caso contrario devuelve false.
 	 */
 	public boolean habilidad1(final Personaje caster, final Peleable atacado) {
-		if (caster.getEnergia() > 10) {
-			caster.serDesenergizado(10);
+		if (caster.getEnergia() > ENERGIANECESARIA) {
+			caster.serDesenergizado(ENERGIANECESARIA);
 			if (atacado.serAtacado((int) (caster.ataque * caster.getCasta().getDanioCritico())) > 0) {
 				return true;
 			}
@@ -68,7 +69,7 @@ public class Asesino extends Casta {
 	 * <p>
 	 * El objetivo de dicho método es el de aumentar la probabilidad de evasión
 	 * de los personajes pertenecientes a dicha casta. (Asesinos)
-	 * 
+	 *
 	 * @param caster
 	 *            De tipo Personaje encargado de obtener y setear energías.
 	 * @param atacado
@@ -77,8 +78,8 @@ public class Asesino extends Casta {
 	 *         contrario.
 	 */
 	public boolean habilidad2(final Personaje caster, final Peleable atacado) {
-		if (caster.getEnergia() > 10) {
-			caster.serDesenergizado(10);
+		if (caster.getEnergia() > ENERGIANECESARIA) {
+			caster.serDesenergizado(ENERGIANECESARIA);
 			if (this.getProbabilidadEvitarDanio() + 0.15 < 0.5) {
 				this.probabilidadEvitarDanio += 0.15;
 			} else {
@@ -92,7 +93,7 @@ public class Asesino extends Casta {
 	// Robar
 	/**
 	 * <h3>Método habilidad3</h3> Robar
-	 * 
+	 *
 	 * @param caster
 	 *            De tipo Personaje encargado de obtener y setear energías.
 	 * @param atacado

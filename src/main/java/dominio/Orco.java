@@ -8,9 +8,10 @@ package dominio;
  */
 public class Orco extends Personaje {
 
+	private static int ENERGIANECESARIA = 10;
 	/**
 	 * <h3>Constructor de Orco</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            del personaje
 	 * @param casta
@@ -28,7 +29,7 @@ public class Orco extends Personaje {
 
 	/**
 	 * <h3>Constructor de Orco</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            del personaje
 	 * @param salud
@@ -50,8 +51,9 @@ public class Orco extends Personaje {
 	 * @param idPersonaje
 	 *            del personaje
 	 */
-	public Orco(final String nombre, final int salud, final int energia, final int fuerza, final int destreza,
-			final int inteligencia, final Casta casta, final int experiencia, final int nivel, final int idPersonaje) {
+	public Orco(final String nombre, final int salud, final int energia, final int fuerza,
+			final int destreza, final int inteligencia, final Casta casta, final int experiencia,
+			final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 		nombreRaza = "Orco";
 
@@ -75,8 +77,8 @@ public class Orco extends Personaje {
 	 * @return true en caso de realizarse el ataque, false en caso contrario.
 	 */
 	public boolean habilidadRaza1(final Peleable atacado) {
-		if (this.getEnergia() > 10) {
-			this.serDesenergizado(10);
+		if (this.getEnergia() > ENERGIANECESARIA) {
+			this.serDesenergizado(ENERGIANECESARIA);
 			if (atacado.serAtacado(this.getDefensa() * 2) > 0) {
 				return true;
 			}
@@ -91,14 +93,14 @@ public class Orco extends Personaje {
 	 * Si luego de un ataque de un Orco a un objeto Peleable, el daño causado es
 	 * mayor que cero; dicho objeto recupera vida por el mismo valor de daño que
 	 * hubiese causado el Orco.
-	 * 
+	 *
 	 * @param atacado
 	 *            Peleable mordido por el Orco.
 	 * @return true en caso de realizarse la mordida, false en caso contrario.
 	 */
 	public boolean habilidadRaza2(final Peleable atacado) {
-		if (this.getEnergia() > 10) {
-			this.serDesenergizado(10);
+		if (this.getEnergia() > ENERGIANECESARIA) {
+			this.serDesenergizado(ENERGIANECESARIA);
 			int danioCausado = atacado.serAtacado(this.getFuerza());
 			if (danioCausado > 0) {
 				atacado.serCurado(danioCausado);

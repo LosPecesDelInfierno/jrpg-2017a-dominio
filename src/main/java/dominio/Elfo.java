@@ -10,9 +10,10 @@ package dominio;
  */
 public class Elfo extends Personaje {
 
+	private static int ENERGIANECESARIA = 10;
 	/**
 	 * <h3>Constructor de Elfo</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            del pesonaje
 	 * @param casta
@@ -30,7 +31,7 @@ public class Elfo extends Personaje {
 
 	/**
 	 * <h3>Constructor de Elfo</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            del personaje
 	 * @param salud
@@ -53,7 +54,8 @@ public class Elfo extends Personaje {
 	 *            del personaje
 	 */
 	public Elfo(final String nombre, final int salud, final int energia, final int fuerza, final int destreza,
-			final int inteligencia, final Casta casta, final int experiencia, final int nivel, final int idPersonaje) {
+			final int inteligencia, final Casta casta, final int experiencia, 
+			final int nivel, final int idPersonaje) {
 		super(nombre, salud, energia, fuerza, destreza, inteligencia, casta, experiencia, nivel, idPersonaje);
 		nombreRaza = "Elfo";
 
@@ -75,8 +77,8 @@ public class Elfo extends Personaje {
 	 *         contrario.
 	 */
 	public boolean habilidadRaza1(final Peleable atacado) {
-		if (this.getEnergia() > 10) {
-			this.serDesenergizado(10);
+		if (this.getEnergia() > ENERGIANECESARIA) {
+			this.serDesenergizado(ENERGIANECESARIA);
 			if (atacado.serAtacado(this.getFuerza() + this.getNivel() * 10) > 0) {
 				return true;
 			}
@@ -90,14 +92,14 @@ public class Elfo extends Personaje {
 	 * Elfo como daño a causar.<br>
 	 * En caso de poder realizarse el ataque se pierde la Energia utilizada y se
 	 * devuelve true, caso contrario devuelve false.
-	 * 
+	 *
 	 * @param atacado
 	 *            Peleable a ser atacado por el Elfo.
 	 * @return true en caso de realizarse el ataque, false en caso contrario.
 	 */
 	public boolean habilidadRaza2(final Peleable atacado) {
-		if (this.getEnergia() > 10) {
-			this.serDesenergizado(10);
+		if (this.getEnergia() > ENERGIANECESARIA) {
+			this.serDesenergizado(ENERGIANECESARIA);
 			if (atacado.serAtacado((int) (this.magia)) > 0) {
 				return true;
 			}

@@ -8,7 +8,7 @@ public class RandomGeneratorStub extends RandomGenerator {
 	}
 
 	@Override
-	public int nextInt(int val) {
+	public int nextInt(final int val) {
 		return val - 1;
 	}
 

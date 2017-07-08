@@ -6,8 +6,10 @@ public class AtributoModificable {
 	public static final int DESTREZA = 3;
 	public static final int SALUD = 4;
 	public static final int ENERGIA = 5;
+	
+	public AtributoModificable() { }
 
-	public static String getNombre(int value) {
+	public static String getNombre(final int value) {
 		switch (value) {
 		case FUERZA:
 			return "Fuerza";

@@ -13,11 +13,11 @@ public abstract class SuperPersonaje {
 	protected int bonusSalud;
 	protected int nivel;
 	protected RandomGenerator randomGenerator;
-	
-	
+
+
 	/**
 	 * <h3>Constructor SuperPersonaje</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            personaje
 	 * @param nivel
@@ -29,13 +29,13 @@ public abstract class SuperPersonaje {
 		this.randomGenerator = new MyRandom();
 	}
 
-	public void setRandomGenerator(RandomGenerator randomGenerator) {
+	public void setRandomGenerator(final RandomGenerator randomGenerator) {
 		this.randomGenerator = (RandomGeneratorStub) randomGenerator;
 	}
 
 	/**
 	 * <h3>Obtener nombre personaje</h3>
-	 * 
+	 *
 	 * @return nombre personaje
 	 */
 	public String getNombre() {
@@ -44,21 +44,21 @@ public abstract class SuperPersonaje {
 
 	/**
 	 * <h3>Setear nombre personaje</h3>
-	 * 
+	 *
 	 * @param nombre
 	 *            personaje
 	 */
 	public void setNombre(final String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public int getFuerzaBase() {
 	  return fuerza;
 	}
-	
+
 	/**
 	 * <h3>Método getSalud</h3>
-	 * 
+	 *
 	 * @return int salud
 	 */
 	public int getSalud() {
@@ -73,7 +73,7 @@ public abstract class SuperPersonaje {
 
 	/**
 	 * <h3>Método getFuerza</h3>
-	 * 
+	 *
 	 * @return int fuerza
 	 */
 	public int getFuerza() {
@@ -82,7 +82,7 @@ public abstract class SuperPersonaje {
 
 	/**
 	 * <h3>Método getDefensa</h3>
-	 * 
+	 *
 	 * @return int defensa
 	 */
 	public int getDefensa() {
@@ -94,9 +94,9 @@ public abstract class SuperPersonaje {
 	 * <p>
 	 * Aumenta el nivel de defensa del personaje
 	 * </p>
-	 * 
-	 * @param aumento
-	 *            de nivel de defensa del personaje
+	 *
+	 * @param defensa
+	 *            aumento de nivel de defensa del personaje
 	 */
 	public void mejorarDefensa(final int defensa) {
 		this.defensa += defensa;

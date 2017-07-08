@@ -9,9 +9,11 @@ package dominio;
  */
 public class Hechicero extends Casta {
 
+	private static int ENERGIANECESARIA = 10;
+
 	/**
 	 * <h3>Contructor parametrizado de Hechicero</h3>
-	 * 
+	 *
 	 * @param probCrit
 	 *            probabilidad de hacer danio critico
 	 * @param evasion
@@ -44,7 +46,7 @@ public class Hechicero extends Casta {
 	 * En este caso el método es el encargado de producir un ataque por Bola de
 	 * Fuego por parte de un hechicero hacia un objeto Peleable.<br>
 	 * Nótese que en este caso el Personaje que ataca es parámetro.
-	 * 
+	 *
 	 * @param caster
 	 *            Objeto de tipo Personaje encargado del ataque.
 	 * @param atacado
@@ -53,8 +55,8 @@ public class Hechicero extends Casta {
 	 *         devuelve un boolean true, caso contrario devuelve false.
 	 */
 	public boolean habilidad1(final Personaje caster, final Peleable atacado) {
-		if (caster.getEnergia() > 10) {
-			caster.serDesenergizado(10);
+		if (caster.getEnergia() > ENERGIANECESARIA) {
+			caster.serDesenergizado(ENERGIANECESARIA);
 			if (atacado.serAtacado((int) (caster.calcularPuntosDeMagia() * 1.5)) > 0) {
 				return true;
 			}
@@ -70,7 +72,7 @@ public class Hechicero extends Casta {
 	 * En este caso el método es el encargado de curar a un Peleable aliado, por
 	 * parte de un hechicero.<br>
 	 * Nótese que el Personaje que cura es parámetro.
-	 * 
+	 *
 	 * @param caster
 	 *            Objeto de tipo Personaje encargado de la sanacion.
 	 * @param aliado
@@ -79,8 +81,8 @@ public class Hechicero extends Casta {
 	 *         devuelve un boolean true, caso contrario devuelve false.
 	 */
 	public boolean habilidad2(final Personaje caster, final Peleable aliado) {
-		if (caster.getEnergia() > 10) {
-			caster.serDesenergizado(10);
+		if (caster.getEnergia() > ENERGIANECESARIA) {
+			caster.serDesenergizado(ENERGIANECESARIA);
 			if (aliado instanceof Personaje) {
 				((Personaje) aliado).serCurado(caster.calcularPuntosDeMagia());
 				return true;
@@ -93,7 +95,7 @@ public class Hechicero extends Casta {
 	/**
 	 * <h3>Robar Energia y Salud</h3> Implementacion del método abstracto
 	 * habilidad3 declarado en la clase abstracta Casta.
-	 * 
+	 *
 	 * @param caster
 	 *            De tipo Personaje encargado de obtener y setear energías.
 	 * @param atacado
@@ -101,8 +103,8 @@ public class Hechicero extends Casta {
 	 * @return boolean
 	 */
 	public boolean habilidad3(final Personaje caster, final Peleable atacado) {
-		if (caster.getEnergia() > 10) {
-			caster.serDesenergizado(10);
+		if (caster.getEnergia() > ENERGIANECESARIA) {
+			caster.serDesenergizado(ENERGIANECESARIA);
 			if (atacado.sufreDanioExtra()) {
 				int energiaRobada = ((Personaje) atacado).serDesenergizado(caster.calcularPuntosDeMagia());
 				int saludRobada = ((Personaje) atacado).serRobadoSalud(caster.calcularPuntosDeMagia() / 2);
