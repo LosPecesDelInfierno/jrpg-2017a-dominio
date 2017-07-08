@@ -136,12 +136,12 @@ public class Item {
 	}
 
 	/**
-	 * <h3>Metodo addModificador</h3> 
+	 * <h3>Metodo addModificador</h3>
 	 * agrega un modificador de atributos al Item
-	 * 
+	 *
 	 * @param modificador
 	 * 					del item
-	 * 						
+	 *
 	 */
 	public void addModificador(final ModificadorItem modificador) {
 		this.modificadores.put(modificador.getAtributoModificable(), modificador);
